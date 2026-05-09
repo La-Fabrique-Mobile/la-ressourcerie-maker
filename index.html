@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>La Ressourcerie Maker — commun numérique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap">
+  <style>
+/* =============================================================
+   La Ressourcerie Maker — design tokens & base
+   ============================================================= */
+:root {
+  --rm-cream:      #FBF5E9;
+  --rm-cream-2:    #F5ECD9;
+  --rm-cream-3:    #ECE0C5;
+  --rm-paper:      #FFFCF4;
+  --rm-kraft:      #B89065;
+  --rm-kraft-deep: #8B6A40;
+  --rm-kraft-soft: #D9BC93;
+  --rm-terracotta: #C2562F;
+  --rm-terracotta-soft: #E8B49A;
+  --rm-moss:       #6B7F4A;
+  --rm-moss-soft:  #B6C29A;
+  --rm-orange:     #E8611A;
+  --rm-ink:        #2A2118;
+  --rm-ink-2:      #534434;
+  --rm-ink-3:      #7A6A56;
+  --rm-line:       #DCC9A6;
+
+  --bg:        var(--rm-cream);
+  --surface:   var(--rm-paper);
+  --border:    var(--rm-line);
+  --text:      var(--rm-ink);
+  --text-2:    var(--rm-ink-2);
+  --text-3:    var(--rm-ink-3);
+  --accent:    var(--rm-orange);
+
+  --tag-public-bg:   #EFE3CB;
+  --tag-public-fg:   #6B4D1F;
+  --tag-time-bg:     #F5DCC4;
+  --tag-time-fg:     #7A4520;
+  --tag-mat-bg:      #DDE3CB;
+  --tag-mat-fg:      #4A5A2E;
+
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-body:    "DM Sans", system-ui, sans-serif;
+  --font-mono:    "DM Mono", ui-monospace, monospace;
+
+  --r-xs: 4px; --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-2xl: 40px;
+  --r-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(42,33,24,.05);
+  --shadow-sm: 0 2px 6px rgba(42,33,24,.06), 0 1px 2px rgba(42,33,24,.04);
+  --shadow-md: 0 8px 22px rgba(42,33,24,.08), 0 2px 6px rgba(42,33,24,.04);
+  --shadow-pop: 0 4px 0 0 var(--rm-kraft-deep);
+
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  --dur: 200ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(184,144,101,.07) 0 1px, transparent 1px),
+    radial-gradient(circle at 78% 64%, rgba(184,144,101,.06) 0 1px, transparent 1px),
+    radial-gradient(circle at 38% 88%, rgba(139,106,64,.05) 0 1px, transparent 1px);
+  background-size: 280px 280px, 320px 320px, 240px 240px;
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; }
+a { color: inherit; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(--text); margin: 0; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+
+.label-mono {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-3);
+}
+
+/* App shell */
+.app {
+  max-width: 480px; margin: 0 auto; min-height: 100vh;
+  background: var(--bg); position: relative;
+  border-left: 1px dashed var(--border);
+  border-right: 1px dashed var(--border);
+}
+
+/* =============================================================
+   Nav
+   ============================================================= */
+.nav {
+  position: sticky; top: 0; z-index: 30;
+  background: rgba(251,245,233,.92);
+  backdrop-filter: blur(8px) saturate(1.1);
+  -webkit-backdrop-filter: blur(8px) saturate(1.1);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; gap: 12px;
+}
+.nav__logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.nav__logo-mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--rm-kraft); color: var(--rm-paper);
+  display: grid; place-items: center;
+  box-shadow: 0 2px 0 0 var(--rm-kraft-deep);
+  flex: none;
+}
+.nav__logo-text { display: flex; flex-direction: column; line-height: 1; }
+.nav__logo-text b { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+.nav__logo-text small { font-size: 10px; font-family: var(--font-mono); color: var(--text-3); margin-top: 3px; letter-spacing: .06em; }
+.nav__menu-btn {
+  width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--rm-paper); display: grid; place-items: center;
+  color: var(--text);
+}
+.nav__sheet {
+  display: none;
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--rm-paper); border-bottom: 1px solid var(--border);
+  padding: 8px 12px 14px; flex-direction: column; gap: 2px;
+  box-shadow: 0 12px 24px rgba(42,33,24,.08);
+}
+.nav__sheet.open { display: flex; }
+.nav__link {
+  padding: 12px 14px; border-radius: 10px; text-decoration: none; color: var(--text);
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 500; font-size: 15px;
+}
+.nav__link:hover, .nav__link[aria-current="page"] { background: var(--rm-cream-2); }
+.nav__sub { padding-left: 14px; display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
+.nav__sub a {
+  padding: 9px 14px; border-radius: 8px; text-decoration: none; color: var(--text-2);
+  font-size: 14px; display: flex; align-items: center; gap: 10px;
+}
+.nav__sub a:hover { background: var(--rm-cream-2); color: var(--text); }
+.nav__sub-pic { width: 18px; height: 18px; flex: none; }
+
+/* =============================================================
+   Reusable bits
+   ============================================================= */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 20px; border-radius: 999px;
+  font-family: var(--font-display); font-weight: 600; font-size: 15px;
+  border: 1.5px solid transparent; text-decoration: none; cursor: pointer;
+  transition: transform var(--dur) var(--ease-out), background var(--dur);
+}
+.btn--primary { background: var(--rm-ink); color: var(--rm-cream); box-shadow: 0 3px 0 0 #000; }
+.btn--primary:hover { background: var(--rm-ink-2); }
+.btn--accent { background: var(--rm-orange); color: var(--rm-paper); box-shadow: 0 3px 0 0 #B84A0F; }
+.btn--accent:hover { background: #D2520F; }
+.btn--ghost { background: transparent; color: var(--text); border-color: var(--text); }
+.btn--ghost:hover { background: var(--rm-cream-2); }
+.btn:active { transform: translateY(1px); }
+
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 500; line-height: 1;
+  font-family: var(--font-mono); letter-spacing: .02em;
+}
+.tag--public { background: var(--tag-public-bg); color: var(--tag-public-fg); }
+.tag--time   { background: var(--tag-time-bg);   color: var(--tag-time-fg); }
+.tag--mat    { background: var(--tag-mat-bg);     color: var(--tag-mat-fg); }
+.tag--reuse  { background: var(--rm-moss); color: var(--rm-paper); padding: 5px 10px 5px 8px; }
+.tag svg { width: 12px; height: 12px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px 5px 8px; border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  background: var(--rm-paper); border: 1.5px solid var(--rm-kraft);
+  color: var(--text);
+}
+.badge--classique { border-color: var(--rm-moss); color: var(--rm-moss); background: #F4F7EA; }
+.badge--original  { border-color: var(--rm-terracotta); color: var(--rm-terracotta); background: #FAEDE3; }
+.badge__dot { width: 7px; height: 7px; border-radius: 999px; background: currentColor; }
+
+.section-eyebrow {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--rm-orange); font-weight: 500;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.section-eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--rm-orange); border-radius: 99px; }
+
+/* Photo placeholder texture */
+.ph-photo {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,252,244,.7) 0 2px, transparent 2px),
+    radial-gradient(circle at 75% 60%, rgba(255,252,244,.55) 0 2px, transparent 2px),
+    radial-gradient(circle at 55% 85%, rgba(255,252,244,.55) 0 2px, transparent 2px),
+    linear-gradient(135deg, var(--rm-kraft-soft), var(--rm-kraft));
+  background-size: 14px 14px, 18px 18px, 16px 16px, 100% 100%;
+}
+.ph-photo--moss {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,252,244,.6) 0 2px, transparent 2px),
+    radial-gradient(circle at 70% 70%, rgba(255,252,244,.5) 0 2px, transparent 2px),
+    linear-gradient(135deg, var(--rm-moss-soft), var(--rm-moss));
+  background-size: 14px 14px, 18px 18px, 100% 100%;
+}
+.ph-photo--terracotta {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,252,244,.65) 0 2px, transparent 2px),
+    radial-gradient(circle at 70% 70%, rgba(255,252,244,.5) 0 2px, transparent 2px),
+    linear-gradient(135deg, var(--rm-terracotta-soft), var(--rm-terracotta));
+  background-size: 14px 14px, 18px 18px, 100% 100%;
+}
+.ph-photo__caption {
+  position: absolute; bottom: 10px; left: 10px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
+  background: rgba(42,33,24,.78); color: var(--rm-cream);
+  padding: 4px 8px; border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* =============================================================
+   Hero
+   ============================================================= */
+.hero { padding: 38px 22px 28px; position: relative; }
+.hero__eyebrow { margin-bottom: 18px; }
+.hero__title {
+  font-size: clamp(34px, 9vw, 44px);
+  line-height: 0.98; letter-spacing: -0.035em; font-weight: 700;
+  margin-bottom: 18px;
+}
+.hero__title em {
+  font-style: normal;
+  background: linear-gradient(to bottom, transparent 60%, var(--rm-orange) 60%, var(--rm-orange) 92%, transparent 92%);
+  padding: 0 4px;
+}
+.hero__lead {
+  font-size: 17px; line-height: 1.55; color: var(--text-2);
+  margin-bottom: 26px; max-width: 38ch;
+}
+.hero__cta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+
+.hero__visual {
+  position: relative; height: 280px;
+  border-radius: var(--r-xl); overflow: visible; margin-bottom: 18px;
+}
+.hero__visual-card {
+  position: absolute; border-radius: var(--r-lg);
+  border: 1.5px solid var(--rm-kraft);
+  box-shadow: var(--shadow-pop); overflow: hidden;
+}
+.hero__visual-card--lg {
+  inset: 0 50px 70px 0;
+  transform: rotate(-2deg);
+}
+.hero__visual-card--md {
+  bottom: 8px; right: 0; width: 56%; height: 50%;
+  transform: rotate(3deg);
+  background: var(--rm-paper);
+}
+.hero__visual-card--sm {
+  top: 24px; right: 8px; width: 100px; height: 100px;
+  transform: rotate(-6deg);
+  border-radius: 999px;
+}
+.hero__visual-card__inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: flex-end; padding: 14px;
+}
+.hero__visual-card--md .hero__visual-card__inner {
+  align-items: flex-start; flex-direction: column;
+  justify-content: space-between; padding: 14px;
+}
+.hero__sticker {
+  position: absolute; z-index: 2;
+  top: -10px; right: 30px;
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-ink);
+  padding: 8px 14px; border-radius: 99px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: rotate(4deg);
+  box-shadow: 0 3px 0 0 var(--rm-ink);
+}
+
+.hero__stats {
+  display: flex; gap: 8px; padding: 16px 0 0;
+  border-top: 1px dashed var(--border);
+}
+.hero__stat { flex: 1; }
+.hero__stat b { display: block; font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--text); letter-spacing: -.02em; }
+.hero__stat span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--text-3); text-transform: uppercase; }
+
+/* =============================================================
+   Sections & workshop grid
+   ============================================================= */
+.section { padding: 30px 22px; }
+.section__head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 20px; gap: 12px;
+}
+.section__head h2 { font-size: 26px; letter-spacing: -.025em; }
+.section__head a { font-size: 13px; font-family: var(--font-mono); color: var(--text); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+
+.workshop-grid {
+  display: grid; grid-template-columns: 1fr; gap: 18px;
+}
+@media (min-width: 540px) { .workshop-grid { grid-template-columns: 1fr 1fr; } }
+
+.wcard {
+  background: var(--rm-paper); border: 1.5px solid var(--rm-kraft);
+  border-radius: var(--r-md); text-decoration: none; color: var(--text);
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur);
+}
+.wcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }
+.wcard__media { aspect-ratio: 5 / 3; position: relative; }
+.wcard__badges { position: absolute; top: 10px; left: 10px; display: flex; gap: 6px; z-index: 2; }
+.wcard__reuse  { position: absolute; top: 10px; right: 10px; z-index: 2; }
+.wcard__body { padding: 14px 14px 16px; }
+.wcard__title { font-size: 19px; font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; margin-bottom: 4px; line-height: 1.15; }
+.wcard__hint  { font-size: 13.5px; color: var(--text-2); margin-bottom: 12px; line-height: 1.45; }
+.wcard__tags  { display: flex; flex-wrap: wrap; gap: 5px; }
+
+/* =============================================================
+   Manifesto
+   ============================================================= */
+.manifesto {
+  padding: 36px 24px; background: var(--rm-ink); color: var(--rm-cream);
+  position: relative; overflow: hidden;
+}
+.manifesto__eyebrow {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--rm-orange); margin-bottom: 14px;
+}
+.manifesto__text {
+  font-family: var(--font-display); font-size: 22px; line-height: 1.3;
+  font-weight: 500; letter-spacing: -.015em; text-wrap: balance;
+}
+.manifesto__text em { font-style: normal; color: var(--rm-orange); }
+.manifesto__sign {
+  margin-top: 18px; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: .12em; color: rgba(251,245,233,.5); text-transform: uppercase;
+}
+
+/* =============================================================
+   Resources
+   ============================================================= */
+.resources {
+  background: var(--rm-cream-2);
+  padding: 36px 22px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.resources__list { display: flex; flex-direction: column; gap: 14px; }
+.resource-card {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--rm-paper); padding: 18px 18px 18px 16px;
+  border: 1.5px solid var(--rm-kraft);
+  border-radius: var(--r-md);
+  text-decoration: none; color: var(--text);
+  position: relative;
+  transition: transform var(--dur) var(--ease-out);
+}
+.resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-pop); }
+.resource-card__pic {
+  flex: none; width: 52px; height: 52px;
+  border-radius: 12px; display: grid; place-items: center;
+  background: var(--rm-cream-2); border: 1.5px solid var(--rm-kraft-soft);
+}
+.resource-card--moss   .resource-card__pic { background: var(--rm-moss-soft); border-color: var(--rm-moss); }
+.resource-card--orange .resource-card__pic { background: #F8DEC8; border-color: var(--rm-terracotta); }
+.resource-card__title { font-family: var(--font-display); font-weight: 700; font-size: 17px; margin-bottom: 4px; letter-spacing: -.01em; }
+.resource-card__desc  { font-size: 14px; color: var(--text-2); line-height: 1.45; }
+.resource-card__arrow { position: absolute; top: 18px; right: 16px; color: var(--text-3); transition: color var(--dur), transform var(--dur); }
+.resource-card:hover .resource-card__arrow { color: var(--rm-orange); transform: translate(2px, -2px); }
+
+/* =============================================================
+   Footer
+   ============================================================= */
+.footer {
+  background: var(--rm-ink); color: var(--rm-cream);
+  padding: 36px 22px 28px; margin-top: 56px; position: relative;
+}
+.footer::before {
+  content:""; position: absolute; top: -10px; left: 28px;
+  width: 86px; height: 22px; background: var(--rm-orange); opacity: .92;
+  transform: rotate(-2deg);
+  box-shadow: 0 4px 8px rgba(0,0,0,.16);
+}
+.footer h4 { color: var(--rm-cream); font-size: 18px; margin-bottom: 6px; letter-spacing: -.01em; }
+.footer p { color: rgba(251,245,233,.72); font-size: 14px; line-height: 1.6; }
+.footer__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 22px 0 18px; }
+.footer__col-title {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--rm-kraft-soft); margin-bottom: 10px;
+}
+.footer__col a { display: block; color: rgba(251,245,233,.85); text-decoration: none; font-size: 14px; padding: 4px 0; }
+.footer__col a:hover { color: var(--rm-orange); }
+.footer__poweredby {
+  border-top: 1px dashed rgba(251,245,233,.18);
+  padding-top: 18px; margin-top: 8px;
+  display: flex; align-items: center; gap: 10px; font-size: 12px;
+  color: rgba(251,245,233,.55); flex-wrap: wrap;
+}
+.footer__poweredby b { color: var(--rm-cream); font-weight: 600; }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="/">
+        <span class="nav__logo-mark">
+          <!-- Picto logo (R + M) -->
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 27V7h7c2.5 0 4 1.7 4 4 0 2.3-1.5 4-4 4H5" />
+            <path d="M12 15l5 12" />
+            <path d="M21 27v-7l3 7 3-7v7" />
+          </svg>
+        </span>
+        <span class="nav__logo-text">
+          <b>La Ressourcerie Maker</b>
+          <small>commun numérique · v0.3</small>
+        </span>
+      </a>
+      <button class="nav__menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h10" />
+        </svg>
+        <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+    <div class="nav__sheet" id="nav-sheet">
+      <a class="nav__link" aria-current="page" href="/">Accueil</a>
+      <a class="nav__link" href="/catalogue">Ateliers <span class="label-mono">24</span></a>
+      <div class="nav__link" style="padding-bottom:4px">Ressources</div>
+      <div class="nav__sub">
+        <a href="/ressources/pedagogie-maker">
+          <span class="nav__sub-pic" style="color:var(--rm-kraft-deep)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 17h6M10 20h4"/><path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+            </svg>
+          </span>
+          Pédagogie maker
+        </a>
+        <a href="/ressources/kit-de-base">
+          <span class="nav__sub-pic" style="color:var(--rm-terracotta)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4M20 8l-8 4M12 12v9"/>
+            </svg>
+          </span>
+          Kit de base
+        </a>
+        <a href="/ressources/reemploi">
+          <span class="nav__sub-pic" style="color:var(--rm-moss)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+            </svg>
+          </span>
+          Thématique réemploi
+        </a>
+      </div>
+      <a class="nav__link" href="/a-propos">À propos</a>
+    </div>
+  </nav>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__eyebrow">
+        <span class="section-eyebrow">Commun numérique · ouvert</span>
+      </div>
+      <h1 class="hero__title">Tous les outils pour <em>animer</em> des ateliers maker.</h1>
+      <p class="hero__lead">Fiches pédagogiques prêtes à l'emploi, kits de matériel, déclinaisons réemploi. Pour les MJC, centres sociaux, médiathèques et toutes les structures qui veulent faire fabriquer.</p>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="/catalogue">
+          Explorer le catalogue
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="/a-propos">Comment ça marche</a>
+      </div>
+
+      <!-- Visual card stack -->
+      <div class="hero__visual">
+        <span class="hero__sticker">+24 ateliers · libres</span>
+
+        <!-- Large photo card -->
+        <div class="hero__visual-card hero__visual-card--lg ph-photo">
+          <div class="hero__visual-card__inner">
+            <span class="ph-photo__caption">atelier · chamboule-tout</span>
+          </div>
+        </div>
+
+        <!-- Medium info card -->
+        <div class="hero__visual-card hero__visual-card--md">
+          <div class="hero__visual-card__inner">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span class="label-mono" style="color:var(--rm-orange)">Fiche · 4 étapes</span>
+              <b style="font-size:14px;letter-spacing:-.01em">Bras hydraulique en carton</b>
+            </div>
+            <div style="display:flex;gap:4px">
+              <span class="tag tag--time">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+                90 min
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small recycle circle -->
+        <div class="hero__visual-card hero__visual-card--sm ph-photo ph-photo--moss">
+          <div class="hero__visual-card__inner" style="padding:0;justify-content:center;align-items:center">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--rm-paper)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="hero__stats">
+        <div class="hero__stat"><b>24</b><span>ateliers</span></div>
+        <div class="hero__stat"><b>3h</b><span>déploiement</span></div>
+        <div class="hero__stat"><b>♻︎ 18</b><span>en réemploi</span></div>
+        <div class="hero__stat"><b>CC</b><span>licence</span></div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="manifesto__eyebrow">Notre parti pris</div>
+      <p class="manifesto__text">
+        Le matériel coûte cher. Le savoir-faire, lui, peut <em>circuler librement</em>. Voici ce qu'on partage : nos ratés, nos protocoles, nos astuces de récup'.
+      </p>
+      <div class="manifesto__sign">— Édition 2026 · 24 fiches · 6 contributeurs</div>
+    </section>
+
+    <!-- FEATURED WORKSHOPS -->
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Sélection</span>
+          <h2 style="margin-top:8px">Ateliers à essayer</h2>
+        </div>
+        <a href="/catalogue">Tout voir →</a>
+      </div>
+
+      <div class="workshop-grid">
+        <!-- Chamboule-tout -->
+        <a class="wcard" href="/ateliers/chamboule-tout">
+          <div class="wcard__media ph-photo">
+            <div class="wcard__badges">
+              <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            </div>
+            <div class="wcard__reuse">
+              <span class="tag tag--reuse">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/></svg>
+                Réemploi
+              </span>
+            </div>
+            <span class="ph-photo__caption">jeu d'adresse</span>
+          </div>
+          <div class="wcard__body">
+            <h3 class="wcard__title">Chamboule-tout</h3>
+            <p class="wcard__hint">Boîtes empilées, balles lestées : un classique de kermesse à fabriquer en 20 minutes.</p>
+            <div class="wcard__tags">
+              <span class="tag tag--public">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+                Tout public
+              </span>
+              <span class="tag tag--time">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+                20 min
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Lampe à conduction -->
+        <a class="wcard" href="/ateliers/lampe-conduction">
+          <div class="wcard__media ph-photo ph-photo--moss">
+            <div class="wcard__badges">
+              <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+            </div>
+            <span class="ph-photo__caption">électronique douce</span>
+          </div>
+          <div class="wcard__body">
+            <h3 class="wcard__title">Lampe à conduction</h3>
+            <p class="wcard__hint">Une LED, du papier alu, une pile bouton. La lumière comme prétexte pour parler de circuits.</p>
+            <div class="wcard__tags">
+              <span class="tag tag--public">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+                8–12 ans
+              </span>
+              <span class="tag tag--time">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+                45 min
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="resources">
+      <div style="margin-bottom:22px">
+        <span class="section-eyebrow">Au-delà des fiches</span>
+        <h2 style="font-size:26px;margin-top:8px;letter-spacing:-.025em">Ressources transversales</h2>
+        <p style="font-size:15px;color:var(--text-2);margin-top:8px;max-width:40ch">Trois entrées pour outiller votre posture d'animateur·rice maker, au-delà de l'atelier.</p>
+      </div>
+      <div class="resources__list">
+
+        <!-- Pédagogie maker -->
+        <a class="resource-card" href="/ressources/pedagogie-maker">
+          <span class="resource-card__pic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rm-kraft-deep)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 17h6M10 20h4"/><path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="resource-card__title">Pédagogie maker</h3>
+            <p class="resource-card__desc">La culture du faire, du rater, du recommencer — guide pour animer sans donner la leçon.</p>
+          </div>
+          <svg class="resource-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Kit de base -->
+        <a class="resource-card resource-card--orange" href="/ressources/kit-de-base">
+          <span class="resource-card__pic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rm-terracotta)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4M20 8l-8 4M12 12v9"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="resource-card__title">Kit de base</h3>
+            <p class="resource-card__desc">L'outillage minimum pour démarrer un coin maker : 220 € de matériel, 12 ateliers couverts.</p>
+          </div>
+          <svg class="resource-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Thématique réemploi -->
+        <a class="resource-card resource-card--moss" href="/ressources/reemploi">
+          <span class="resource-card__pic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rm-moss)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="resource-card__title">Thématique réemploi</h3>
+            <p class="resource-card__desc">Faire avec ce qu'on a — sourcing local, déchets industriels, partenariats ressourcerie.</p>
+          </div>
+          <svg class="resource-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <h4>Un commun, pas un produit.</h4>
+    <p>Tout est sous licence ouverte (CC BY-SA 4.0). Reprenez, adaptez, partagez vos déclinaisons — on continue de fabriquer ensemble.</p>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <div class="footer__col-title">Explorer</div>
+        <a href="/catalogue">Tous les ateliers</a>
+        <a href="/ressources/pedagogie-maker">Pédagogie maker</a>
+        <a href="/ressources/kit-de-base">Kit de base</a>
+        <a href="/ressources/reemploi">Thématique réemploi</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Le commun</div>
+        <a href="/contribuer">Contribuer</a>
+        <a href="/licences">Licences</a>
+        <a href="/newsletter">Newsletter</a>
+      </div>
+    </div>
+    <div class="footer__poweredby">
+      <span>Propulsé par</span>
+      <b>La Fabrique Mobile</b>
+      <span>· fablab itinérant · Lyon</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const sheet = document.getElementById('nav-sheet');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  btn.addEventListener('click', () => {
+    const open = sheet.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    iconMenu.style.display = open ? 'none' : '';
+    iconClose.style.display = open ? '' : 'none';
+  });
+</script>
+</body>
+</html>

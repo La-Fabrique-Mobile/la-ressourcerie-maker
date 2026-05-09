@@ -1,0 +1,129 @@
+---
+interface Props {
+  current?: 'home' | 'catalogue' | 'ressources' | 'about';
+}
+const { current } = Astro.props;
+---
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="/">
+      <span class="nav__logo-mark">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 27V7h7c2.5 0 4 1.7 4 4 0 2.3-1.5 4-4 4H5" />
+          <path d="M12 15l5 12" />
+          <path d="M21 27v-7l3 7 3-7v7" />
+        </svg>
+      </span>
+      <span class="nav__logo-text">
+        <b>La Ressourcerie Maker</b>
+        <small>commun numérique · v0.3</small>
+      </span>
+    </a>
+    <!-- Desktop horizontal nav (hidden on mobile via CSS, shown at ≥880px) -->
+    <div class="nav__desktop" style="display:none">
+      <a class="nav__desktop-link" aria-current={current === 'home' ? 'page' : undefined} href="/">Accueil</a>
+      <a class="nav__desktop-link" aria-current={current === 'catalogue' ? 'page' : undefined} href="/catalogue">
+        Ateliers <span class="label-mono">24</span>
+      </a>
+      <div class="nav__dropdown">
+        <button class="nav__desktop-link" type="button">
+          Ressources
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(90deg);opacity:.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <div class="nav__dropdown-panel">
+          <a href="/ressources/pedagogie-maker">
+            <span class="nav__dropdown-panel-pic" style="color:var(--rm-kraft-deep)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 17h6M10 20h4"/>
+                <path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+              </svg>
+            </span>
+            <div><b>Pédagogie maker</b><span>La culture du faire, du rater, du recommencer</span></div>
+          </a>
+          <a href="/ressources/kit-de-base">
+            <span class="nav__dropdown-panel-pic" style="color:var(--rm-terracotta);background:#F8DEC8;border-color:var(--rm-terracotta-soft)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 8l8-4 8 4v9l-8 4-8-4z"/>
+                <path d="M4 8l8 4M20 8l-8 4M12 12v9"/>
+              </svg>
+            </span>
+            <div><b>Kit de base</b><span>Outillage minimum pour démarrer</span></div>
+          </a>
+          <a href="/ressources/reemploi">
+            <span class="nav__dropdown-panel-pic" style="color:var(--rm-moss);background:var(--rm-moss-soft);border-color:var(--rm-moss)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+              </svg>
+            </span>
+            <div><b>Thématique réemploi</b><span>Faire avec ce qu'on a</span></div>
+          </a>
+        </div>
+      </div>
+      <a class="nav__desktop-link" href="/a-propos">À propos</a>
+    </div>
+
+    <button class="nav__menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false">
+      <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h10" />
+      </svg>
+      <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="nav__sheet" id="nav-sheet" role="menu">
+    <a class="nav__link" aria-current={current === 'home' ? 'page' : undefined} href="/">Accueil</a>
+    <a class="nav__link" aria-current={current === 'catalogue' ? 'page' : undefined} href="/catalogue">
+      Ateliers <span class="label-mono">24</span>
+    </a>
+    <div class="nav__link" style="padding-bottom:4px">Ressources</div>
+    <div class="nav__sub">
+      <a href="/ressources/pedagogie-maker">
+        <span class="nav__sub-pic" style="color:var(--rm-kraft-deep)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 17h6M10 20h4"/>
+            <path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+          </svg>
+        </span>
+        Pédagogie maker
+      </a>
+      <a href="/ressources/kit-de-base">
+        <span class="nav__sub-pic" style="color:var(--rm-terracotta)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 8l8-4 8 4v9l-8 4-8-4z"/>
+            <path d="M4 8l8 4M20 8l-8 4M12 12v9"/>
+          </svg>
+        </span>
+        Kit de base
+      </a>
+      <a href="/ressources/reemploi">
+        <span class="nav__sub-pic" style="color:var(--rm-moss)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+            <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+            <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+          </svg>
+        </span>
+        Thématique réemploi
+      </a>
+    </div>
+    <a class="nav__link" href="/a-propos">À propos</a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menu-btn')!;
+  const sheet = document.getElementById('nav-sheet')!;
+  const iconMenu = document.getElementById('icon-menu')!;
+  const iconClose = document.getElementById('icon-close')!;
+
+  btn.addEventListener('click', () => {
+    const open = sheet.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    (iconMenu as HTMLElement).style.display = open ? 'none' : '';
+    (iconClose as HTMLElement).style.display = open ? '' : 'none';
+  });
+</script>

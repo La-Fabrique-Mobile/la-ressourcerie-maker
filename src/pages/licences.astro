@@ -1,0 +1,400 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Licences"
+  description="Tout le contenu de La Ressourcerie Maker est publié sous licence Creative Commons BY-SA 4.0 — librement utilisable, modifiable et redistribuable."
+>
+  <Nav />
+
+  <main class="page">
+
+    <!-- EN-TÊTE -->
+    <section class="lic-hero">
+      <span class="section-eyebrow">Ouvert par défaut</span>
+      <h1 class="lic-hero__title">Licences</h1>
+      <p class="lic-hero__lead">Tout ce que vous trouvez ici est publié sous licence ouverte. Utilisez, adaptez, partagez — c'est fait pour ça.</p>
+    </section>
+
+    <!-- LICENCE CONTENU — principale -->
+    <section class="section" style="padding-top:0">
+
+      <div class="lic-card lic-card--main">
+        <div class="lic-card__header">
+          <div class="lic-badge lic-badge--dark">
+            <span class="lic-badge__cc">CC</span>
+            <span class="lic-badge__sub">BY SA</span>
+          </div>
+          <div>
+            <h2 class="lic-card__title">Creative Commons BY-SA 4.0</h2>
+            <p class="lic-card__scope">Fiches pédagogiques · Ressources · Textes · Illustrations</p>
+          </div>
+        </div>
+        <p class="lic-card__desc">
+          L'ensemble du contenu pédagogique de La Ressourcerie Maker — fiches ateliers, guides, ressources transversales — est publié sous licence <strong>Creative Commons Attribution – Partage dans les mêmes conditions 4.0 International</strong>.
+        </p>
+
+        <div class="lic-perms">
+          <div class="lic-perm lic-perm--ok">
+            <span class="lic-perm__icon">
+              <!-- check -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <b>Utiliser</b>
+              <p>Téléchargez et animez les ateliers dans vos structures — gratuitement, sans demande préalable.</p>
+            </div>
+          </div>
+          <div class="lic-perm lic-perm--ok">
+            <span class="lic-perm__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <b>Adapter</b>
+              <p>Modifiez les fiches, créez des variantes, ajustez au public ou au contexte de votre structure.</p>
+            </div>
+          </div>
+          <div class="lic-perm lic-perm--ok">
+            <span class="lic-perm__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <b>Redistribuer</b>
+              <p>Partagez les fiches originales ou modifiées, imprimées ou en ligne, dans vos réseaux.</p>
+            </div>
+          </div>
+          <div class="lic-perm lic-perm--cond">
+            <span class="lic-perm__icon">
+              <!-- info -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            </span>
+            <div>
+              <b>Citer la source</b>
+              <p>Mentionnez « La Ressourcerie Maker » et le nom de l'auteur·ice original·e si connu·e.</p>
+            </div>
+          </div>
+          <div class="lic-perm lic-perm--cond">
+            <span class="lic-perm__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            </span>
+            <div>
+              <b>Même licence</b>
+              <p>Si vous publiez une version adaptée, faites-le sous la même licence CC BY-SA 4.0.</p>
+            </div>
+          </div>
+          <div class="lic-perm lic-perm--no">
+            <span class="lic-perm__icon">
+              <!-- cross -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </span>
+            <div>
+              <b>Pas de restriction supplémentaire</b>
+              <p>Vous ne pouvez pas ajouter de conditions qui empêcheraient autrui d'exercer ces droits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- COMMENT CITER -->
+    <section class="section" style="padding-top:0">
+      <h2 class="lic-section-title">Comment citer correctement</h2>
+      <p class="lic-section-intro">Quand vous partagez ou adaptez du contenu issu de La Ressourcerie Maker, une mention suffit :</p>
+
+      <div class="lic-cite">
+        <p class="lic-cite__text">
+          « <strong>[Nom de la fiche]</strong> » par <strong>La Ressourcerie Maker</strong> est mis à disposition selon les termes de la licence <strong>Creative Commons Attribution – Partage dans les mêmes conditions 4.0 International</strong>.
+        </p>
+        <div class="lic-cite__url">la-ressourcerie-maker.netlify.app</div>
+      </div>
+
+      <p style="font-size:14px;color:var(--text-2);margin-top:14px;line-height:1.55">
+        Sur une fiche imprimée, un lien en bas de page suffit. En ligne, un lien hypertexte vers la fiche d'origine est préférable.
+      </p>
+    </section>
+
+    <!-- CODE SOURCE -->
+    <section class="section" style="padding-top:0">
+      <div class="lic-card">
+        <div class="lic-card__header">
+          <div class="lic-badge lic-badge--moss">
+            <span class="lic-badge__cc">MIT</span>
+          </div>
+          <div>
+            <h2 class="lic-card__title">Licence MIT</h2>
+            <p class="lic-card__scope">Code source de la plateforme</p>
+          </div>
+        </div>
+        <p class="lic-card__desc">
+          Le code source de cette plateforme (composants Astro, CSS, scripts) est publié sous <strong>licence MIT</strong>. Vous êtes libre de le réutiliser, le modifier et le déployer pour votre propre ressourcerie ou projet communautaire.
+        </p>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="manifesto__inner">
+        <div>
+          <div class="manifesto__eyebrow">Pourquoi l'ouvert</div>
+          <div class="manifesto__sign">— La Ressourcerie Maker</div>
+        </div>
+        <p class="manifesto__text">
+          Un commun numérique ne fonctionne que si les <em>contributions circulent</em>. Les licences ouvertes ne sont pas une formalité — elles sont la condition de l'existence du commun.
+        </p>
+      </div>
+    </section>
+
+    <!-- QUESTIONS -->
+    <section class="section">
+      <h2 class="lic-section-title">Une question sur les licences ?</h2>
+      <p class="lic-section-intro">Pour tout usage commercial, partenariat ou question spécifique, contactez-nous :</p>
+      <div class="about-lfm" style="margin-top:16px">
+        <div class="about-lfm__logo">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 27V7h7c2.5 0 4 1.7 4 4 0 2.3-1.5 4-4 4H5"/>
+            <path d="M12 15l5 12"/>
+            <path d="M21 27v-7l3 7 3-7v7"/>
+          </svg>
+        </div>
+        <div>
+          <p class="about-lfm__label">Contact</p>
+          <p class="about-lfm__name">La Fabrique Mobile</p>
+          <a href="mailto:bonjour.lafabriquemobile@gmail.com" class="about-lfm__desc" style="color:var(--rm-orange);text-decoration:none;font-weight:500">bonjour.lafabriquemobile@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+/* ---- Hero ---- */
+.lic-hero {
+  padding: 48px 22px 32px;
+}
+.lic-hero__title {
+  font-size: clamp(40px, 9vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 16px 0 16px;
+}
+.lic-hero__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 46ch;
+}
+
+/* ---- Section titles ---- */
+.lic-section-title {
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.lic-section-intro {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+/* ---- Licence card ---- */
+.lic-card {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft);
+  border-radius: var(--r-lg);
+  padding: 22px 20px;
+}
+.lic-card--main {
+  border-color: var(--rm-ink);
+  box-shadow: 0 4px 0 0 var(--rm-ink);
+}
+.lic-card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.lic-card__title {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+.lic-card__scope {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.lic-card__desc {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ---- CC badge ---- */
+.lic-badge {
+  flex: none;
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+.lic-badge--dark { background: var(--rm-ink); color: var(--rm-cream); }
+.lic-badge--moss { background: var(--rm-moss); color: var(--rm-paper); }
+.lic-badge__cc {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.lic-badge__sub {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: .1em;
+  opacity: .65;
+}
+
+/* ---- Permissions grid ---- */
+.lic-perms {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.lic-perm {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  align-items: flex-start;
+}
+.lic-perm:last-child { border-bottom: 0; }
+.lic-perm__icon {
+  flex: none;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+}
+.lic-perm--ok   .lic-perm__icon { background: #E6F2D9; color: var(--rm-moss); }
+.lic-perm--cond .lic-perm__icon { background: #FEF3C7; color: #92600A; }
+.lic-perm--no   .lic-perm__icon { background: #FAEDE3; color: var(--rm-terracotta); }
+.lic-perm b {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+  letter-spacing: -0.005em;
+}
+.lic-perm p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ---- Citation block ---- */
+.lic-cite {
+  background: var(--rm-cream-2);
+  border: 1.5px solid var(--rm-kraft);
+  border-radius: var(--r-md);
+  padding: 18px 18px 14px;
+}
+.lic-cite__text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-2);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.lic-cite__url {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--rm-orange);
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+
+/* ---- LFM contact (réutilisé depuis a-propos) ---- */
+.about-lfm {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 18px;
+  border: 1.5px dashed var(--rm-kraft);
+  border-radius: var(--r-md);
+  background: var(--rm-paper);
+}
+.about-lfm__logo {
+  flex: none;
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  background: var(--rm-orange);
+  color: var(--rm-paper);
+  display: grid; place-items: center;
+}
+.about-lfm__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 2px;
+}
+.about-lfm__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.about-lfm__desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 880px) {
+  .lic-hero {
+    padding: 80px 64px 56px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .lic-hero__title { font-size: clamp(56px, 5.5vw, 80px); }
+  .lic-hero__lead { font-size: 20px; max-width: 52ch; }
+
+  .lic-card { padding: 32px 36px; }
+  .lic-card__title { font-size: 22px; }
+  .lic-badge { width: 60px; height: 60px; border-radius: 14px; }
+  .lic-badge__cc { font-size: 18px; }
+
+  .lic-perms { display: grid; grid-template-columns: 1fr 1fr; }
+  .lic-perm { border-bottom: 1px solid var(--rm-kraft-soft); }
+  .lic-perm:nth-child(5),
+  .lic-perm:nth-child(6) { border-bottom: 0; }
+  .lic-perm:nth-child(odd) { border-right: 1px solid var(--rm-kraft-soft); }
+
+  .lic-cite { padding: 24px 28px 20px; }
+  .lic-cite__text { font-size: 15px; }
+
+  .lic-section-title { font-size: 28px; }
+
+  .about-lfm { padding: 28px 32px; gap: 20px; align-items: center; }
+}
+</style>

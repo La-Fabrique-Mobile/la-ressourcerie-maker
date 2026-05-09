@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Tous les outils pour animer des ateliers maker">
+  <Nav current="home" />
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__eyebrow">
+        <span class="section-eyebrow">Commun numérique · ouvert</span>
+      </div>
+      <h1 class="hero__title">Tous les outils pour <em>animer</em> des ateliers maker.</h1>
+      <p class="hero__lead">Fiches pédagogiques prêtes à l'emploi, kits de matériel, déclinaisons réemploi. Pour les MJC, centres sociaux, médiathèques et toutes les structures qui veulent faire fabriquer.</p>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="/catalogue">
+          Explorer le catalogue
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="/a-propos">Comment ça marche</a>
+      </div>
+
+      <!-- Visual card stack -->
+      <div class="hero__visual">
+        <span class="hero__sticker">+24 ateliers · libres</span>
+
+        <div class="hero__visual-card hero__visual-card--lg ph-photo">
+          <div class="hero__visual-card__inner">
+            <span class="ph-photo__caption">atelier · chamboule-tout</span>
+          </div>
+        </div>
+
+        <div class="hero__visual-card hero__visual-card--md">
+          <div class="hero__visual-card__inner">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span class="label-mono" style="color:var(--rm-orange)">Fiche · 4 étapes</span>
+              <b style="font-size:14px;letter-spacing:-.01em">Bras hydraulique en carton</b>
+            </div>
+            <div style="display:flex;gap:4px">
+              <span class="tag tag--time">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+                90 min
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual-card hero__visual-card--sm ph-photo ph-photo--moss">
+          <div class="hero__visual-card__inner" style="padding:0;justify-content:center;align-items:center">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--rm-paper)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+              <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+              <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="hero__stats">
+        <div class="hero__stat"><b>24</b><span>ateliers</span></div>
+        <div class="hero__stat"><b>3h</b><span>déploiement</span></div>
+        <div class="hero__stat"><b>♻︎ 18</b><span>en réemploi</span></div>
+        <div class="hero__stat"><b>CC</b><span>licence</span></div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="manifesto__inner">
+        <div>
+          <div class="manifesto__eyebrow">Notre parti pris</div>
+          <div class="manifesto__sign">— Édition 2026 · 24 fiches · 6 contributeurs</div>
+        </div>
+        <p class="manifesto__text">
+          Le matériel coûte cher. Le savoir-faire, lui, peut <em>circuler librement</em>. Voici ce qu'on partage : nos ratés, nos protocoles, nos astuces de récup'.
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURED WORKSHOPS -->
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Sélection</span>
+          <h2 style="margin-top:8px">Ateliers à essayer</h2>
+        </div>
+        <a href="/catalogue">Tout voir →</a>
+      </div>
+
+      <div class="workshop-grid">
+        <a class="wcard" href="/ateliers/chamboule-tout">
+          <div class="wcard__media ph-photo">
+            <div class="wcard__badges">
+              <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            </div>
+            <div class="wcard__reuse">
+              <span class="tag tag--reuse">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                  <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                  <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+                </svg>
+                Réemploi
+              </span>
+            </div>
+            <span class="ph-photo__caption">jeu d'adresse</span>
+          </div>
+          <div class="wcard__body">
+            <h3 class="wcard__title">Chamboule-tout</h3>
+            <p class="wcard__hint">Boîtes empilées, balles lestées : un classique de kermesse à fabriquer en 20 minutes.</p>
+            <div class="wcard__tags">
+              <span class="tag tag--public">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                  <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
+                </svg>
+                Tout public
+              </span>
+              <span class="tag tag--time">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
+                </svg>
+                20 min
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <a class="wcard" href="/ateliers/lampe-conduction">
+          <div class="wcard__media ph-photo ph-photo--moss">
+            <div class="wcard__badges">
+              <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+            </div>
+            <span class="ph-photo__caption">électronique douce</span>
+          </div>
+          <div class="wcard__body">
+            <h3 class="wcard__title">Lampe à conduction</h3>
+            <p class="wcard__hint">Une LED, du papier alu, une pile bouton. La lumière comme prétexte pour parler de circuits.</p>
+            <div class="wcard__tags">
+              <span class="tag tag--public">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                  <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
+                </svg>
+                8–12 ans
+              </span>
+              <span class="tag tag--time">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
+                </svg>
+                45 min
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="resources">
+      <div class="resources__inner">
+      <div class="resources__head" style="margin-bottom:22px">
+        <span class="section-eyebrow">Au-delà des fiches</span>
+        <h2 style="font-size:26px;margin-top:8px;letter-spacing:-.025em">Ressources transversales</h2>
+        <p style="font-size:15px;color:var(--text-2);margin-top:8px;max-width:40ch">Trois entrées pour outiller votre posture d'animateur·rice maker, au-delà de l'atelier.</p>
+      </div>
+      <div class="resources__list">
+        <a class="resource-card" href="/ressources/pedagogie-maker">
+          <span class="resource-card__pic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rm-kraft-deep)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 17h6M10 20h4"/>
+              <path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="resource-card__title">Pédagogie maker</h3>
+            <p class="resource-card__desc">La culture du faire, du rater, du recommencer — guide pour animer sans donner la leçon.</p>
+          </div>
+          <svg class="resource-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+
+        <a class="resource-card resource-card--orange" href="/ressources/kit-de-base">
+          <span class="resource-card__pic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rm-terracotta)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 8l8-4 8 4v9l-8 4-8-4z"/>
+              <path d="M4 8l8 4M20 8l-8 4M12 12v9"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="resource-card__title">Kit de base</h3>
+            <p class="resource-card__desc">L'outillage minimum pour démarrer un coin maker : 220 € de matériel, 12 ateliers couverts.</p>
+          </div>
+          <svg class="resource-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+
+        <a class="resource-card resource-card--moss" href="/ressources/reemploi">
+          <span class="resource-card__pic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rm-moss)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+              <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+              <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="resource-card__title">Thématique réemploi</h3>
+            <p class="resource-card__desc">Faire avec ce qu'on a — sourcing local, déchets industriels, partenariats ressourcerie.</p>
+          </div>
+          <svg class="resource-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

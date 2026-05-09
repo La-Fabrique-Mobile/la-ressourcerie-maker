@@ -1,0 +1,31 @@
+{
+  "name": "la-ressourcerie-maker",
+  "version": "0.1.0",
+  "description": "Commun numérique de fiches pédagogiques maker — pour MJC, centres sociaux et médiathèques.",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "author": "La Fabrique Mobile <bonjour.lafabriquemobile@gmail.com>",
+  "homepage": "https://la-ressourcerie-maker.com",
+  "repository": {
+    "type": "git",
+    "url": "https://framagit.org/la-fabrique-mobile/la-ressourcerie-maker"
+  },
+  "keywords": [
+    "maker",
+    "education",
+    "pedagogie",
+    "ateliers",
+    "fablab",
+    "commons",
+    "astro"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}
