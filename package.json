@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run sync && astro build",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {

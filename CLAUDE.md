@@ -4,15 +4,15 @@ Plateforme communautaire ouverte pour partager la culture maker à travers des a
 
 Propulsée par **La Fabrique Mobile** — qui apparaît discrètement en bas de page. Ce n'est pas le site de LFM : c'est un commun numérique indépendant, avec sa propre identité.
 
+> **Dépôt public** — ce repo est hébergé sur Framagit et ouvert. Ne jamais commettre de chemins absolus de machine locale, de données personnelles ou de contenus issus de projets internes LFM non publiés.
+
 ---
 
 ## Source de contenu
 
-Tout le contenu (ateliers, fiches pédagogiques, ressources) provient du projet :
+Tout le contenu (ateliers, fiches pédagogiques, ressources) provient de la **base de connaissances interne de LFM** — un projet privé non publié dans ce dépôt.
 
-**`../generateur-fiche-pedagogique`**
-
-Ce projet contient :
+La base de connaissances contient :
 - `catalogue/` — fiches d'ateliers génériques (carton, kermesse, machines, médiation, beaverbot)
 - `analyses/` — référentiels pédagogie, matériaux, publics, thématiques, contextes
 - `activites/` — formats d'animation (atelier, stage, événementiel, kermesse, réemploi…)
@@ -20,7 +20,7 @@ Ce projet contient :
 
 Le `catalogue/kermesse/chamboule-tout.md` est l'atelier pilote de cette plateforme.
 
-La classification des ateliers est héritée du projet source :
+La classification des ateliers est héritée de la base de connaissances :
 - 🟢 **Classique** — atelier éprouvé, connu dans le milieu maker
 - 🟣 **Original** — atelier différenciant, moins commun
 
@@ -95,4 +95,5 @@ la-ressourcerie-maker/
 
 - **`public/styles/global.css` doit rester synchronisé** avec `src/styles/global.css` — copier manuellement après chaque modification CSS.
 - Les pages Astro importent `Nav` et `Footer` comme composants — ne pas dupliquer la nav/footer en inline.
-- Le contenu des ateliers vient du projet source (`generateur-fiche-pedagogique`), pas inventé ici.
+- Le contenu des ateliers vient de la base de connaissances interne LFM — pas inventé ici, pas à dupliquer dans ce dépôt.
+- Ne jamais écrire de chemins absolus de machine locale dans ce dépôt (ni dans le code, ni dans la doc).

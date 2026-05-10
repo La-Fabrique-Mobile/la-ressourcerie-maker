@@ -1,0 +1,682 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Design thinking — La Ressourcerie Maker"
+  description="Cadre de conception centré sur l'humain : les 5 phases (Empathiser, Définir, Idéer, Prototyper, Tester), les outils pratiques et l'adaptation par âge."
+>
+  <Nav current="ressources" />
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="dt-hero">
+      <a class="dt-back" href="/ressources/pedagogie-maker">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Pédagogie maker
+      </a>
+      <div class="dt-hero__tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+        </svg>
+        Approche pédagogique
+      </div>
+      <h1 class="dt-hero__title">Design thinking</h1>
+      <p class="dt-hero__lead">Une philosophie et une méthode de résolution de problèmes centrée sur l'humain. Elle structure la créativité collective en cycles d'exploration, de prototypage et de test — et s'intègre naturellement dans les ateliers maker.</p>
+      <div class="dt-hero__pills">
+        <span>Projets 2h → plusieurs jours</span>
+        <span>8 ans+</span>
+        <span>Itération</span>
+        <span>Centré utilisateur</span>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHIE -->
+    <section class="section">
+      <span class="section-eyebrow">Philosophie</span>
+      <h2 style="margin-top:8px;margin-bottom:20px">3 principes fondateurs</h2>
+
+      <div class="dt-principles">
+        <div class="dt-principle">
+          <div class="dt-principle__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+          </div>
+          <h3>Centré sur l'utilisateur</h3>
+          <p>On ne part pas de la technique ou du matériau. On part des personnes concernées, de leurs besoins réels, souvent non formulés. Le prototype n'est pas une fin en soi — c'est un outil pour apprendre.</p>
+        </div>
+        <div class="dt-principle">
+          <div class="dt-principle__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6M9 15l3 3 3-3"/></svg>
+          </div>
+          <h3>Apprendre par le faire</h3>
+          <p>Une mauvaise idée prototypée vaut mieux que dix bonnes idées discutées. L'échec précoce est une information, pas une défaite. On cherche à échouer vite, souvent, et bon marché.</p>
+        </div>
+        <div class="dt-principle">
+          <div class="dt-principle__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </div>
+          <h3>Itération permanente</h3>
+          <p>Le processus n'est pas linéaire. On avance, on recule, on repart. La qualité d'un atelier se mesure au nombre de cycles, pas à la perfection du résultat final.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LES 5 PHASES -->
+    <section class="section">
+      <span class="section-eyebrow">Méthode Stanford d.school</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Les 5 phases</h2>
+      <p class="dt-intro-text">Le modèle le plus répandu. Les phases ne sont pas linéaires — on peut revenir en arrière à tout moment selon ce qu'on apprend.</p>
+
+      <div class="dt-flow">
+        <span>Empathiser</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <span>Définir</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <span>Idéer</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <span>Prototyper</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <span>Tester</span>
+      </div>
+
+      <div class="dt-phases">
+
+        <div class="dt-phase">
+          <div class="dt-phase__num">1</div>
+          <div>
+            <h3>Empathiser</h3>
+            <p class="dt-phase__goal">Observer, interviewer, se mettre à la place de l'utilisateur.</p>
+            <div class="dt-phase__tools">
+              <span class="dt-tool-label">Techniques</span>
+              <ul>
+                <li><b>Observation silencieuse</b> — observer sans intervenir (5–10 min). Noter ce qui est difficile, détourné, improvisé.</li>
+                <li><b>Interview d'empathie</b> — 5 questions ouvertes. "Raconte-moi la dernière fois où tu as…" Écoute active, pas de jugement.</li>
+                <li><b>Carte d'empathie</b> — quadrant Ce que la personne <em>dit / pense / fait / ressent</em>.</li>
+                <li><b>Jeu de rôle</b> — simuler la situation de l'utilisateur.</li>
+              </ul>
+            </div>
+            <div class="dt-phase__tip">En atelier maker : nommer "pour qui" on fabrique avant de toucher les outils — même pour un défi technique.</div>
+          </div>
+        </div>
+
+        <div class="dt-phase">
+          <div class="dt-phase__num">2</div>
+          <div>
+            <h3>Définir</h3>
+            <p class="dt-phase__goal">Transformer les observations en un problème précis et actionnable.</p>
+            <div class="dt-phase__tools">
+              <span class="dt-tool-label">Outils clés</span>
+              <ul>
+                <li><b>Point de vue (POV)</b> — "[Utilisateur] a besoin de [besoin] parce que [insight]"</li>
+                <li><b>"Comment pourrions-nous…"</b> — reformuler le POV en invitation à créer.</li>
+                <li><b>Tri par affinités</b> — regrouper les observations en post-its par thèmes.</li>
+              </ul>
+            </div>
+            <div class="dt-phase__warn">Erreur fréquente : sauter cette phase pour "aller construire". Un problème mal défini produit une solution qui ne sert à rien — même parfaitement exécutée.</div>
+          </div>
+        </div>
+
+        <div class="dt-phase">
+          <div class="dt-phase__num">3</div>
+          <div>
+            <h3>Idéer</h3>
+            <p class="dt-phase__goal">Générer le plus grand nombre d'idées possible avant d'en sélectionner.</p>
+            <div class="dt-phase__tools">
+              <span class="dt-tool-label">Techniques</span>
+              <ul>
+                <li><b>Brainstorming</b> — pas de jugement, quantité primée, une idée par post-it. 5–10 min chrono.</li>
+                <li><b>Pire idée</b> — trouver délibérément les pires solutions, puis les retourner. Débloque les groupes inhibés.</li>
+                <li><b>Brainwriting</b> — 3 idées en 3 min, passer sa feuille, s'inspirer des idées reçues. Plus équitable que l'oral.</li>
+                <li><b>Croquis rapides (6-8-5)</b> — 8 croquis différents en 5 min. Force la diversité avant la convergence.</li>
+              </ul>
+            </div>
+            <div class="dt-phase__tip">Convergence : vote par points (dot voting) ou "coup de cœur" individuel puis discussion.</div>
+          </div>
+        </div>
+
+        <div class="dt-phase">
+          <div class="dt-phase__num">4</div>
+          <div>
+            <h3>Prototyper</h3>
+            <p class="dt-phase__goal">Construire quelque chose de tangible, vite, avec peu de moyens, pour apprendre.</p>
+            <div class="dt-fidel">
+              <div class="dt-fidel__row">
+                <span class="dt-fidel__level dt-fidel__level--low">Papier / schéma</span>
+                <span>5 min</span>
+                <span>La logique, la structure</span>
+              </div>
+              <div class="dt-fidel__row">
+                <span class="dt-fidel__level dt-fidel__level--mid">Carton brut</span>
+                <span>15–30 min</span>
+                <span>La forme, les proportions</span>
+              </div>
+              <div class="dt-fidel__row">
+                <span class="dt-fidel__level dt-fidel__level--high">Maquette fonctionnelle</span>
+                <span>1–3h</span>
+                <span>L'usage, l'ergonomie</span>
+              </div>
+            </div>
+            <div class="dt-phase__tip">Règle d'or : le prototype doit coûter moins cher à construire qu'à débattre. Si une équipe discute 20 min d'une idée, c'est le signe de construire en 10 min pour le savoir.</div>
+          </div>
+        </div>
+
+        <div class="dt-phase">
+          <div class="dt-phase__num">5</div>
+          <div>
+            <h3>Tester</h3>
+            <p class="dt-phase__goal">Confronter le prototype à de vrais utilisateurs, observer sans défendre sa solution.</p>
+            <div class="dt-phase__tools">
+              <span class="dt-tool-label">Techniques</span>
+              <ul>
+                <li><b>Test utilisateur</b> — l'utilisateur interagit pendant que l'équipe observe en silence. Pas d'explications.</li>
+                <li><b>"Penser à voix haute"</b> — l'utilisateur verbalise ses pensées. Révèle les frictions invisibles.</li>
+                <li><b>5 utilisateurs suffit</b> — 5 personnes révèlent 85 % des problèmes majeurs (règle de Nielsen).</li>
+              </ul>
+            </div>
+            <div class="dt-phase__tip">Après le test : retour en phase Définir ou Idéer selon ce qu'on a appris. Ce n'est pas un échec — c'est le cycle.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ADAPTATION PAR ÂGE -->
+    <section class="section">
+      <span class="section-eyebrow">Adaptation</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Par âge</h2>
+      <p class="dt-intro-text">Moins les participants sont âgés, plus on raccourcit et simplifie chaque phase — mais on ne supprime pas l'empathie. Même avec des enfants de 6 ans, nommer "pour qui" on fabrique change tout.</p>
+
+      <div class="dt-ages">
+        <div class="dt-age">
+          <span class="dt-age__range">6–8 ans</span>
+          <div><b>Empathiser</b> — raconter une histoire fictive ("pour un personnage qui…")</div>
+          <div><b>Prototyper</b> — libre, sans contrainte de forme</div>
+          <div><b>Tester</b> — "tu aimes ? tu comprends ?"</div>
+        </div>
+        <div class="dt-age">
+          <span class="dt-age__range">9–11 ans</span>
+          <div>POV simplifié. Brainstorming avec règles explicites. Croquis avant de construire.</div>
+          <div style="margin-top:6px;color:var(--text-3);font-size:12px">Toutes les phases, condensées</div>
+        </div>
+        <div class="dt-age">
+          <span class="dt-age__range">12–15 ans</span>
+          <div>Entretiens d'empathie réels. HMW complet. Argumentation du choix d'idée. Feedbacks structurés.</div>
+          <div style="margin-top:6px;color:var(--text-3);font-size:12px">Cycle complet possible</div>
+        </div>
+        <div class="dt-age">
+          <span class="dt-age__range">Adultes</span>
+          <div>Outils avancés (carte d'empathie, SCAMPER, dot voting). Méta-réflexion sur le processus lui-même.</div>
+          <div style="margin-top:6px;color:var(--text-3);font-size:12px">Cadre complet</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATS -->
+    <section class="section">
+      <span class="section-eyebrow">En pratique</span>
+      <h2 style="margin-top:8px;margin-bottom:20px">Selon le format d'atelier</h2>
+
+      <div class="dt-formats">
+        <div class="dt-format">
+          <div class="dt-format__head">
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              1h–2h
+            </span>
+            <h3>Événementiel</h3>
+          </div>
+          <p>Pas le temps de faire toutes les phases. Deux options :</p>
+          <ul>
+            <li><b>Option A — Prototypage rapide :</b> donner un problème défini en amont, aller directement à l'idéation + prototypage. Afficher une carte persona pour rendre l'empathie visible.</li>
+            <li><b>Option B — Défi contraint :</b> brief précis avec critère de test intégré à la fin.</li>
+          </ul>
+        </div>
+        <div class="dt-format">
+          <div class="dt-format__head">
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              2–5 jours
+            </span>
+            <h3>Stage</h3>
+          </div>
+          <p>Le cycle complet est possible :</p>
+          <ul>
+            <li><b>Jour 1 :</b> Empathie (observation, interview) + Définition (POV + HMW)</li>
+            <li><b>Jour 2 :</b> Idéation + premier prototype papier</li>
+            <li><b>Jours 3–4 :</b> Prototype fonctionnel (carton, machines)</li>
+            <li><b>Jour 5 :</b> Test avec vrais utilisateurs + présentation</li>
+          </ul>
+        </div>
+        <div class="dt-format">
+          <div class="dt-format__head">
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              4 × 1h30
+            </span>
+            <h3>Scolaire</h3>
+          </div>
+          <p>Découper le cycle par séance :</p>
+          <ul>
+            <li><b>Séance 1 :</b> Empathie + Définition</li>
+            <li><b>Séance 2 :</b> Idéation + choix + croquis</li>
+            <li><b>Séance 3 :</b> Prototypage (carton, Makedo, machines)</li>
+            <li><b>Séance 4 :</b> Test + itération + restitution</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERREURS FRÉQUENTES -->
+    <section class="section">
+      <span class="section-eyebrow">Vigilance</span>
+      <h2 style="margin-top:8px;margin-bottom:20px">Erreurs fréquentes à éviter</h2>
+
+      <div class="dt-errors">
+        <div class="dt-error">
+          <div class="dt-error__icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <div>
+            <b>Sauter l'empathie</b>
+            <p>Pour "gagner du temps" — on résout alors le mauvais problème, même parfaitement.</p>
+          </div>
+        </div>
+        <div class="dt-error">
+          <div class="dt-error__icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <div>
+            <b>Tomber amoureux de la première idée</b>
+            <p>Bloquer l'idéation, rejeter les alternatives trop vite. On coupe le cycle avant qu'il commence.</p>
+          </div>
+        </div>
+        <div class="dt-error">
+          <div class="dt-error__icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <div>
+            <b>Prototyper trop tard et trop fini</b>
+            <p>S'attacher à un prototype qui a coûté du temps — refuser de le jeter quand le test révèle qu'il ne marche pas.</p>
+          </div>
+        </div>
+        <div class="dt-error">
+          <div class="dt-error__icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <div>
+            <b>Tester entre membres du groupe</b>
+            <p>Les coéquipiers ne représentent pas les utilisateurs. Chercher des personnes extérieures.</p>
+          </div>
+        </div>
+        <div class="dt-error">
+          <div class="dt-error__icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <div>
+            <b>Expliquer avant que l'utilisateur ait essayé</b>
+            <p>L'explication tue l'observation. Observer d'abord, expliquer ensuite seulement si nécessaire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="dt-cta-section">
+      <div class="dt-cta">
+        <div class="dt-cta__links">
+          <a href="/ressources/defis-stem">Défis STEM →</a>
+          <a href="/ressources/processus-artisanal">Processus artisanal →</a>
+          <a href="/ressources/pedagogie-maker">← Pédagogie maker</a>
+        </div>
+        <a class="btn btn--accent" href="/catalogue">Explorer le catalogue</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+.dt-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-3);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  letter-spacing: .04em;
+}
+.dt-back:hover { color: var(--text-1); }
+
+.dt-hero {
+  padding: 32px 22px 36px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+}
+.dt-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  border: 1px solid var(--rm-kraft);
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-bottom: 18px;
+}
+.dt-hero__title {
+  font-size: clamp(36px, 9vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+.dt-hero__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 56ch;
+  margin-bottom: 22px;
+}
+.dt-hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dt-hero__pills span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  background: var(--rm-cream-3);
+  color: var(--text-2);
+  border-radius: var(--r-sm);
+  padding: 4px 10px;
+  border: 1px solid var(--rm-kraft-soft);
+}
+
+.dt-intro-text {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 20px;
+}
+
+/* Principles */
+.dt-principles {
+  display: grid;
+  gap: 10px;
+}
+.dt-principle {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+}
+.dt-principle__icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: #F0E6D6;
+  color: var(--rm-kraft-deep);
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+.dt-principle h3 { font-size: 16px; letter-spacing: -0.02em; margin-bottom: 8px; }
+.dt-principle p { font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
+
+/* Flow indicator */
+.dt-flow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+}
+.dt-flow span {
+  background: #F0E6D6;
+  color: var(--rm-kraft-deep);
+  border: 1px solid var(--rm-kraft);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.dt-flow svg { color: var(--rm-kraft); flex: none; }
+
+/* Phases */
+.dt-phases {
+  display: grid;
+  gap: 10px;
+}
+.dt-phase {
+  display: flex;
+  gap: 16px;
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+  align-items: flex-start;
+}
+.dt-phase__num {
+  flex: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--rm-kraft-deep);
+  color: var(--rm-paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+.dt-phase h3 { font-size: 16px; letter-spacing: -0.02em; margin-bottom: 6px; }
+.dt-phase__goal { font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin-bottom: 12px; font-style: italic; }
+.dt-tool-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 8px;
+}
+.dt-phase__tools ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dt-phase__tools li {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.dt-phase__tools li::before { content: '—'; position: absolute; left: 0; color: var(--rm-kraft); }
+.dt-phase__tip {
+  font-size: 12.5px;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  line-height: 1.55;
+}
+.dt-phase__warn {
+  font-size: 12.5px;
+  color: #7A5A10;
+  background: #FEF3C7;
+  border: 1px solid #F6D860;
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  line-height: 1.55;
+}
+
+/* Fidélité prototype */
+.dt-fidel {
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.dt-fidel__row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  font-size: 12.5px;
+  align-items: center;
+}
+.dt-fidel__row:last-child { border-bottom: 0; }
+.dt-fidel__row span:not(.dt-fidel__level) { color: var(--text-3); font-family: var(--font-mono); font-size: 11px; }
+.dt-fidel__level {
+  font-weight: 600;
+  font-size: 12.5px;
+  padding: 2px 8px;
+  border-radius: var(--r-sm);
+}
+.dt-fidel__level--low  { background: var(--rm-cream-3); color: var(--text-2); }
+.dt-fidel__level--mid  { background: #F0E6D6; color: var(--rm-kraft-deep); }
+.dt-fidel__level--high { background: var(--rm-moss-soft); color: var(--rm-moss); }
+
+/* Ages */
+.dt-ages {
+  display: grid;
+  gap: 10px;
+}
+.dt-age {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dt-age__range {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  border: 1px solid var(--rm-kraft);
+  border-radius: 20px;
+  padding: 3px 10px;
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+
+/* Formats */
+.dt-formats { display: grid; gap: 10px; }
+.dt-format {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+.dt-format__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.dt-format h3 { font-size: 16px; letter-spacing: -0.02em; }
+.dt-format p { font-size: 13.5px; color: var(--text-2); line-height: 1.6; margin-bottom: 8px; }
+.dt-format ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+.dt-format li { font-size: 13px; color: var(--text-2); line-height: 1.5; padding-left: 14px; position: relative; }
+.dt-format li::before { content: '—'; position: absolute; left: 0; color: var(--rm-kraft); }
+
+/* Errors */
+.dt-errors {
+  display: grid;
+  gap: 0;
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.dt-error {
+  display: flex;
+  gap: 14px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  background: var(--rm-paper);
+  align-items: flex-start;
+}
+.dt-error:last-child { border-bottom: 0; }
+.dt-error__icon {
+  flex: none;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: #FAEDE3;
+  color: var(--rm-terracotta);
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+.dt-error b { font-size: 14px; display: block; margin-bottom: 3px; }
+.dt-error p { font-size: 13px; color: var(--text-2); line-height: 1.5; margin: 0; }
+
+/* CTA */
+.dt-cta-section { padding: 0 22px 56px; }
+.dt-cta {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dt-cta__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.dt-cta__links a {
+  font-size: 14px;
+  color: var(--rm-kraft-deep);
+  text-decoration: none;
+  font-weight: 500;
+}
+.dt-cta__links a:hover { color: var(--rm-ink); }
+
+/* Desktop */
+@media (min-width: 880px) {
+  .dt-hero { padding: 56px 64px 48px; max-width: 1320px; margin: 0 auto; }
+  .dt-hero__title { font-size: clamp(56px, 5.5vw, 80px); }
+  .dt-hero__lead { font-size: 19px; }
+
+  .dt-principles { grid-template-columns: 1fr 1fr 1fr; }
+  .dt-phases { grid-template-columns: 1fr 1fr; }
+  .dt-ages { grid-template-columns: 1fr 1fr; }
+  .dt-formats { grid-template-columns: 1fr 1fr 1fr; }
+  .dt-errors { grid-template-columns: 1fr 1fr; }
+  .dt-error:nth-child(odd) { border-right: 1px solid var(--rm-kraft-soft); }
+  .dt-error:nth-last-child(-n+2) { border-bottom: 0; }
+  .dt-error:nth-child(even):last-child { border-bottom: 0; }
+
+  .dt-cta-section { padding: 0 64px 72px; max-width: 1320px; margin: 0 auto; }
+  .dt-cta { flex-direction: row; align-items: center; justify-content: space-between; padding: 28px 32px; }
+}
+
+@media (min-width: 1280px) {
+  .dt-ages { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
+</style>

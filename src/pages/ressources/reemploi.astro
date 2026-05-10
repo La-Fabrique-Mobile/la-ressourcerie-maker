@@ -1,0 +1,875 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Thématique réemploi — La Ressourcerie Maker"
+  description="Faire avec ce qu'on a : philosophie, matériaux, idées d'ateliers et organisation de la collecte. Le réemploi comme contrainte créative et levier d'inclusion."
+>
+  <Nav current="ressources" />
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="re-hero">
+      <div class="re-hero__tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+          <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+          <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+        </svg>
+        Ressource thématique
+      </div>
+      <h1 class="re-hero__title">Thématique réemploi</h1>
+      <p class="re-hero__lead">Faire avec ce qu'on a plutôt qu'avec ce qu'on voudrait. Le réemploi est à la fois une contrainte créative, un geste écologique et un levier d'accessibilité pour tous vos ateliers.</p>
+      <div class="re-hero__stats">
+        <div class="re-stat">
+          <b>0 €</b>
+          <span>budget matière possible</span>
+        </div>
+        <div class="re-stat">
+          <b>6 ans+</b>
+          <span>dès le plus jeune âge</span>
+        </div>
+        <div class="re-stat">
+          <b>12+</b>
+          <span>idées d'activités</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHIE -->
+    <section class="section">
+      <span class="section-eyebrow">Pourquoi</span>
+      <h2 style="margin-top:8px;margin-bottom:20px">La philosophie du réemploi</h2>
+      <div class="re-pillars">
+
+        <div class="re-pillar">
+          <div class="re-pillar__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+          <h3>Le matériau comme ressource</h3>
+          <p>Un rouleau de papier toilette, une boîte de céréales, un bouchon — ce sont des matériaux à part entière. Le réemploi entraîne à changer de regard : voir du potentiel là où les autres voient de la poubelle.</p>
+        </div>
+
+        <div class="re-pillar">
+          <div class="re-pillar__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2l3 6.5L21 9l-4.5 4 1 6.5L12 17l-5.5 2.5 1-6.5L3 9l6-0.5z"/>
+            </svg>
+          </div>
+          <h3>Contrainte créative</h3>
+          <p>Travailler avec ce qu'on a plutôt qu'avec ce qu'on voudrait. La limitation du matériau force l'ingéniosité, l'adaptation, la débrouillardise — compétences fondamentales du maker.</p>
+        </div>
+
+        <div class="re-pillar">
+          <div class="re-pillar__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+              <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
+            </svg>
+          </div>
+          <h3>Accessibilité radicale</h3>
+          <p>Un atelier réemploi peut fonctionner avec zéro budget matière si la collecte a été faite en amont. Tout le monde peut contribuer — amener des boîtes, des bouchons, des rouleaux — et tout le monde a accès aux mêmes ressources.</p>
+        </div>
+
+        <div class="re-pillar">
+          <div class="re-pillar__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <h3>Rapport à la valeur</h3>
+          <p>Le réemploi questionne ce qu'on jette et pourquoi. Il introduit la notion de valeur d'usage vs valeur d'échange, et invite à repenser le cycle de vie des objets — un angle fort pour la médiation.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONCEPTS -->
+    <section class="section">
+      <span class="section-eyebrow">Comprendre</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Réemploi, recyclage, réparation — quelles différences ?</h2>
+      <p class="re-intro-text">Ces termes sont souvent confondus. Ils désignent des démarches très différentes — et n'ont pas le même impact environnemental.</p>
+
+      <div class="re-concepts">
+
+        <div class="re-concept re-concept--best">
+          <div class="re-concept__rank">Le plus vertueux</div>
+          <div class="re-concept__head">
+            <span class="re-concept__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Réparation</h3>
+              <span class="label-mono">remettre en état</span>
+            </div>
+          </div>
+          <p>Prolonger la vie d'un objet cassé sans le transformer. Zéro nouvelle extraction de matière. Réparer un vélo, ressemeler des chaussures, imprimer une pièce en 3D pour remplacer une pièce introuvable.</p>
+        </div>
+
+        <div class="re-concept re-concept--main">
+          <div class="re-concept__rank">Cœur des ateliers</div>
+          <div class="re-concept__head">
+            <span class="re-concept__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Réemploi &amp; surcyclage</h3>
+              <span class="label-mono">autre usage, valeur ajoutée</span>
+            </div>
+          </div>
+          <p>Utiliser un matériau pour un usage différent de son usage d'origine. Un rouleau de papier WC devient une colonne, une boîte de conserve devient une percussion. Le surcyclage va plus loin — l'objet fabriqué vaut plus que le déchet de départ.</p>
+        </div>
+
+        <div class="re-concept re-concept--neutral">
+          <div class="re-concept__rank">Moins vertueux qu'on croit</div>
+          <div class="re-concept__head">
+            <span class="re-concept__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/>
+                <path d="M12 8v4l3 3"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Recyclage</h3>
+              <span class="label-mono">destruction + recréation</span>
+            </div>
+          </div>
+          <p>Le matériau est fondu, broyé ou digéré pour devenir une nouvelle matière première. Nécessite une infrastructure industrielle et consomme de l'énergie. Vertueux — mais moins que le réemploi, qui évite cette étape entièrement.</p>
+        </div>
+
+      </div>
+
+      <div class="re-note">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <p><strong>À retenir pour la médiation :</strong> le recyclage est souvent présenté comme "la" solution écologique. En réalité, il est moins vertueux que le réemploi et la réparation. Trier ses déchets, c'est bien. Éviter d'en produire, c'est mieux.</p>
+      </div>
+    </section>
+
+    <!-- MATÉRIAUX -->
+    <section class="section">
+      <span class="section-eyebrow">Sourcing</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Matériaux courants en atelier</h2>
+      <p class="re-intro-text">Tous ces matériaux sont gratuits ou quasi-gratuits. La clé : organiser la collecte en amont avec les familles, les commerces du quartier, ou les ressourceries locales.</p>
+
+      <div class="re-mats">
+
+        <div class="re-mat-group">
+          <div class="re-mat-group__head">
+            <span class="re-mat-icon re-mat-icon--kraft">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+              </svg>
+            </span>
+            <h3>Carton &amp; papier</h3>
+          </div>
+          <ul class="re-mat-list">
+            <li><span class="re-mat-name">Carton ondulé</span><span class="re-mat-source">Livraisons, supermarché</span><span class="re-mat-use">Structure, découpe, prototypage</span></li>
+            <li><span class="re-mat-name">Boîtes de céréales</span><span class="re-mat-source">Cuisine</span><span class="re-mat-use">Panneaux plats, maquettes, masques</span></li>
+            <li><span class="re-mat-name">Rouleaux essuie-tout / WC</span><span class="re-mat-source">Cuisine, salle de bain</span><span class="re-mat-use">Tubes, colonnes, engrenages</span></li>
+            <li><span class="re-mat-name">Cartons d'œufs</span><span class="re-mat-source">Cuisine</span><span class="re-mat-use">Alvéoles, textures, isolant phonique</span></li>
+            <li><span class="re-mat-name">Boîtes à pizza</span><span class="re-mat-source">Restaurants, livraisons</span><span class="re-mat-use">Plateaux, surfaces de travail</span></li>
+          </ul>
+        </div>
+
+        <div class="re-mat-group">
+          <div class="re-mat-group__head">
+            <span class="re-mat-icon re-mat-icon--terra">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z"/><path d="M12 8v8M8 12h8"/>
+              </svg>
+            </span>
+            <h3>Plastique &amp; métal</h3>
+          </div>
+          <ul class="re-mat-list">
+            <li><span class="re-mat-name">Bouchons de bouteilles</span><span class="re-mat-source">Cuisine</span><span class="re-mat-use">Palets, roues, pixels, connecteurs</span></li>
+            <li><span class="re-mat-name">Boîtes de conserve</span><span class="re-mat-source">Cuisine</span><span class="re-mat-use">Percussions, structures, rangements</span></li>
+            <li><span class="re-mat-name">Capsules de café</span><span class="re-mat-source">Cuisine</span><span class="re-mat-use">Boutons, décoration, moulage</span></li>
+            <li><span class="re-mat-name">CD/DVD hors d'usage</span><span class="re-mat-source">Informatique</span><span class="re-mat-use">Réflecteurs, gabarits de cercle</span></li>
+          </ul>
+          <p class="re-mat-warn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+            Boîtes de conserve : bords potentiellement tranchants — utiliser un ouvre-boîte à bord roulé ou couvrir avec du ruban électrique. À réserver aux 12 ans+.
+          </p>
+        </div>
+
+        <div class="re-mat-group">
+          <div class="re-mat-group__head">
+            <span class="re-mat-icon re-mat-icon--moss">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22V8M12 8C12 8 7 4 4 6c3 2 6 6 8 16M12 8c0 0 5-4 8-2-3 2-6 6-8 16"/>
+              </svg>
+            </span>
+            <h3>Tissu &amp; matières souples</h3>
+          </div>
+          <ul class="re-mat-list">
+            <li><span class="re-mat-name">Vieux vêtements</span><span class="re-mat-source">Don, ressourcerie</span><span class="re-mat-use">Couture, rembourrage, costume</span></li>
+            <li><span class="re-mat-name">Chutes de tissu</span><span class="re-mat-source">Couturières, ateliers textile</span><span class="re-mat-use">Broderie, patchwork, décoration</span></li>
+            <li><span class="re-mat-name">Collants filés</span><span class="re-mat-source">Lingerie</span><span class="re-mat-use">Filet, rembourrage (boule)</span></li>
+            <li><span class="re-mat-name">Ficelle, laine</span><span class="re-mat-source">Mercerie, récup'</span><span class="re-mat-use">Armatures, textiles, macramé</span></li>
+          </ul>
+        </div>
+
+        <div class="re-mat-group">
+          <div class="re-mat-group__head">
+            <span class="re-mat-icon re-mat-icon--ink">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </span>
+            <h3>Bois &amp; divers</h3>
+          </div>
+          <ul class="re-mat-list">
+            <li><span class="re-mat-name">Bâtons de glace</span><span class="re-mat-source">Achat vrac ou récup'</span><span class="re-mat-use">Assemblages, pixels, structures</span></li>
+            <li><span class="re-mat-name">Palettes bois</span><span class="re-mat-source">Livraisons</span><span class="re-mat-use">Mobilier, structures, scènes</span></li>
+            <li><span class="re-mat-name">Pots de yaourt</span><span class="re-mat-source">Cuisine</span><span class="re-mat-use">Contenant, moule, mélangeur peinture</span></li>
+            <li><span class="re-mat-name">Mousses d'emballage</span><span class="re-mat-source">Livraisons électroniques</span><span class="re-mat-use">Isolation, rembourrage, structure</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACTIVITÉS -->
+    <section class="section">
+      <span class="section-eyebrow">En pratique</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Idées d'activités</h2>
+      <p class="re-intro-text">Une sélection d'activités testées, classées par durée et public. Toutes fonctionnent avec des matériaux de collecte.</p>
+
+      <div class="re-activities">
+
+        <div class="re-activity">
+          <div class="re-activity__head">
+            <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              45 min
+            </span>
+          </div>
+          <h3>Tri &amp; bibliothèque de matériaux</h3>
+          <p>Trier une collection de matériaux récupérés selon leur nature, rigidité, poids, résistance à l'eau. Construire une "bibliothèque de matériaux" collective. Idéal en ouverture d'un atelier plus long.</p>
+          <span class="tag tag--public">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+            dès 6 ans
+          </span>
+        </div>
+
+        <div class="re-activity">
+          <div class="re-activity__head">
+            <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              1h–2h
+            </span>
+          </div>
+          <h3>Défi tout-carton</h3>
+          <p>Construire une structure imposante — tour, pont, château, véhicule — uniquement avec du carton de récupération et un nombre limité d'attaches. La contrainte matière intensifie la créativité.</p>
+          <span class="tag tag--public">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+            dès 6 ans
+          </span>
+        </div>
+
+        <div class="re-activity">
+          <div class="re-activity__head">
+            <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              2h–3h
+            </span>
+          </div>
+          <h3>Instruments de musique récup'</h3>
+          <p>Construire des percussions (boîte de conserve + peau plastique), des cordophones (boîte de carton + élastiques), des aérophones (tubes de longueurs variées). Jam session en fin de séance.</p>
+          <span class="tag tag--public">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+            dès 8 ans
+          </span>
+        </div>
+
+        <div class="re-activity">
+          <div class="re-activity__head">
+            <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              1h30–3h
+            </span>
+          </div>
+          <h3>Costume en carton</h3>
+          <p>Créer un costume — robot, armure, animal — entièrement en carton de récupération. Assemblage par ruban kraft, ficelle ou Makedo. Idéal pour un atelier événementiel ou une parade.</p>
+          <span class="tag tag--public">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+            dès 7 ans
+          </span>
+        </div>
+
+        <div class="re-activity">
+          <div class="re-activity__head">
+            <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              1h–2h
+            </span>
+          </div>
+          <h3>Pixel art en bouchons</h3>
+          <p>Construire une fresque collective en bouchons de bouteilles triés par couleur. Chaque bouchon = un pixel. Format mural ou table. Résultat surprenant avec un matériau ultra-commun.</p>
+          <span class="tag tag--public">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+            dès 6 ans
+          </span>
+        </div>
+
+        <div class="re-activity">
+          <div class="re-activity__head">
+            <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+            <span class="tag tag--time">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/></svg>
+              2h
+            </span>
+          </div>
+          <h3>Atelier réparation — Repair Café</h3>
+          <p>Apporter un objet cassé ou abîmé — vêtement, outil, jouet, électronique. Tenter de le réparer avec les moyens disponibles. Format convivial, intergénérationnel, sans objectif de performance.</p>
+          <span class="tag tag--public">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/></svg>
+            adultes · familles
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLLECTE -->
+    <section class="section">
+      <span class="section-eyebrow">Organisation</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Organiser la collecte</h2>
+      <p class="re-intro-text">La collecte se prépare 2 à 3 semaines à l'avance. Plus tôt vous communiquez, plus vous avez de matière.</p>
+
+      <div class="re-collect">
+
+        <div class="re-collect-step">
+          <div class="re-collect-step__num">1</div>
+          <div>
+            <h3>Appel à dons</h3>
+            <p>Préparer une liste des matériaux recherchés et la diffuser aux familles ou partenaires. Préciser : <em>propre, sec, sans résidu alimentaire</em>. Un flyer A5 suffit, ou un message dans les groupes parents.</p>
+          </div>
+        </div>
+
+        <div class="re-collect-step">
+          <div class="re-collect-step__num">2</div>
+          <div>
+            <h3>Tri à l'arrivée</h3>
+            <p>Trier en 3 catégories : carton plat / carton en volume / petits éléments (bouchons, capsules). Des bacs clairement étiquetés accélèrent le tri et peuvent devenir une activité d'introduction.</p>
+          </div>
+        </div>
+
+        <div class="re-collect-step">
+          <div class="re-collect-step__num">3</div>
+          <div>
+            <h3>Conservation</h3>
+            <p>Carton : empiler à plat, éviter l'humidité. Bouchons : sacs ou bacs triés par taille. Tissu : caisses fermées pour éviter la poussière. Un espace dédié évite la confusion avec les déchets réels.</p>
+          </div>
+        </div>
+
+        <div class="re-collect-step">
+          <div class="re-collect-step__num">4</div>
+          <div>
+            <h3>Ressourceries partenaires</h3>
+            <p>Certaines ressourceries proposent des partenariats avec les associations et établissements scolaires : tarifs réduits, ateliers de découverte, dons de chutes ou de fins de stock. Cherchez "ressourcerie" + votre ville.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRO ACTIVITÉ AVEC DIFFÉRENTS PUBLICS -->
+    <section class="section">
+      <span class="section-eyebrow">Médiation</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Introduire le sujet selon le public</h2>
+
+      <div class="re-publics">
+        <div class="re-public-card">
+          <div class="re-public-card__head">
+            <span class="re-public-card__age">6–12 ans</span>
+            <h3>La chasse au trésor dans la poubelle</h3>
+          </div>
+          <p>Apporter une sélection de "déchets" propres. Demander : <em>"Qu'est-ce que vous voyez ?"</em> puis <em>"Qu'est-ce que vous pourriez construire avec ça ?"</em> Laisser 5 minutes d'observation libre avant tout défi.</p>
+          <p style="margin-top:8px">Variante : raconter la trajectoire d'une boîte de céréales (forêt → usine → maison → poubelle) puis demander : <em>"Et si on ajoutait une étape 'atelier' ?"</em></p>
+        </div>
+
+        <div class="re-public-card">
+          <div class="re-public-card__head">
+            <span class="re-public-card__age">12–17 ans</span>
+            <h3>Audit de la salle de classe</h3>
+          </div>
+          <p>Lister tout ce qui pourrait être réutilisé ou réparé dans la salle, au lieu d'être jeté ou remplacé. Estimer le coût, l'impact, l'alternative. Rend le concept concret et local.</p>
+          <p style="margin-top:8px">Variante : comparer les filières — poubelle ordinaire / poubelle de tri / réemploi. Quelle filière consomme le moins d'énergie ? (Réponse : le réemploi, toujours.)</p>
+        </div>
+
+        <div class="re-public-card">
+          <div class="re-public-card__head">
+            <span class="re-public-card__age">Adultes</span>
+            <h3>Cartographie des flux</h3>
+          </div>
+          <p>Dans une structure (école, association, entreprise) : identifier ce qui est jeté, en quelle quantité, avec quel potentiel de réemploi. Proposer un système de collecte interne ou un partenariat avec une ressourcerie locale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CATALOGUE -->
+    <section class="re-cta-section">
+      <div class="re-cta">
+        <div class="re-cta__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+            <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+            <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Ateliers réemploi dans le catalogue</h2>
+          <p>Tous les ateliers avec une version réemploi sont filtrables directement depuis le catalogue — matériel zéro budget, collecte en amont.</p>
+        </div>
+        <a class="btn btn--accent" href="/catalogue?reemploi=true">
+          Voir les ateliers réemploi
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+/* ---- Hero ---- */
+.re-hero {
+  padding: 48px 22px 36px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+}
+.re-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--rm-moss);
+  background: var(--rm-moss-soft);
+  border: 1px solid var(--rm-moss);
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-bottom: 18px;
+}
+.re-hero__title {
+  font-size: clamp(36px, 9vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+.re-hero__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 52ch;
+  margin-bottom: 28px;
+}
+.re-hero__stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.re-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.re-stat b {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: var(--rm-moss);
+}
+.re-stat span {
+  font-size: 12px;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+
+/* ---- Shared ---- */
+.re-intro-text {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 24px;
+}
+
+/* ---- Pillars ---- */
+.re-pillars {
+  display: grid;
+  gap: 12px;
+}
+.re-pillar {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+}
+.re-pillar__icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--rm-moss-soft);
+  color: var(--rm-moss);
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+.re-pillar h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.re-pillar p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ---- Concepts ---- */
+.re-concepts {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.re-concept {
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+  border: 1.5px solid transparent;
+}
+.re-concept--best {
+  background: #E6F2D9;
+  border-color: var(--rm-moss);
+}
+.re-concept--main {
+  background: var(--rm-moss-soft);
+  border-color: var(--rm-moss);
+  box-shadow: 0 3px 0 0 var(--rm-moss);
+}
+.re-concept--neutral {
+  background: var(--rm-paper);
+  border-color: var(--rm-kraft-soft);
+}
+.re-concept__rank {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 12px;
+}
+.re-concept__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.re-concept__icon {
+  flex: none;
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  background: rgba(255,255,255,.6);
+  display: grid;
+  place-items: center;
+  color: var(--rm-moss);
+}
+.re-concept--neutral .re-concept__icon { color: var(--rm-kraft-deep); }
+.re-concept h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+.re-concept p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.re-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #FEF3C7;
+  border: 1px solid #F6D860;
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+  color: #7A5A10;
+}
+.re-note svg { flex: none; margin-top: 2px; }
+.re-note p { font-size: 13.5px; line-height: 1.55; }
+
+/* ---- Materials ---- */
+.re-mats {
+  display: grid;
+  gap: 12px;
+}
+.re-mat-group {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.re-mat-group__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px 14px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+}
+.re-mat-group__head h3 {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.re-mat-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.re-mat-icon--kraft  { background: #F0E6D6; color: var(--rm-kraft-deep); }
+.re-mat-icon--terra  { background: #F8DEC8; color: var(--rm-terracotta); }
+.re-mat-icon--moss   { background: var(--rm-moss-soft); color: var(--rm-moss); }
+.re-mat-icon--ink    { background: var(--rm-cream-3); color: var(--rm-ink); }
+.re-mat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.re-mat-list li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.re-mat-list li:last-child { border-bottom: 0; }
+.re-mat-name { font-weight: 600; color: var(--text-1); grid-column: 1; }
+.re-mat-source { color: var(--text-3); font-family: var(--font-mono); font-size: 11px; grid-column: 2; align-self: center; }
+.re-mat-use { color: var(--text-2); grid-column: 1 / -1; }
+.re-mat-warn {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 12px 18px;
+  font-size: 12.5px;
+  color: #7A5A10;
+  background: #FEF3C7;
+  border-top: 1px solid #F6D860;
+}
+.re-mat-warn svg { flex: none; margin-top: 1px; color: #92600A; }
+
+/* ---- Activities ---- */
+.re-activities {
+  display: grid;
+  gap: 12px;
+}
+.re-activity {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+.re-activity__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.re-activity h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.re-activity p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ---- Collect steps ---- */
+.re-collect {
+  display: grid;
+  gap: 0;
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.re-collect-step {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  background: var(--rm-paper);
+}
+.re-collect-step:last-child { border-bottom: 0; }
+.re-collect-step__num {
+  flex: none;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--rm-moss);
+  color: var(--rm-paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+.re-collect-step h3 {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.re-collect-step p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ---- Publics ---- */
+.re-publics {
+  display: grid;
+  gap: 12px;
+}
+.re-public-card {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+.re-public-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.re-public-card__age {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--rm-moss);
+  background: var(--rm-moss-soft);
+  border: 1px solid var(--rm-moss);
+  border-radius: 20px;
+  padding: 3px 10px;
+  flex: none;
+}
+.re-public-card h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.re-public-card p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ---- CTA section ---- */
+.re-cta-section {
+  padding: 0 22px 56px;
+}
+.re-cta {
+  background: var(--rm-moss);
+  border-radius: var(--r-xl);
+  padding: 28px 24px;
+  color: var(--rm-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.re-cta__icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.15);
+  display: grid;
+  place-items: center;
+}
+.re-cta h2 {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  color: var(--rm-paper);
+}
+.re-cta p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(251,245,233,.75);
+}
+.re-cta .btn--accent {
+  align-self: flex-start;
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 880px) {
+  .re-hero {
+    padding: 80px 64px 56px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .re-hero__title { font-size: clamp(56px, 5.5vw, 80px); }
+  .re-hero__lead { font-size: 20px; }
+  .re-hero__stats { gap: 40px; }
+  .re-stat b { font-size: 28px; }
+
+  .re-pillars { grid-template-columns: 1fr 1fr; }
+  .re-concepts { grid-template-columns: 1fr 1fr 1fr; }
+
+  .re-mats { grid-template-columns: 1fr 1fr; }
+  .re-mat-list li { grid-template-columns: 1.2fr 1fr 2fr; }
+  .re-mat-name { grid-column: 1; }
+  .re-mat-source { grid-column: 2; }
+  .re-mat-use { grid-column: 3; align-self: center; }
+
+  .re-activities { grid-template-columns: 1fr 1fr 1fr; }
+
+  .re-collect { grid-template-columns: 1fr 1fr; }
+  .re-collect-step:nth-child(1),
+  .re-collect-step:nth-child(2) { border-bottom: 1px solid var(--rm-kraft-soft); }
+  .re-collect-step:nth-child(3),
+  .re-collect-step:nth-child(4) { border-bottom: 0; }
+  .re-collect-step:nth-child(odd) { border-right: 1px solid var(--rm-kraft-soft); }
+
+  .re-publics { grid-template-columns: 1fr 1fr 1fr; }
+
+  .re-cta-section { padding: 0 64px 72px; max-width: 1320px; margin: 0 auto; }
+  .re-cta {
+    flex-direction: row;
+    align-items: center;
+    padding: 36px 40px;
+    gap: 28px;
+  }
+  .re-cta > div { flex: 1; }
+  .re-cta h2 { font-size: 26px; }
+  .re-cta .btn--accent { flex: none; white-space: nowrap; align-self: center; }
+}
+
+@media (min-width: 1280px) {
+  .re-concept--main { box-shadow: 0 4px 0 0 var(--rm-moss); }
+}
+</style>

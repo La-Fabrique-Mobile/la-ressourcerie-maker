@@ -1,0 +1,282 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const ateliers = await getCollection('ateliers');
+  return ateliers.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const {
+  titre, accroche, famille, classification, reemploi,
+  public: pub, duree, materiel, niveau,
+  fiche_pdf, steps, declinaisons,
+} = entry.data;
+
+const familleLabel: Record<string, string> = {
+  kermesse: 'Kermesse',
+  carton: 'Carton',
+  machines: 'Machines',
+  mediation: 'Médiation',
+  beaverbot: 'BeaverBot',
+};
+---
+<Layout title={titre} description={accroche}>
+  <Nav current="catalogue" />
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="atelier-hero">
+      <a class="atelier-back" href="/catalogue">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Catalogue
+      </a>
+
+      <div class="atelier-hero__col">
+        <div class="atelier-hero__badges">
+          {classification === 'classique'
+            ? <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            : <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+          }
+          {reemploi && (
+            <span class="tag tag--reuse">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+              </svg>
+              Réemploi dispo
+            </span>
+          )}
+          <span class="label-mono">{familleLabel[famille]}</span>
+        </div>
+
+        <h1 class="atelier-hero__title">{titre}</h1>
+        <p class="atelier-hero__lead">{accroche}</p>
+      </div>
+
+      <div class="atelier-cover">
+        <span class="atelier-cover__tape">photo · à venir</span>
+      </div>
+    </section>
+
+    <!-- EN UN COUP D'ŒIL -->
+    <section class="glance" aria-label="En un coup d'œil">
+      <div class="glance__title">
+        <span>En un coup d'œil</span>
+        <span class="label-mono">{familleLabel[famille]}</span>
+      </div>
+      <dl class="glance__rows">
+        <div class="glance__row">
+          <span class="glance__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+              <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
+            </svg>
+          </span>
+          <div><dt>Public</dt><dd>{pub}</dd></div>
+        </div>
+        <div class="glance__row">
+          <span class="glance__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
+            </svg>
+          </span>
+          <div><dt>Durée</dt><dd>{duree}</dd></div>
+        </div>
+        <div class="glance__row">
+          <span class="glance__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <path d="M3 6h18M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </span>
+          <div><dt>Matériel</dt><dd>{materiel}</dd></div>
+        </div>
+        <div class="glance__row">
+          <span class="glance__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+            </svg>
+          </span>
+          <div><dt>Niveau</dt><dd>{niveau}</dd></div>
+        </div>
+      </dl>
+    </section>
+
+    <!-- PAS-À-PAS -->
+    {steps && steps.length > 0 && (
+      <section class="steps-section">
+        <div class="steps-section__head">
+          <span class="section-eyebrow">Pas-à-pas · {steps.length} étape{steps.length > 1 ? 's' : ''}</span>
+          <h2 style="margin-top:8px">Fabrication</h2>
+        </div>
+        <div class="steps-section__grid">
+          {steps.map((step, i) => (
+            <article class="step-card">
+              <div class="step-card__media">
+                <span class="step-card__num">{i + 1}</span>
+                {step.temps && <span class="step-card__time">{step.temps}</span>}
+                <span class="ph-photo__caption">étape {i + 1}</span>
+              </div>
+              <div class="step-card__body">
+                <h3 class="step-card__title">{step.titre}</h3>
+                <p class="step-card__copy">{step.corps}</p>
+                {step.outils.length > 0 && (
+                  <div class="step-card__tools">
+                    {step.outils.map(o => (
+                      <span class="tag" style="background:var(--rm-cream-3);color:var(--text-2)">{o}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- DÉCLINAISONS -->
+    {declinaisons && declinaisons.length > 0 && (
+      <section class="declinaisons">
+        <span class="section-eyebrow">À adapter</span>
+        <h2 style="margin-top:8px">Déclinaisons par contexte</h2>
+        <p class="declinaisons__intro">L'atelier marche tel quel — mais il gagne souvent à être ajusté au lieu, à l'âge, au temps disponible.</p>
+        <div class="declinaisons__list">
+          {declinaisons.map(d => (
+            <div class={`decl-card decl-card--${d.kind}`}>
+              <span class="decl-card__pic" aria-hidden="true">
+                {d.kind === 'reuse' && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                    <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                    <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+                  </svg>
+                )}
+                {d.kind === 'time' && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
+                  </svg>
+                )}
+                {(d.kind === 'age' || d.kind === 'context' || d.kind === 'theme') && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                    <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
+                  </svg>
+                )}
+              </span>
+              <div>
+                <h3>{d.titre}</h3>
+                <p>{d.corps}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- CONTENU ADDITIONNEL (adaptations, sécurité…) -->
+    {/* Content est rendu si le corps .md contient du texte */}
+    <div class="atelier-prose section">
+      <Content />
+    </div>
+
+    <!-- TÉLÉCHARGER LA FICHE -->
+    {fiche_pdf && (
+      <section class="dl-banner">
+        <div class="dl-banner__bg-circle"></div>
+        <div>
+          <h3>Télécharger la fiche pédagogique</h3>
+          <p>PDF A4 prêt pour l'atelier — étapes, matériel, variantes.</p>
+        </div>
+        <div class="dl-banner__actions">
+          <a class="btn btn--accent" href={fiche_pdf} download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Télécharger PDF
+          </a>
+        </div>
+      </section>
+    )}
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+/* Prose du corps markdown */
+.atelier-prose {
+  padding-top: 32px;
+}
+.atelier-prose :global(h2) {
+  font-size: 22px;
+  letter-spacing: -.02em;
+  margin: 28px 0 10px;
+}
+.atelier-prose :global(h3) {
+  font-size: 17px;
+  letter-spacing: -.01em;
+  margin: 20px 0 8px;
+  color: var(--text);
+}
+.atelier-prose :global(p) {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.atelier-prose :global(ul),
+.atelier-prose :global(ol) {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+.atelier-prose :global(li) { margin-bottom: 4px; }
+.atelier-prose :global(strong) { color: var(--text); font-weight: 600; }
+.atelier-prose :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 18px;
+}
+.atelier-prose :global(th) {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 8px 12px;
+  border-bottom: 1.5px solid var(--border);
+}
+.atelier-prose :global(td) {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rm-cream-3);
+  color: var(--text-2);
+  vertical-align: top;
+}
+.atelier-prose :global(tr:last-child td) { border-bottom: 0; }
+
+/* hide connexions section (internal references) */
+.atelier-prose :global(h2:last-of-type + ul) { display: none; }
+
+@media (min-width: 880px) {
+  .atelier-prose {
+    padding: 56px 64px 0;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .atelier-prose :global(h2) { font-size: 28px; }
+  .atelier-prose :global(p) { font-size: 16px; max-width: 70ch; }
+}
+</style>

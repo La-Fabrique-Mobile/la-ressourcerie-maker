@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Page introuvable" description="Cette page s'est perdue dans l'atelier.">
+  <Nav />
+
+  <main>
+    <section class="notfound">
+      <div class="notfound__eyebrow">
+        <span class="section-eyebrow">Erreur · Page introuvable</span>
+      </div>
+
+      <!-- Illustration : fiche égarée -->
+      <div class="notfound__visual" aria-hidden="true">
+        <span class="notfound__code label-mono">404</span>
+
+        <div class="notfound__pile">
+          <!-- Fiche du dessous -->
+          <div class="notfound__fiche notfound__fiche--ghost">
+            <span class="notfound__fiche-label">fiche · ??</span>
+          </div>
+          <!-- Fiche principale -->
+          <div class="notfound__fiche notfound__fiche--main">
+            <span class="notfound__fiche-label">atelier · ?</span>
+            <span class="notfound__fiche-qmark">?</span>
+            <div class="notfound__fiche-lines">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Débris d'atelier éparpillés -->
+        <div class="notfound__debris notfound__debris--a">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--rm-kraft)" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="7" r="5.5"/>
+            <line x1="7" y1="1.5" x2="7" y2="3.5"/>
+            <line x1="7" y1="10.5" x2="7" y2="12.5"/>
+          </svg>
+        </div>
+        <div class="notfound__debris notfound__debris--b"></div>
+        <div class="notfound__debris notfound__debris--c">
+          <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="var(--rm-terracotta)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M5 1v10M2 4l3-3 3 3"/>
+            <circle cx="5" cy="15" r="2.5" fill="var(--rm-terracotta)" stroke="none" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="notfound__debris notfound__debris--d"></div>
+
+        <span class="notfound__sticker">Égarée&nbsp;!</span>
+      </div>
+
+      <h1 class="notfound__title">Cette page s'est perdue dans l'atelier.</h1>
+      <p class="notfound__lead">
+        Elle a peut-être glissé sous une pile de cartons — ou elle n'a pas encore été fabriquée.
+      </p>
+
+      <div class="notfound__cta">
+        <a class="btn btn--accent" href="/">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+          Retour à l'accueil
+        </a>
+        <a class="btn btn--ghost" href="/catalogue">Explorer le catalogue</a>
+      </div>
+
+      <!-- Suggestions rapides -->
+      <div class="notfound__suggestions">
+        <p class="notfound__suggestions-label label-mono">En attendant de la retrouver…</p>
+        <div class="notfound__suggestions-list">
+          <a class="notfound__suggestion" href="/ateliers/chamboule-tout">
+            <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+            Chamboule-tout
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="notfound__suggestion" href="/ressources/pedagogie-maker">
+            <span class="badge"><span class="badge__dot" style="background:var(--rm-kraft-deep)"></span>Ressource</span>
+            Pédagogie maker
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="notfound__suggestion" href="/ressources/kit-de-base">
+            <span class="badge" style="border-color:var(--rm-terracotta);color:var(--rm-terracotta);background:#FAEDE3"><span class="badge__dot"></span>Ressource</span>
+            Kit de base
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+/* ---- 404 section ---- */
+.notfound {
+  padding: 48px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.notfound__eyebrow {
+  margin-bottom: 28px;
+}
+
+/* ---- Visual block ---- */
+.notfound__visual {
+  position: relative;
+  width: 220px;
+  height: 200px;
+  margin-bottom: 32px;
+}
+
+.notfound__code {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 80px;
+  font-weight: 500;
+  letter-spacing: -.05em;
+  color: var(--rm-cream-3);
+  line-height: 1;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ---- Pile de fiches ---- */
+.notfound__pile {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 148px;
+  z-index: 1;
+}
+
+.notfound__fiche {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-sm);
+  background: var(--rm-paper);
+  border: 1.5px dashed var(--rm-kraft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 12px 12px;
+  gap: 0;
+}
+
+.notfound__fiche--ghost {
+  background: var(--rm-cream-2);
+  border-color: var(--rm-kraft-soft);
+  transform: rotate(-9deg) translateY(4px);
+  z-index: 0;
+}
+
+.notfound__fiche--main {
+  transform: rotate(4deg);
+  z-index: 1;
+  box-shadow: var(--shadow-md);
+}
+
+.notfound__fiche-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  align-self: flex-start;
+  opacity: .7;
+}
+
+.notfound__fiche-qmark {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--rm-cream-3);
+  line-height: 1;
+  margin-top: 8px;
+  letter-spacing: -.03em;
+}
+
+.notfound__fiche-lines {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.notfound__fiche-lines span {
+  display: block;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--rm-cream-3);
+}
+.notfound__fiche-lines span:last-child { width: 55%; }
+
+/* ---- Débris éparpillés ---- */
+.notfound__debris {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Vis/écrou — coin haut gauche */
+.notfound__debris--a {
+  top: 14px;
+  left: 14px;
+}
+
+/* Bout de carton — coin bas gauche */
+.notfound__debris--b {
+  bottom: 18px;
+  left: 8px;
+  width: 18px;
+  height: 12px;
+  background: var(--rm-cream-2);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: 3px;
+  transform: rotate(-20deg);
+}
+
+/* Punaise — haut droite */
+.notfound__debris--c {
+  top: 10px;
+  right: 18px;
+}
+
+/* Petit éclat de kraft — bas droite */
+.notfound__debris--d {
+  bottom: 22px;
+  right: 12px;
+  width: 14px;
+  height: 9px;
+  background: var(--rm-kraft-soft);
+  border: 1px solid var(--rm-kraft);
+  border-radius: 2px;
+  transform: rotate(32deg);
+  opacity: .7;
+}
+
+/* ---- Sticker ---- */
+.notfound__sticker {
+  position: absolute;
+  bottom: 6px;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  background: var(--rm-orange);
+  color: var(--rm-paper);
+  padding: 5px 9px;
+  border-radius: var(--r-sm);
+  transform: rotate(-2deg);
+  box-shadow: 0 2px 0 0 #B84A0F;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* ---- Text ---- */
+.notfound__title {
+  font-size: 26px;
+  letter-spacing: -.025em;
+  margin-bottom: 12px;
+  max-width: 28ch;
+}
+
+.notfound__lead {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.65;
+  max-width: 38ch;
+  margin-bottom: 28px;
+}
+
+/* ---- CTAs ---- */
+.notfound__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+/* ---- Suggestions ---- */
+.notfound__suggestions {
+  width: 100%;
+  border-top: 1px dashed var(--border);
+  padding-top: 28px;
+}
+
+.notfound__suggestions-label {
+  color: var(--text-3);
+  margin-bottom: 14px;
+}
+
+.notfound__suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notfound__suggestion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  transition: background var(--dur), border-color var(--dur), transform var(--dur) var(--ease-out);
+  box-shadow: var(--shadow-xs);
+}
+
+.notfound__suggestion:hover {
+  background: var(--rm-cream-2);
+  border-color: var(--rm-kraft);
+  transform: translateY(-1px);
+}
+
+.notfound__suggestion svg {
+  margin-left: auto;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+</style>

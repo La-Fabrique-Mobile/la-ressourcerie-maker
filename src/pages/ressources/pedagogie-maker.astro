@@ -1,0 +1,887 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Pédagogie maker — La Ressourcerie Maker"
+  description="Les principes de la pédagogie par le faire : faire avant de comprendre, l'erreur comme ressource, la posture de l'animateur et les adaptations par public."
+>
+  <Nav current="ressources" />
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="pm-hero">
+      <div class="pm-hero__tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 17h6M10 20h4"/>
+          <path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+        </svg>
+        Ressource pédagogique
+      </div>
+      <h1 class="pm-hero__title">Pédagogie maker</h1>
+      <p class="pm-hero__lead">On apprend mieux en faisant qu'en écoutant. Fabriquer un objet mobilise simultanément la conception, la motricité, le raisonnement, la collaboration et la persévérance — autant de compétences que les approches passives activent difficilement.</p>
+    </section>
+
+    <!-- FONDEMENTS THÉORIQUES -->
+    <section class="section">
+      <span class="section-eyebrow">Pourquoi ça marche</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Ancrages théoriques</h2>
+      <p class="pm-intro-text">La pédagogie maker s'ancre dans plusieurs courants convergents — pas une invention récente, mais une synthèse de décennies de recherche sur l'apprentissage.</p>
+
+      <div class="pm-theorists">
+        <div class="pm-theorist">
+          <span class="pm-theorist__date">1859–1952</span>
+          <h3>John Dewey</h3>
+          <p><em>Learning by doing.</em> L'expérience n'est pas un supplément à l'apprentissage, elle en est le moteur. L'enfant qui construit comprend différemment de l'enfant qui lit ou écoute.</p>
+        </div>
+        <div class="pm-theorist">
+          <span class="pm-theorist__date">Constructivisme</span>
+          <h3>Jean Piaget</h3>
+          <p>La connaissance se construit à partir de l'interaction entre l'apprenant et son environnement. On ne reçoit pas un savoir passif — on le construit en manipulant, en testant, en se trompant.</p>
+        </div>
+        <div class="pm-theorist">
+          <span class="pm-theorist__date">1928–2016</span>
+          <h3>Seymour Papert</h3>
+          <p><em>Constructionnisme.</em> L'apprentissage est encore plus efficace quand on construit quelque chose de partageable. L'objet fabriqué n'est pas un prétexte — il est le support de la pensée.</p>
+        </div>
+        <div class="pm-theorist">
+          <span class="pm-theorist__date">Zone proximale</span>
+          <h3>Lev Vygotski</h3>
+          <p>On apprend mieux avec les autres que seul. Ce qu'on peut faire avec l'aide d'un pair ou d'un adulte, qu'on ne pourrait pas faire seul — c'est là que l'apprentissage est le plus efficace.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 PRINCIPES -->
+    <section class="section">
+      <span class="section-eyebrow">En pratique</span>
+      <h2 style="margin-top:8px;margin-bottom:20px">Les 4 principes fondamentaux</h2>
+
+      <div class="pm-principles">
+
+        <div class="pm-principle">
+          <div class="pm-principle__num">1</div>
+          <div>
+            <h3>Faire avant de comprendre</h3>
+            <p>Dans un atelier classique, on explique la théorie puis on applique. En pédagogie maker, c'est l'inverse : on fait d'abord, on comprend <em>en</em> faisant. La démo dure 5–10 min max, puis les participants se lancent. Les questions émergent du faire — c'est là qu'elles ont de la valeur.</p>
+            <div class="pm-principle__note">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span>Ce principe ne signifie pas "jeter les participants dans le vide". La démo montre les gestes de sécurité et les 2–3 techniques clés. Tout le reste se découvre.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pm-principle">
+          <div class="pm-principle__num">2</div>
+          <div>
+            <h3>L'erreur est une étape, pas un échec</h3>
+            <p>L'erreur n'est pas un échec — c'est une information sur le matériau, le mécanisme ou la méthode. L'animateur ne résout pas le problème à la place du participant, il pose des questions : "qu'est-ce qui se passe à ton avis ? comment tu pourrais tester ?"</p>
+            <blockquote class="pm-quote">"C'est cassé ? Super. Ça veut dire qu'on a appris quelque chose. Qu'est-ce qui n'a pas tenu ?"</blockquote>
+          </div>
+        </div>
+
+        <div class="pm-principle">
+          <div class="pm-principle__num">3</div>
+          <div>
+            <h3>L'objet compte</h3>
+            <p>L'objet fabriqué a une valeur intrinsèque — il est fonctionnel, il est beau, il est emporté. Laisser du temps pour la présentation en fin de séance : chacun montre son objet, dit une chose apprise ou une chose qu'il changerait. L'objet doit tenir pour être emporté — une création qui s'effondre dans le sac est une déception mémorielle.</p>
+          </div>
+        </div>
+
+        <div class="pm-principle">
+          <div class="pm-principle__num">4</div>
+          <div>
+            <h3>Sans écran — le corps et les mains d'abord</h3>
+            <p>Quand on fabrique avec ses mains, on mobilise des capacités sensorimotrices, spatiales et de concentration différentes de celles sollicitées devant un écran. Et on prouve, par l'expérience, qu'on peut créer sans interface numérique.</p>
+            <div class="pm-principle__note">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span>Ce n'est pas une posture anti-technologique — les machines numériques de fabrication (laser, impression 3D) sont des outils, pas des écrans de consommation. C'est une alternance intentionnelle.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STRUCTURE D'UNE SÉANCE -->
+    <section class="section">
+      <span class="section-eyebrow">Déroulé</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Structure type d'une séance</h2>
+      <p class="pm-intro-text">Quatre phases. La fabrication occupe 60 à 90 % du temps — tout le reste en est le cadre.</p>
+
+      <div class="pm-phases">
+
+        <div class="pm-phase">
+          <div class="pm-phase__head">
+            <span class="pm-phase__label">Phase 1</span>
+            <span class="pm-phase__time">5–15 min</span>
+          </div>
+          <h3>Accroche</h3>
+          <p>Montrer, pas expliquer. Un ou deux objets finis. Une question ouverte.</p>
+          <div class="pm-phase__example">"Avec des boîtes en carton et de la colle, qu'est-ce qu'on peut faire ?"</div>
+          <p style="font-size:13px;color:var(--text-3);margin-top:8px">L'accroche crée l'envie. Elle ne doit pas déjà répondre aux questions qu'elle soulève.</p>
+        </div>
+
+        <div class="pm-phase">
+          <div class="pm-phase__head">
+            <span class="pm-phase__label">Phase 2</span>
+            <span class="pm-phase__time">5–15 min</span>
+          </div>
+          <h3>Démo technique</h3>
+          <p>Les 2–3 gestes indispensables, dans l'ordre d'utilisation. Montrer les erreurs fréquentes en les commettant volontairement.</p>
+          <div class="pm-phase__example">"Si je colle avant d'avoir testé à sec, voilà ce qui arrive…"</div>
+          <p style="font-size:13px;color:var(--text-3);margin-top:8px">Ne pas tout montrer. Laisser une partie à découvrir.</p>
+        </div>
+
+        <div class="pm-phase pm-phase--main">
+          <div class="pm-phase__head">
+            <span class="pm-phase__label">Phase 3</span>
+            <span class="pm-phase__time">60–90 % du temps</span>
+          </div>
+          <h3>Fabrication</h3>
+          <p>Le cœur de la séance. L'animateur circule, observe, pose des questions — mais ne fait pas à la place.</p>
+          <ul class="pm-phase__list">
+            <li><b>Si bloqué</b> — "qu'est-ce que tu as déjà essayé ?" avant de proposer une solution</li>
+            <li><b>Si frustré</b> — reconnaître la difficulté, montrer une technique plus simple</li>
+            <li><b>Si fini trop vite</b> — "tu peux l'améliorer comment ?"</li>
+            <li><b>Si perdu</b> — "quel est ton objectif ? qu'est-ce qu'il te reste à faire ?"</li>
+          </ul>
+        </div>
+
+        <div class="pm-phase">
+          <div class="pm-phase__head">
+            <span class="pm-phase__label">Phase 4</span>
+            <span class="pm-phase__time">10–20 min</span>
+          </div>
+          <h3>Présentation</h3>
+          <p>Tour de table. Chacun montre son objet. L'animateur pose 2–3 questions :</p>
+          <ul class="pm-phase__list">
+            <li>"Comment ça fonctionne ?"</li>
+            <li>"Qu'est-ce que tu changerais si tu recommençais ?"</li>
+            <li>"Qu'est-ce que tu as appris ?"</li>
+          </ul>
+          <p style="font-size:13px;color:var(--text-3);margin-top:8px">Ne pas corriger les objets "ratés" à ce moment. Les valoriser pour leur processus.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POSTURE ANIMATEUR -->
+    <section class="section">
+      <span class="section-eyebrow">Posture</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">L'animateur — guide de côté, pas sage sur scène</h2>
+      <p class="pm-intro-text">L'animateur en pédagogie maker n'est pas un enseignant au sens classique. Il observe, questionne, facilite — sans donner les réponses à la place du participant.</p>
+
+      <div class="pm-posture">
+        <div class="pm-posture-col pm-posture-col--do">
+          <div class="pm-posture-col__head">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Il fait
+          </div>
+          <ul>
+            <li>Observe et circule — il voit ce qui se passe avant d'intervenir</li>
+            <li>Pose des questions plutôt que de donner des réponses</li>
+            <li>Montre ses propres erreurs et tâtonnements — dé-mystifie la compétence</li>
+            <li>Valide les processus, pas seulement les résultats</li>
+            <li>Gère le temps — donne des repères sans précipiter</li>
+          </ul>
+        </div>
+        <div class="pm-posture-col pm-posture-col--dont">
+          <div class="pm-posture-col__head">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            Il ne fait pas
+          </div>
+          <ul>
+            <li>Ne finit pas les objets à la place des participants</li>
+            <li>Ne donne pas la solution avant que le participant ait cherché</li>
+            <li>Ne compare pas les productions entre participants</li>
+            <li>Ne minimise pas une difficulté ("c'est simple, tu vas voir")</li>
+            <li>Ne répond pas aux questions avant qu'elles émergent de la pratique</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADAPTATIONS PAR PUBLIC -->
+    <section class="section">
+      <span class="section-eyebrow">Adaptations</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Par public</h2>
+      <p class="pm-intro-text">Chaque public a un rapport différent à l'erreur, au temps, à la légitimité de fabriquer. L'atelier s'ajuste — les principes restent.</p>
+
+      <div class="pm-publics">
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">3–6 ans</div>
+          <h3>Maternelle</h3>
+          <p>Pièces pré-découpées et pré-tracées — le participant assemble et décore. Colle PVA uniquement (pas de colle chaude). Maximum 3 étapes, résultat visible en 20 min. Concentration courte : 20–30 min max.</p>
+          <div class="pm-pub__ratio">Encadrement : 1 adulte / 5–6 enfants</div>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">6–12 ans</div>
+          <h3>Enfants</h3>
+          <p>Rapport à l'erreur encore libre — l'erreur n'est pas encore stigmatisée. Encourager et nommer explicitement : "c'est exactement comme ça qu'on apprend." Identifier 2–3 participants avancés comme helpers pour les grands groupes.</p>
+          <div class="pm-pub__ratio">Idéal : îlots de 4–6 participants</div>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">12–17 ans</div>
+          <h3>Adolescents</h3>
+          <p>Fort enjeu de regard des pairs — la honte est une réalité. Normaliser par la démo de ses propres erreurs. Éviter la mise en avant individuelle. Proposer un téléphone posé — "ici on est présents avec nos mains."</p>
+          <div class="pm-pub__ratio">Terrain fort pour le décrochage numérique</div>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">Adultes</div>
+          <h3>Adultes</h3>
+          <p>Blocage de légitimité ("je suis nul en bricolage"). Consacrer plus de temps à la démo. Proposer un objet finissable dans le temps imparti. Éviter le ton scolaire — préférer l'échange entre pairs. Les adultes apprécient les explications sur le matériau.</p>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">Parents-enfants</div>
+          <h3>Intergénérationnel</h3>
+          <p>Risque que le parent "prenne le contrôle" du projet de l'enfant. Consigne claire dès le début : "l'enfant décide, le parent aide sur demande." Valoriser les contributions de l'enfant devant le parent.</p>
+          <div class="pm-pub__ratio">Grands-parents + enfants : dynamique de transmission forte</div>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">Scolaire</div>
+          <h3>Classe entière</h3>
+          <p>Envoyer une fiche préparatoire à l'enseignant (compétences, lien programmes, matériel). Proposer un rôle actif à l'enseignant. Prévoir un critère de réussite objectif — facilite l'évaluation. Structurer en groupes de 3–4 avec des rôles.</p>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">ALSH · QPV</div>
+          <h3>Publics en difficulté</h3>
+          <p>Rapport difficile à l'échec scolaire. Choisir des projets avec résultat visible rapidement (30–45 min) pour les premières séances. Mettre en valeur les compétences manuelles — souvent très fortes chez les participants en difficulté scolaire.</p>
+          <div class="pm-pub__ratio">Le making comme vecteur de revalorisation</div>
+        </div>
+
+        <div class="pm-pub">
+          <div class="pm-pub__age">Seniors</div>
+          <h3>Seniors</h3>
+          <p>Ancrer dans des savoir-faire existants ("vous avez déjà cousu, bricolé ?"). Rythme plus lent. Valoriser l'expérience artisanale ou professionnelle. Projets avec dimension mémorielle ou narrative. Les formats intergénérationnels fonctionnent très bien.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- APPROCHES COMPLÉMENTAIRES -->
+    <section class="section">
+      <span class="section-eyebrow">Aller plus loin</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Approches complémentaires</h2>
+      <p class="pm-intro-text">Ces trois cadres s'emboîtent dans la pédagogie maker — chacun apporte un angle spécifique selon la durée et l'objectif de la séance.</p>
+
+      <div class="pm-approaches">
+
+        <div class="pm-approach">
+          <div class="pm-approach__icon pm-approach__icon--dt">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Design thinking</h3>
+            <span class="pm-approach__scope">Projets de 2h à plusieurs jours</span>
+            <p>Cadre structuré en 5 phases : Empathiser → Définir → Idéer → Prototyper → Tester. Idéal pour les projets où la question "pour qui on fabrique ?" est centrale. Une mauvaise idée prototypée vaut mieux que dix bonnes idées discutées.</p>
+            <div class="pm-approach__phases">
+              <span>Empathiser</span><span>Définir</span><span>Idéer</span><span>Prototyper</span><span>Tester</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pm-approach">
+          <div class="pm-approach__icon pm-approach__icon--stem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Défis STEM</h3>
+            <span class="pm-approach__scope">Séances de 1h30 à 2h · contexte scolaire</span>
+            <p>Une contrainte réelle à résoudre avec des matériaux limités, dans un temps défini. La boucle : concevoir → construire → tester → améliorer. Le critère de réussite est mesurable — une tour qui tient, un pont qui charge, un véhicule qui roule.</p>
+            <div class="pm-approach__phases">
+              <span>Concevoir</span><span>Construire</span><span>Tester</span><span>Améliorer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pm-approach">
+          <div class="pm-approach__icon pm-approach__icon--craft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 2l1 4-2 5 6 1 1 10 5-8 4 2-2-7 5-3-7-2z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Processus artisanal</h3>
+            <span class="pm-approach__scope">Séquence des gestes en atelier</span>
+            <p>Les 5 étapes qui transforment un matériau brut en objet fini : Concevoir → Tracer → Découper → Assembler → Finir. Nommer les étapes aide les participants à se situer, à anticiper, à surmonter les blocages.</p>
+            <div class="pm-approach__phases">
+              <span>Concevoir</span><span>Tracer</span><span>Découper</span><span>Assembler</span><span>Finir</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUESTIONS FRÉQUENTES -->
+    <section class="section">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 style="margin-top:8px;margin-bottom:20px">Questions fréquentes en atelier</h2>
+
+      <div class="pm-faqs">
+
+        <details class="pm-faq">
+          <summary>"Ils ne font que décorer, pas fabriquer."</summary>
+          <p>La décoration est une forme de fabrication. Si le temps est court ou le public très jeune, c'est souvent la bonne entrée. Accepter et valoriser. Proposer une prochaine séance plus technique.</p>
+        </details>
+
+        <details class="pm-faq">
+          <summary>"Certains finissent en 20 min, d'autres pas du tout."</summary>
+          <p>Préparer des défis supplémentaires pour les rapides ("peux-tu le faire tenir plus loin / plus vite / plus haut ?"). Pour les lents, identifier ce qui bloque : motricité, indécision, perfectionnisme — et adapter.</p>
+        </details>
+
+        <details class="pm-faq">
+          <summary>"L'objet ne ressemble pas à ce qu'on avait prévu."</summary>
+          <p>C'est presque toujours une réussite déguisée. Demander au participant de raconter son objet. Souvent, la divergence par rapport au modèle révèle une intention créative légitime.</p>
+        </details>
+
+        <details class="pm-faq">
+          <summary>"Un participant monopolise l'animateur."</summary>
+          <p>Déléguer à un pair ("lui/elle sait faire — demande-lui"). Puis revenir. Éviter l'attachement exclusif animateur-participant qui prive les autres de soutien.</p>
+        </details>
+
+        <details class="pm-faq">
+          <summary>"La séance devient bruyante et désorganisée."</summary>
+          <p>Signal que les participants sont engagés — mais peut indiquer un manque de cadre. Reprendre en annonçant la phase suivante à voix haute : "on a 15 min de fabrication, puis on fait le tour de table." Le cadre temporel recentre.</p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- CTA CATALOGUE -->
+    <section class="pm-cta-section">
+      <div class="pm-cta">
+        <div class="pm-cta__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 17h6M10 20h4"/>
+            <path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Mettre en pratique</h2>
+          <p>Toutes les fiches du catalogue sont conçues pour appliquer ces principes — démo courte, fabrication longue, objet emporté. Choisir un atelier et l'animer dès cette semaine.</p>
+        </div>
+        <a class="btn btn--accent" href="/catalogue">
+          Explorer le catalogue
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+/* ---- Hero ---- */
+.pm-hero {
+  padding: 48px 22px 36px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+}
+.pm-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  border: 1px solid var(--rm-kraft);
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-bottom: 18px;
+}
+.pm-hero__title {
+  font-size: clamp(36px, 9vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+.pm-hero__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 58ch;
+}
+
+/* ---- Shared ---- */
+.pm-intro-text {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 24px;
+}
+
+/* ---- Theorists ---- */
+.pm-theorists {
+  display: grid;
+  gap: 10px;
+}
+.pm-theorist {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+.pm-theorist__date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  display: block;
+  margin-bottom: 6px;
+}
+.pm-theorist h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.pm-theorist p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ---- Principles ---- */
+.pm-principles {
+  display: grid;
+  gap: 0;
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+.pm-principle {
+  display: flex;
+  gap: 18px;
+  padding: 22px 20px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  background: var(--rm-paper);
+  align-items: flex-start;
+}
+.pm-principle:last-child { border-bottom: 0; }
+.pm-principle__num {
+  flex: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--rm-ink);
+  color: var(--rm-cream);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+.pm-principle h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.pm-principle p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.pm-principle p:last-child { margin-bottom: 0; }
+.pm-principle__note {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: var(--rm-cream-2);
+  border: 1px solid var(--rm-kraft-soft);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.pm-principle__note svg { flex: none; color: var(--rm-kraft-deep); margin-top: 1px; }
+
+/* ---- Quote ---- */
+.pm-quote {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--rm-kraft-deep);
+  border-left: 3px solid var(--rm-kraft);
+  padding: 8px 14px;
+  margin: 10px 0 0;
+  background: #F0E6D6;
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+/* ---- Phases ---- */
+.pm-phases {
+  display: grid;
+  gap: 10px;
+}
+.pm-phase {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+.pm-phase--main {
+  border-color: var(--rm-ink);
+  box-shadow: 0 3px 0 0 var(--rm-ink);
+}
+.pm-phase__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.pm-phase__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.pm-phase__time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.pm-phase h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.pm-phase p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.pm-phase__example {
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  margin: 8px 0;
+}
+.pm-phase__list {
+  margin: 8px 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pm-phase__list li {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.pm-phase__list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--rm-kraft);
+}
+
+/* ---- Posture ---- */
+.pm-posture {
+  display: grid;
+  gap: 10px;
+}
+.pm-posture-col {
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+  border: 1.5px solid transparent;
+}
+.pm-posture-col--do { background: #E6F2D9; border-color: var(--rm-moss); }
+.pm-posture-col--dont { background: #FAEDE3; border-color: var(--rm-terracotta); }
+.pm-posture-col__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.pm-posture-col--do .pm-posture-col__head { color: var(--rm-moss); }
+.pm-posture-col--dont .pm-posture-col__head { color: var(--rm-terracotta); }
+.pm-posture-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pm-posture-col li {
+  font-size: 13.5px;
+  color: var(--text-1);
+  line-height: 1.55;
+  padding-left: 16px;
+  position: relative;
+}
+.pm-posture-col--do li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--rm-moss);
+  font-weight: 700;
+  font-size: 12px;
+}
+.pm-posture-col--dont li::before {
+  content: '×';
+  position: absolute;
+  left: 0;
+  color: var(--rm-terracotta);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ---- Publics ---- */
+.pm-publics {
+  display: grid;
+  gap: 10px;
+}
+.pm-pub {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+}
+.pm-pub__age {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  background: #F0E6D6;
+  border: 1px solid var(--rm-kraft);
+  border-radius: 20px;
+  padding: 3px 10px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.pm-pub h3 {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.pm-pub p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.pm-pub__ratio {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--text-3);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--rm-kraft-soft);
+}
+
+/* ---- Approaches ---- */
+.pm-approaches {
+  display: grid;
+  gap: 12px;
+}
+.pm-approach {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.pm-approach__icon {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+}
+.pm-approach__icon--dt   { background: #F0E6D6; color: var(--rm-kraft-deep); }
+.pm-approach__icon--stem { background: var(--rm-moss-soft); color: var(--rm-moss); }
+.pm-approach__icon--craft { background: #F8DEC8; color: var(--rm-terracotta); }
+.pm-approach__scope {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 8px;
+}
+.pm-approach h3 {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.pm-approach p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.pm-approach__phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.pm-approach__phases span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  background: var(--rm-cream-3);
+  color: var(--text-2);
+  border-radius: var(--r-sm);
+  padding: 3px 8px;
+}
+
+/* ---- FAQ ---- */
+.pm-faqs {
+  display: grid;
+  gap: 0;
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.pm-faq {
+  background: var(--rm-paper);
+  border-bottom: 1px solid var(--rm-kraft-soft);
+}
+.pm-faq:last-child { border-bottom: 0; }
+.pm-faq summary {
+  padding: 16px 18px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.pm-faq summary::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-3);
+  flex: none;
+}
+.pm-faq[open] summary::after { content: '−'; }
+.pm-faq p {
+  padding: 0 18px 16px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+/* ---- CTA ---- */
+.pm-cta-section {
+  padding: 0 22px 56px;
+}
+.pm-cta {
+  background: var(--rm-ink);
+  border-radius: var(--r-xl);
+  padding: 28px 24px;
+  color: var(--rm-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pm-cta__icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.1);
+  display: grid;
+  place-items: center;
+}
+.pm-cta h2 {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  color: var(--rm-cream);
+}
+.pm-cta p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(251,245,233,.7);
+}
+.pm-cta .btn--accent { align-self: flex-start; }
+
+/* ---- Desktop ---- */
+@media (min-width: 880px) {
+  .pm-hero {
+    padding: 80px 64px 56px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .pm-hero__title { font-size: clamp(56px, 5.5vw, 80px); }
+  .pm-hero__lead { font-size: 20px; }
+
+  .pm-theorists { grid-template-columns: 1fr 1fr; }
+
+  .pm-phases { grid-template-columns: 1fr 1fr; }
+  .pm-phase--main { grid-column: 1 / -1; }
+
+  .pm-posture { grid-template-columns: 1fr 1fr; }
+
+  .pm-publics { grid-template-columns: 1fr 1fr; }
+
+  .pm-approaches { gap: 14px; }
+
+  .pm-cta-section {
+    padding: 0 64px 72px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .pm-cta {
+    flex-direction: row;
+    align-items: center;
+    padding: 36px 40px;
+    gap: 28px;
+  }
+  .pm-cta > div { flex: 1; }
+  .pm-cta h2 { font-size: 26px; }
+  .pm-cta .btn--accent { flex: none; white-space: nowrap; align-self: center; }
+}
+
+@media (min-width: 1280px) {
+  .pm-theorists { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .pm-phases { grid-template-columns: 1fr 1fr; }
+  .pm-phase--main { grid-column: 1 / -1; }
+  .pm-publics { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .pm-approaches { grid-template-columns: 1fr 1fr 1fr; }
+  .pm-approach { flex-direction: column; gap: 12px; }
+  .pm-approach__icon { width: 48px; height: 48px; }
+}
+</style>

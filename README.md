@@ -35,19 +35,17 @@ npm run dev       # http://localhost:4321
 ### Build
 
 ```bash
-npm run build     # sync contenu + build Astro → dist/
+npm run build     # build Astro → dist/
 npm run preview   # prévisualiser le build
 ```
-
-Le build lance d'abord `npm run sync` qui copie les fiches ateliers depuis la source de contenu (voir ci-dessous).
 
 ---
 
 ## Source de contenu
 
-Les fiches ateliers ne vivent pas dans ce dépôt — elles viennent d'un projet interne à La Fabrique Mobile et propriétaire qui contient la base de connaissance complète.
+Les fiches ateliers proviennent de la base de connaissances interne de La Fabrique Mobile (projet privé, non publié dans ce dépôt).
 
---
+---
 
 ## Structure
 
