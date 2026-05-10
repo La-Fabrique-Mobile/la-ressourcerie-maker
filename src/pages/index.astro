@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Manifesto from '../components/Manifesto.astro';
 import { getCollection } from 'astro:content';
 
 // --- Sélection saisonnière (build-time) ---
@@ -49,6 +50,8 @@ const FAMILLE_LABEL: Record<string, string> = {
 };
 const publicCourt = (p: string) => p.split(' · ')[0];
 const dureeCourte = (d: string) => d.split(' de ')[0];
+const nbReemploi = tousAteliers.filter(a => a.data.reemploi).length;
+const reemploiLabel = nbReemploi >= 100 ? '100+' : String(nbReemploi);
 ---
 <Layout title="Tous les outils pour animer des ateliers maker">
   <Nav current="home" />
@@ -57,7 +60,7 @@ const dureeCourte = (d: string) => d.split(' de ')[0];
     <!-- HERO -->
     <section class="hero">
       <div class="hero__eyebrow">
-        <span class="section-eyebrow">Commun numérique · ouvert</span>
+        <span class="section-eyebrow">Commun numérique</span>
       </div>
       <h1 class="hero__title">Tous les outils pour <em>animer</em> des ateliers maker.</h1>
       <p class="hero__lead">Fiches pédagogiques prêtes à l'emploi, kits de matériel, déclinaisons réemploi. Pour les MJC, centres sociaux, médiathèques et toutes les structures qui veulent faire fabriquer.</p>
@@ -71,7 +74,7 @@ const dureeCourte = (d: string) => d.split(' de ')[0];
 
       <!-- Visual card stack -->
       <div class="hero__visual">
-        <span class="hero__sticker">+24 ateliers · libres</span>
+        <span class="hero__sticker">+{tousAteliers.length} ateliers · libres</span>
 
         <div class="hero__visual-card hero__visual-card--lg ph-photo">
           <div class="hero__visual-card__inner">
@@ -107,25 +110,14 @@ const dureeCourte = (d: string) => d.split(' de ')[0];
 
       <!-- Stats strip -->
       <div class="hero__stats">
-        <div class="hero__stat"><b>24</b><span>ateliers</span></div>
+        <div class="hero__stat"><b>{tousAteliers.length}</b><span>ateliers</span></div>
         <div class="hero__stat"><b>3h</b><span>déploiement</span></div>
-        <div class="hero__stat"><b>♻︎ 18</b><span>en réemploi</span></div>
+        <div class="hero__stat"><b>♻︎ {reemploiLabel}</b><span>en réemploi</span></div>
         <div class="hero__stat"><b>CC</b><span>licence</span></div>
       </div>
     </section>
 
-    <!-- MANIFESTO -->
-    <section class="manifesto">
-      <div class="manifesto__inner">
-        <div>
-          <div class="manifesto__eyebrow">Notre parti pris</div>
-          <div class="manifesto__sign">— Édition 2026 · 24 fiches · 6 contributeurs</div>
-        </div>
-        <p class="manifesto__text">
-          Le matériel coûte cher. Le savoir-faire, lui, peut <em>circuler librement</em>. Voici ce qu'on partage : nos ratés, nos protocoles, nos astuces de récup'.
-        </p>
-      </div>
-    </section>
+    <Manifesto />
 
     <!-- FEATURED WORKSHOPS -->
     <section class="section">

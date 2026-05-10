@@ -10,7 +10,7 @@ const ateliers = defineCollection({
     public: z.string(),
     duree: z.string(),
     materiel: z.string(),
-    niveau: z.string(),
+    difficulte: z.string(),
     machines: z.array(z.string()).default(['aucune']),
     reemploi: z.boolean().default(false),
     fiche_pdf: z.string().optional(),
@@ -22,6 +22,15 @@ const ateliers = defineCollection({
     })).optional(),
     declinaisons: z.array(z.object({
       kind: z.enum(['reuse', 'time', 'age', 'context', 'theme']),
+      titre: z.string(),
+      corps: z.string(),
+    })).optional(),
+    adaptations: z.array(z.object({
+      kind: z.enum(['age', 'group', 'weather', 'location', 'theme']),
+      titre: z.string(),
+      corps: z.string(),
+    })).optional(),
+    securite: z.array(z.object({
       titre: z.string(),
       corps: z.string(),
     })).optional(),

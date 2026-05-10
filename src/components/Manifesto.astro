@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+const ateliers = await getCollection('ateliers');
+const sign = `— Édition ${new Date().getFullYear()} · ${ateliers.length} fiches`;
+---
+<section class="manifesto">
+  <div class="manifesto__inner">
+    <div class="manifesto__meta">
+      <div class="manifesto__eyebrow">Notre parti pris</div>
+      <div class="manifesto__sign">{sign}</div>
+    </div>
+    <p class="manifesto__text">
+      Le matériel coûte cher. Le savoir-faire, lui, peut <em>circuler librement</em>. Voici ce qu'on partage : nos ratés, nos protocoles, nos astuces de récup'.
+    </p>
+  </div>
+</section>

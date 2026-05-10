@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Manifesto from '../components/Manifesto.astro';
 ---
 <Layout
   title="Licences"
@@ -134,18 +135,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- MANIFESTO -->
-    <section class="manifesto">
-      <div class="manifesto__inner">
-        <div>
-          <div class="manifesto__eyebrow">Pourquoi l'ouvert</div>
-          <div class="manifesto__sign">— La Ressourcerie Maker</div>
-        </div>
-        <p class="manifesto__text">
-          Un commun numérique ne fonctionne que si les <em>contributions circulent</em>. Les licences ouvertes ne sont pas une formalité — elles sont la condition de l'existence du commun.
-        </p>
-      </div>
-    </section>
+    <Manifesto />
 
     <!-- QUESTIONS -->
     <section class="section">

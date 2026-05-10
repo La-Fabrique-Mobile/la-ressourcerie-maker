@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Manifesto from '../components/Manifesto.astro';
 ---
 <Layout
   title="À propos"
@@ -18,18 +19,7 @@ import Footer from '../components/Footer.astro';
       <p class="about-hero__lead">La Ressourcerie Maker rassemble des fiches pédagogiques maker libres de droit, des kits de matériel et des ressources pour tous les animateurs et structures qui veulent lancer des ateliers — sans repartir de zéro.</p>
     </section>
 
-    <!-- PARTI PRIS -->
-    <section class="manifesto">
-      <div class="manifesto__inner">
-        <div>
-          <div class="manifesto__eyebrow">Notre parti pris</div>
-          <div class="manifesto__sign">— Ressourcerie Maker · 2026</div>
-        </div>
-        <p class="manifesto__text">
-          Le matériel coûte cher. Le savoir-faire, lui, peut <em>circuler librement</em>. Ce qu'on partage ici : nos ratés, nos protocoles, nos astuces de récup'.
-        </p>
-      </div>
-    </section>
+    <Manifesto />
 
     <!-- POUR QUI -->
     <section class="section">
@@ -343,10 +333,11 @@ import Footer from '../components/Footer.astro';
   .about-step__num { width: auto; font-size: 14px; }
   .about-step__title { font-size: 18px; }
 
-  .about-licence { padding: 40px 64px; }
+  .about-licence { padding: 40px 0; }
   .about-licence__inner {
     max-width: 1320px;
     margin: 0 auto;
+    padding: 0 64px;
     gap: 28px;
     align-items: center;
   }

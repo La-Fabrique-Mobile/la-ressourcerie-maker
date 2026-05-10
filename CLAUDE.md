@@ -38,7 +38,7 @@ La classification des ateliers est héritée de la base de connaissances :
 
 - **Astro** (`output: 'static'`) — génération statique
 - **Netlify** — déploiement via `netlify.toml` (`npm run build` → `dist/`)
-- **CSS** global dans `src/styles/global.css` (copié aussi dans `public/styles/global.css`)
+- **CSS** global dans `src/styles/global.css` — importé via frontmatter dans `Layout.astro`
 - Pas de framework JS côté client — HTML statique pur
 
 ---
@@ -50,8 +50,7 @@ la-ressourcerie-maker/
 ├── CLAUDE.md                      # Ce fichier
 ├── astro.config.mjs               # output: static, site: https://la-ressourcerie-maker.netlify.app
 ├── netlify.toml                   # build command + publish = dist
-├── public/
-│   └── styles/global.css          # Copie du CSS global (synchroniser avec src/styles/)
+├── public/                        # Assets statiques (images, fonts…)
 └── src/
     ├── components/
     │   ├── Nav.astro              # Nav mobile (hamburger) + desktop (menu horizontal + dropdown Ressources)
@@ -132,7 +131,6 @@ Si moins de 3 ateliers scorent > 0, compléter avec les ateliers restants dans l
 
 ## Conventions
 
-- **`public/styles/global.css` doit rester synchronisé** avec `src/styles/global.css` — copier manuellement après chaque modification CSS.
 - Les pages Astro importent `Nav` et `Footer` comme composants — ne pas dupliquer la nav/footer en inline.
 - Le contenu des ateliers vient de la base de connaissances interne LFM — pas inventé ici, pas à dupliquer dans ce dépôt.
 - Ne jamais écrire de chemins absolus de machine locale dans ce dépôt (ni dans le code, ni dans la doc).

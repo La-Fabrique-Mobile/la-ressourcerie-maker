@@ -21,7 +21,7 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
     <!-- EN-TÊTE -->
     <section class="page-head">
       <span class="section-eyebrow">Catalogue · {total} atelier{total > 1 ? 's' : ''}</span>
-      <h1 style="margin-top:10px">Bibliothèque d'ateliers</h1>
+      <h1>Bibliothèque d'ateliers</h1>
       <p>Triez, copiez, adaptez. Toutes les fiches sont libres de droit (CC BY-SA), pensées pour être animées sans formation préalable.</p>
     </section>
 
@@ -62,24 +62,21 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
         <button class="filter-chip" data-filter="duree" data-value="long">&gt; 1 h</button>
       </div>
 
-      <div class="filter-group">
-        <span class="filter-label">Matériel</span>
-        <button class="filter-chip filter-chip--active" data-filter="mat" data-value="tous">Tout</button>
-        <button class="filter-chip" data-filter="mat" data-value="récup">Récup</button>
-        <button class="filter-chip" data-filter="mat" data-value="kit">Kit</button>
-        <button class="filter-chip" data-filter="mat" data-value="machine">Machine</button>
-      </div>
+      <select class="filter-select" id="filter-mat" aria-label="Matériel">
+        <option value="tous">Tout matériel</option>
+        <option value="récup">Récup</option>
+        <option value="kit">Kit</option>
+        <option value="machine">Machine</option>
+      </select>
 
-      <div class="filter-group filter-group--reuse">
-        <button class="filter-chip filter-chip--reuse" data-filter="reuse" data-value="false" id="filter-reuse">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
-            <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
-            <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
-          </svg>
-          Réemploi
-        </button>
-      </div>
+      <button class="filter-chip filter-chip--reuse" id="filter-reuse" aria-pressed="false">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+          <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+          <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+        </svg>
+        Réemploi
+      </button>
 
     </div>
 
@@ -169,6 +166,8 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
   const cards = Array.from(grid.querySelectorAll<HTMLElement>('.wcard'));
   const total = cards.length;
 
+  const selMat = document.getElementById('filter-mat') as HTMLSelectElement;
+
   // Filtre state
   const active: Record<string, string> = { public: 'tous', duree: 'tous', mat: 'tous' };
   let reuseOnly = false;
@@ -244,25 +243,29 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
     }
   }
 
-  // Boutons de filtre
+  // Chips Public + Durée
   document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter!;
-      const value  = btn.dataset.value!;
-
-      if (filter === 'reuse') {
-        reuseOnly = !reuseOnly;
-        btn.classList.toggle('filter-chip--active', reuseOnly);
-      } else {
-        // désactiver les autres chips du même groupe
-        btn.closest('.filter-group')!
-          .querySelectorAll<HTMLButtonElement>('.filter-chip')
-          .forEach(b => b.classList.remove('filter-chip--active'));
-        btn.classList.add('filter-chip--active');
-        active[filter] = value;
-      }
+      btn.closest('.filter-group')!
+        .querySelectorAll<HTMLButtonElement>('.filter-chip')
+        .forEach(b => b.classList.remove('filter-chip--active'));
+      btn.classList.add('filter-chip--active');
+      active[filter] = btn.dataset.value!;
       applyFilters();
     });
+  });
+
+  // Select Matériel
+  selMat.addEventListener('change', () => { active.mat = selMat.value; applyFilters(); });
+
+  // Toggle réemploi
+  const reuseBtn = document.getElementById('filter-reuse')!;
+  reuseBtn.addEventListener('click', () => {
+    reuseOnly = !reuseOnly;
+    reuseBtn.classList.toggle('filter-chip--active', reuseOnly);
+    reuseBtn.setAttribute('aria-pressed', String(reuseOnly));
+    applyFilters();
   });
 
   // Recherche

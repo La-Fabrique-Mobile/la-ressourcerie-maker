@@ -3,10 +3,10 @@ titre: Chamboule-tout
 accroche: "Le jeu d'adresse de kermesse : empiler, viser, faire tomber. Une fabrication courte qui se prête bien aux ateliers événementiels où les participants tournent vite."
 famille: kermesse
 classification: classique
-public: "Tout public · 4 ans+"
+public: "Tout public · 4 ans+ · 8 ans+ en autonomie"
 duree: "20–30 min de fabrication"
 materiel: "Récup' · zéro machine"
-niveau: "⭐ Débutant · dès 8 ans en autonomie"
+difficulte: "⭐ Débutant"
 machines: [aucune]
 reemploi: true
 fiche_pdf: /assets/fiches-pedagogiques/chamboule-tout.pdf
@@ -39,16 +39,23 @@ declinaisons:
   - kind: age
     titre: "Avec des 3–5 ans"
     corps: "Pyramide réduite à 3 + 2 + 1, ligne de tir à 1 m, balles très molles (mousse). Insister sur le geste plutôt que le score. Pas de fabrication autonome à cet âge — l'animateur prépare le matériel en amont."
+adaptations:
+  - kind: age
+    titre: "Selon l'âge"
+    corps: "3–5 ans : 1 m / pyramide 3+2+1 / balle mousse, sans notion de score. 6–10 ans : 1,5–2 m / pyramide standard / chaussette roulée. 11 ans et + : 2,5 m+, cibles lestées, option tournoi ou timer."
+  - kind: group
+    titre: "Taille du groupe"
+    corps: "Le goulot d'étranglement est le remontage de la pyramide entre chaque joueur (15–20 s). Dès 30 participants, affecter un bénévole à cette seule tâche. Compter 1 poste pour 8–10 joueurs en flux continu."
+  - kind: weather
+    titre: "Météo"
+    corps: "Vent : les boîtes carton tombent seules dès vent modéré — les lester (200–300 g) ou basculer sur des boîtes de conserve. Pluie : plastifier les boîtes au ruban adhésif large ou passer au métal. Projectiles en tissu mouillés : prévoir des balles plastique en remplacement."
+securite:
+  - titre: "Projectiles"
+    corps: "Vérifier que les projectiles ne sont pas trop durs ni trop lourds selon le public. Balle de tennis déconseillée pour les moins de 6 ans."
+  - titre: "Dégagement"
+    corps: "Maintenir un dégagement de 2 m derrière la ligne de tir — aucun spectateur dans l'axe de lancer."
+  - titre: "Peinture"
+    corps: "Si peinture lors de la fabrication : protection de surface et ventilation suffisante requises."
+  - titre: "Colle chaude"
+    corps: "Supervision obligatoire pour les moins de 10 ans lors de l'utilisation du pistolet à colle."
 ---
-
-## Adaptations
-
-**Âge** — ce jeu se règle via trois paramètres : distance de lancer, taille de la pyramide, poids du projectile. 3–5 ans : 1 m / pyramide réduite / balle mousse, sans notion de score. 6–10 ans : 1,5–2 m / pyramide standard / chaussette roulée. 11 et + : 2,5 m+, cibles lestées, option tournoi ou timer.
-
-**Taille du groupe** — le goulot d'étranglement est le remontage de la pyramide entre chaque joueur (15–20 s). Dès 30 participants, affecter un bénévole à cette seule tâche. Compter 1 poste pour 8–10 joueurs en flux continu.
-
-**Météo** — *Vent* : les boîtes carton tombent seules dès vent modéré ; les lester (200–300 g de sable) ou basculer sur des boîtes de conserve. *Pluie* : le carton se déforme rapidement ; plastifier les boîtes au ruban adhésif large ou passer au métal. Les projectiles en tissu mouillés deviennent inutilisables — prévoir des balles plastique en remplacement.
-
-## Sécurité
-
-Aucun EPI requis. Vérifier que les projectiles ne sont pas trop durs ni trop lourds selon le public (balle de tennis déconseillée pour les moins de 6 ans). Maintenir un dégagement de 2 m derrière la ligne de tir — aucun spectateur dans l'axe. Si peinture lors de la fabrication : protection surface et ventilation. Si colle chaude : supervision obligatoire pour les moins de 10 ans.

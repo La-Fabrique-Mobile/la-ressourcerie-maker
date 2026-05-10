@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Manifesto from '../components/Manifesto.astro';
 ---
 <Layout
   title="Contribuer — La Ressourcerie Maker"
@@ -13,7 +14,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- HERO -->
     <section class="co-hero">
-      <span class="section-eyebrow">Commun numérique · ouvert</span>
+      <span class="section-eyebrow">Commun numérique</span>
       <h1 class="co-hero__title">Contribuer</h1>
       <p class="co-hero__lead">La Ressourcerie Maker est un commun — elle vit de ce que ses utilisateurs y apportent. Corriger une erreur, proposer un atelier, améliorer une fiche : chaque contribution compte, quelle que soit sa taille.</p>
     </section>
@@ -145,18 +146,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- ESPRIT -->
-    <section class="manifesto">
-      <div class="manifesto__inner">
-        <div>
-          <div class="manifesto__eyebrow">L'esprit du commun</div>
-          <div class="manifesto__sign">— La Ressourcerie Maker</div>
-        </div>
-        <p class="manifesto__text">
-          Ce projet ne cherche pas la perfection — il cherche l'<em>utilité</em>. Une fiche imparfaite qui aide quelqu'un à animer un atelier demain vaut plus qu'une fiche parfaite qui n'existe pas encore.
-        </p>
-      </div>
-    </section>
+    <Manifesto />
 
     <!-- CONTACT -->
     <section class="section">

@@ -7,14 +7,19 @@ import Footer from '../../components/Footer.astro';
   title="Kit de base — La Ressourcerie Maker"
   description="Le matériel nécessaire pour animer des ateliers maker : kits par niveau, matériaux, outils, sécurité et où se fournir."
 >
-  <Nav />
+  <Nav current="ressources" />
 
   <main class="page">
 
     <!-- HERO -->
     <section class="kb-hero">
-      <a href="/ressources/pedagogie-maker" class="kb-back">← Pédagogie maker</a>
-      <div class="kb-hero__tag">Kit de base</div>
+      <div class="kb-hero__tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 8l8-4 8 4v9l-8 4-8-4z"/>
+          <path d="M4 8l8 4M20 8l-8 4M12 12v9"/>
+        </svg>
+        Kit de base
+      </div>
       <h1 class="kb-hero__title">Le nécessaire pour animer,<br>rien de plus.</h1>
       <p class="kb-hero__lead">Pas besoin d'un fablab équipé pour lancer un atelier maker. Voici ce qu'il faut vraiment — par niveau de budget et d'ambition.</p>
       <div class="kb-hero__stats">
@@ -45,7 +50,7 @@ import Footer from '../../components/Footer.astro';
 
       <div class="kb-levels">
 
-        <div class="kb-level kb-level--green">
+        <a class="kb-level kb-level--green" href="#evenementiel">
           <div class="kb-level__head">
             <span class="kb-level__num">01</span>
             <div>
@@ -61,10 +66,10 @@ import Footer from '../../components/Footer.astro';
             <li>Scotch + blue tape</li>
             <li>Tapis de découpe</li>
           </ul>
-          <div class="kb-level__footer">Format animation courte, kermesse, événement</div>
-        </div>
+          <div class="kb-level__footer">Format animation courte, kermesse, événement ↓</div>
+        </a>
 
-        <div class="kb-level kb-level--yellow">
+        <a class="kb-level kb-level--yellow" href="#projet">
           <div class="kb-level__head">
             <span class="kb-level__num">02</span>
             <div>
@@ -80,10 +85,10 @@ import Footer from '../../components/Footer.astro';
             <li>Feutres permanents</li>
             <li>Colle blanche + attaches parisiennes</li>
           </ul>
-          <div class="kb-level__footer">Atelier long, séquence multi-séances, stage</div>
-        </div>
+          <div class="kb-level__footer">Atelier long, séquence multi-séances, stage ↓</div>
+        </a>
 
-        <div class="kb-level kb-level--blue">
+        <a class="kb-level kb-level--blue" href="#makedo">
           <div class="kb-level__head">
             <span class="kb-level__num">03</span>
             <div>
@@ -98,10 +103,10 @@ import Footer from '../../components/Footer.astro';
             <li>Scoring Tool (rainurage)</li>
             <li>Hole Punch (perçage)</li>
           </ul>
-          <div class="kb-level__footer">Structures articulées, mécanismes, projets itératifs</div>
-        </div>
+          <div class="kb-level__footer">Structures articulées, mécanismes ↓</div>
+        </a>
 
-        <div class="kb-level kb-level--red">
+        <a class="kb-level kb-level--red" href="#stem">
           <div class="kb-level__head">
             <span class="kb-level__num">04</span>
             <div>
@@ -116,10 +121,10 @@ import Footer from '../../components/Footer.astro';
             <li>Lunettes de protection × 3</li>
             <li>Masques FFP2 × 5</li>
           </ul>
-          <div class="kb-level__footer">Défis STEM, constructions robustes, public ado-adulte</div>
-        </div>
+          <div class="kb-level__footer">Défis STEM, constructions robustes ↓</div>
+        </a>
 
-        <div class="kb-level kb-level--moss">
+        <a class="kb-level kb-level--moss" href="#code-en-bois">
           <div class="kb-level__head">
             <span class="kb-level__num">05</span>
             <div>
@@ -134,8 +139,8 @@ import Footer from '../../components/Footer.astro';
             <li>Plateau de jeu A3</li>
             <li>Guide animateur PDF</li>
           </ul>
-          <div class="kb-level__footer">Médiation algorithmique · sans écran · dès 5 ans</div>
-        </div>
+          <div class="kb-level__footer">Médiation algorithmique · sans écran ↓</div>
+        </a>
 
       </div>
     </section>
@@ -337,8 +342,139 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- KIT ÉVÉNEMENTIEL -->
+    <section id="evenementiel" class="kb-evenementiel">
+      <div class="kb-evenementiel__inner">
+        <div class="kb-evenementiel__head">
+          <div class="kb-evenementiel__badge">01</div>
+          <div>
+            <div class="kb-evenementiel__eyebrow">Kit de départ · ~30 €</div>
+            <h2 class="kb-evenementiel__title">Kit Événementiel</h2>
+            <p class="kb-evenementiel__sub">Le minimum pour démarrer — ce soir si besoin.</p>
+          </div>
+        </div>
+        <p class="kb-evenementiel__intro">Pour une kermesse, une animation ponctuelle ou un atelier découverte, ce kit suffit. Tout s'achète en grande surface ou se récupère. Budget total : 25–30 €. Aucune machine, aucun outil tranchant au-delà des ciseaux.</p>
+        <div class="kb-evenementiel__cols">
+          <div>
+            <h4>Ce que ça contient</h4>
+            <div class="kb-kit-items">
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Carton de récupération</div>
+                <div class="kb-kit-item__desc">Matériau central. Ondulé double face pour les structures, boîtes de céréales pour les pièces plates.</div>
+                <div class="kb-kit-item__cost">0 € — récup</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Ciseaux bouts ronds</div>
+                <div class="kb-kit-item__desc">1 paire par participant. Ciseaux à pointes dès 6 ans sous supervision.</div>
+                <div class="kb-kit-item__cost">~1 € / paire</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Pistolet à colle chaude</div>
+                <div class="kb-kit-item__desc">1 pistolet pour 4–5 participants. Assemblage rapide et solide. 10 ans+ (idéal 12 ans).</div>
+                <div class="kb-kit-item__cost">~10–15 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Feutres de coloriage</div>
+                <div class="kb-kit-item__desc">Lavables pour les petits, permanents pour les finitions. Gamme Enmy comme alternative au Posca.</div>
+                <div class="kb-kit-item__cost">~5 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Scotch + blue tape</div>
+                <div class="kb-kit-item__desc">Maintien provisoire avant collage, masquage peinture. Le blue tape ne laisse pas de résidu.</div>
+                <div class="kb-kit-item__cost">~3 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Tapis de découpe</div>
+                <div class="kb-kit-item__desc">Obligatoire pour protéger les tables. Format A3 minimum.</div>
+                <div class="kb-kit-item__cost">~8 €</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4>Pour quel format</h4>
+            <table class="kb-table">
+              <thead>
+                <tr><th>Format</th><th>Durée</th><th>Public</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Kermesse, stand</td><td>30–45 min</td><td>Dès 5 ans</td></tr>
+                <tr><td>Atelier découverte</td><td>1 h</td><td>Dès 6 ans</td></tr>
+                <tr><td>Atelier unique</td><td>2 h</td><td>Tout public</td></tr>
+                <tr><td>Animation hors les murs</td><td>Variable</td><td>Tout public</td></tr>
+              </tbody>
+            </table>
+            <div class="kb-evenementiel__tip">
+              <strong>Conseil récup :</strong> prévoir une collecte de carton auprès des épiceries et supermarchés du quartier la semaine avant. Coût participant : &lt; 1 €.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KIT PROJET -->
+    <section id="projet" class="kb-projet">
+      <div class="kb-projet__inner">
+        <div class="kb-projet__head">
+          <div class="kb-projet__badge">02</div>
+          <div>
+            <div class="kb-projet__eyebrow">Kit intermédiaire · +20 €</div>
+            <h2 class="kb-projet__title">Kit Projet</h2>
+            <p class="kb-projet__sub">Pour les ateliers longs et les séquences multi-séances.</p>
+          </div>
+        </div>
+        <p class="kb-projet__intro">Le Kit Projet complète le Kit Événementiel. Il ajoute les outils de traçage et de découpe précise qui permettent de travailler sur des projets plus complexes — robots articulés, véhicules à traction, structures géométriques.</p>
+        <div class="kb-projet__cols">
+          <div>
+            <h4>Ce qui s'ajoute au Kit Événementiel</h4>
+            <div class="kb-kit-items">
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Cutter 18 mm + lames</div>
+                <div class="kb-kit-item__desc">Coupes droites et précises sur carton épais. 10 ans+ avec tapis et règle alu. Renouveler les lames fréquemment.</div>
+                <div class="kb-kit-item__cost">~5 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Règle aluminium 40 cm</div>
+                <div class="kb-kit-item__desc">Guide de découpe et mesures. Aluminium obligatoire — le cutter détruit les règles plastiques.</div>
+                <div class="kb-kit-item__cost">~4 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Équerre + compas</div>
+                <div class="kb-kit-item__desc">Traçage d'angles droits, cercles, gabarits. Indispensables pour les projets géométriques.</div>
+                <div class="kb-kit-item__cost">~3 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Peinture acrylique</div>
+                <div class="kb-kit-item__desc">Couvre bien sur carton avec une couche de gesso. Séchage 15–30 min. Tablier obligatoire.</div>
+                <div class="kb-kit-item__cost">~5 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Feutres permanents</div>
+                <div class="kb-kit-item__desc">Marquage de pièces et contours définitifs. Ventilation conseillée.</div>
+                <div class="kb-kit-item__cost">~3 €</div>
+              </div>
+              <div class="kb-kit-item">
+                <div class="kb-kit-item__name">Colle blanche + attaches parisiennes</div>
+                <div class="kb-kit-item__desc">Collage léger et liaisons pivots pour roues, bras articulés, cames.</div>
+                <div class="kb-kit-item__cost">~4 €</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4>Ce que ça débloque</h4>
+            <ul class="kb-why-list kb-projet__why">
+              <li><strong>Découpe précise</strong> — pièces aux dimensions exactes, assemblages sans jeu</li>
+              <li><strong>Géométrie et mesure</strong> — projets avec angles droits et cercles répétables</li>
+              <li><strong>Peinture couvrante</strong> — finitions propres sur carton brun ou kraft</li>
+              <li><strong>Articulations légères</strong> — pivots sans Makedo pour les projets simples</li>
+              <li><strong>Multi-séances</strong> — une production qu'on reprend et améliore</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MAKEDO -->
-    <section class="kb-makedo">
+    <section id="makedo" class="kb-makedo">
       <div class="kb-makedo__inner">
         <div class="kb-makedo__head">
           <div class="kb-makedo__badge">03</div>
@@ -390,7 +526,7 @@ import Footer from '../../components/Footer.astro';
     </section>
 
     <!-- BEAVERBOT / CHOMPSHOP -->
-    <section class="kb-stem">
+    <section id="stem" class="kb-stem">
       <div class="kb-stem__inner">
         <div class="kb-stem__head">
           <div class="kb-stem__badge">04</div>
@@ -446,7 +582,7 @@ import Footer from '../../components/Footer.astro';
     </section>
 
     <!-- CODE EN BOIS -->
-    <section class="kb-ceb">
+    <section id="code-en-bois" class="kb-ceb">
       <div class="kb-ceb__inner">
         <div class="kb-ceb__head">
           <div class="kb-ceb__badge">
@@ -670,27 +806,20 @@ import Footer from '../../components/Footer.astro';
 .kb-hero {
   padding: 32px 22px 24px;
 }
-.kb-back {
-  display: inline-block;
+.kb-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: .08em;
-  color: var(--text-3);
-  text-decoration: none;
-  margin-bottom: 16px;
-}
-.kb-back:hover { color: var(--text-1); }
-.kb-hero__tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: .1em;
   text-transform: uppercase;
-  background: var(--rm-kraft);
-  color: var(--rm-paper);
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-bottom: 14px;
+  color: var(--rm-terracotta);
+  background: #F8DEC8;
+  border: 1px solid var(--rm-terracotta-soft);
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-bottom: 18px;
 }
 .kb-hero__title {
   font-size: clamp(28px, 7vw, 44px);
@@ -737,7 +866,6 @@ import Footer from '../../components/Footer.astro';
   color: var(--text-2);
   line-height: 1.6;
   margin: 0 0 20px;
-  max-width: 60ch;
 }
 
 /* ---- Niveaux ---- */
@@ -747,16 +875,25 @@ import Footer from '../../components/Footer.astro';
   gap: 12px;
 }
 .kb-level {
+  display: flex;
+  flex-direction: column;
   padding: 20px 18px;
   border-radius: var(--r-md);
   border: 1.5px solid var(--border);
   background: var(--rm-paper);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .15s, transform .15s;
+}
+.kb-level:hover {
+  box-shadow: 0 4px 16px rgba(42,33,24,.1);
+  transform: translateY(-2px);
 }
 .kb-level--green { border-color: var(--rm-moss); }
 .kb-level--yellow { border-color: var(--rm-kraft); }
 .kb-level--blue { border-color: #5B8FD4; }
 .kb-level--red { border-color: var(--rm-terracotta); }
-.kb-level--moss { border-color: var(--rm-moss); background: #F4F7EA; }
+.kb-level--moss { border-color: var(--rm-moss); }
 
 .kb-level__head {
   display: flex;
@@ -954,6 +1091,164 @@ import Footer from '../../components/Footer.astro';
   font-size: 10px;
   top: 2px;
 }
+
+/* ---- Items partagés (Événementiel + Projet) ---- */
+.kb-kit-items {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.kb-kit-item {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--rm-paper);
+}
+.kb-kit-item:last-child { border-bottom: 0; }
+.kb-kit-item__name {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.kb-kit-item__desc {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+.kb-kit-item__cost {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: var(--text-3);
+}
+
+/* ---- Kit Événementiel ---- */
+.kb-evenementiel {
+  border-top: 1px solid var(--rm-moss);
+  border-bottom: 1px solid var(--rm-moss);
+  padding: 32px 22px;
+}
+.kb-evenementiel__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.kb-evenementiel__badge {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--rm-moss);
+  color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+.kb-evenementiel__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-moss);
+  margin-bottom: 4px;
+}
+.kb-evenementiel__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+}
+.kb-evenementiel__sub { font-size: 13px; color: var(--text-2); margin: 0; }
+.kb-evenementiel__intro {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+.kb-evenementiel__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kb-evenementiel__cols h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.kb-evenementiel__tip {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: rgba(107,127,74,.07);
+  border-left: 3px solid var(--rm-moss);
+  border-radius: 0 6px 6px 0;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+/* ---- Kit Projet ---- */
+.kb-projet {
+  background: var(--rm-cream-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 22px;
+}
+.kb-projet__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.kb-projet__badge {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--rm-kraft-deep);
+  color: var(--rm-cream);
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+.kb-projet__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-kraft-deep);
+  margin-bottom: 4px;
+}
+.kb-projet__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+}
+.kb-projet__sub { font-size: 13px; color: var(--text-2); margin: 0; }
+.kb-projet__intro {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+.kb-projet__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kb-projet__cols h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.kb-projet__why li::before { color: var(--rm-kraft-deep) !important; }
 
 /* ---- Makedo ---- */
 .kb-makedo {
@@ -1463,28 +1758,40 @@ import Footer from '../../components/Footer.astro';
 
   .kb-tools-grid { grid-template-columns: repeat(4, 1fr); }
 
-  .kb-makedo { padding: 48px 64px; }
-  .kb-makedo__inner { max-width: 1320px; margin: 0 auto; }
+  .kb-evenementiel { padding: 48px 0; }
+  .kb-evenementiel__inner { max-width: 1320px; margin: 0 auto; padding: 0 64px; }
+  .kb-evenementiel__title { font-size: 28px; }
+  .kb-evenementiel__cols { flex-direction: row; gap: 40px; }
+  .kb-evenementiel__cols > div { flex: 1; }
+
+  .kb-projet { padding: 48px 0; }
+  .kb-projet__inner { max-width: 1320px; margin: 0 auto; padding: 0 64px; }
+  .kb-projet__title { font-size: 28px; }
+  .kb-projet__cols { flex-direction: row; gap: 40px; }
+  .kb-projet__cols > div { flex: 1; }
+
+  .kb-makedo { padding: 48px 0; }
+  .kb-makedo__inner { max-width: 1320px; margin: 0 auto; padding: 0 64px; }
   .kb-makedo__title { font-size: 28px; }
   .kb-makedo__cols { flex-direction: row; gap: 40px; }
   .kb-makedo__components { flex: 1; }
   .kb-makedo__why { flex: 0 0 280px; }
 
-  .kb-stem { padding: 48px 64px; }
-  .kb-stem__inner { max-width: 1320px; margin: 0 auto; }
+  .kb-stem { padding: 48px 0; }
+  .kb-stem__inner { max-width: 1320px; margin: 0 auto; padding: 0 64px; }
   .kb-stem__title { font-size: 26px; }
   .kb-stem__cols { flex-direction: row; gap: 40px; }
   .kb-stem__cols > div { flex: 1; }
 
-  .kb-ceb { padding: 48px 64px; }
-  .kb-ceb__inner { max-width: 1320px; margin: 0 auto; }
+  .kb-ceb { padding: 48px 0; }
+  .kb-ceb__inner { max-width: 1320px; margin: 0 auto; padding: 0 64px; }
   .kb-ceb__title { font-size: 28px; }
   .kb-ceb__cols { flex-direction: row; gap: 48px; }
   .kb-ceb__cols > div { flex: 1; }
   .kb-ceb__links { flex-direction: row; }
   .kb-ceb__link { flex-direction: column; align-items: flex-start; gap: 10px; flex: 1; }
 
-  .kb-sources { padding: 0 64px 48px; }
+  .kb-sources { max-width: 1320px; margin: 0 auto; padding: 0 64px 48px; }
   .kb-sources__grid { grid-template-columns: repeat(4, 1fr); }
 
   .kb-cta-grid { flex-direction: row; }
