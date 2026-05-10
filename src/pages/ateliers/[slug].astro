@@ -27,6 +27,31 @@ const familleLabel: Record<string, string> = {
   mediation: 'Médiation',
   beaverbot: 'BeaverBot',
 };
+
+const publicLabel: Record<string, string> = {
+  'enfants': 'Enfants',
+  'ados':    'Ados',
+  'adultes': 'Adultes',
+  'famille': 'Famille',
+};
+
+const dureeLabel: Record<string, string> = {
+  'flux-ouvert': '⚡ Flux ouvert',
+  'atelier':     '🕐 Atelier',
+  'stage':       '📅 Stage / Projet',
+};
+
+const dureeTime: Record<string, string> = {
+  'flux-ouvert': '20–45 min',
+  'atelier':     '1h à 3h',
+  'stage':       'plusieurs séances',
+};
+
+const difficulteLabel: Record<string, string> = {
+  debutant: '⭐ Débutant',
+  intermediaire: '⭐⭐ Intermédiaire',
+  avance: '⭐⭐⭐ Avancé',
+};
 ---
 <Layout title={titre} description={accroche} excludeSlug={entry.slug}>
   <Nav current="catalogue" />
@@ -88,7 +113,14 @@ const familleLabel: Record<string, string> = {
               <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
             </svg>
           </span>
-          <div><dt>Public</dt><dd>{pub}</dd></div>
+          <div>
+            <dt>Public</dt>
+            <dd class="pub-chips">
+              {pub.map(p => (
+                <span class={`pub-chip pub-chip--${p}`}>{publicLabel[p]}</span>
+              ))}
+            </dd>
+          </div>
         </div>
         <div class="glance__row">
           <span class="glance__icon" aria-hidden="true">
@@ -96,8 +128,18 @@ const familleLabel: Record<string, string> = {
               <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
             </svg>
           </span>
-          <div><dt>Durée</dt><dd>{duree}</dd></div>
+          <div>
+            <dt>Durée</dt>
+            <dd class="duree-chips">
+              {duree.map(d => (
+                <span class={`duree-chip duree-chip--${d}`}>
+                  {dureeLabel[d]}<span class="duree-chip__time">{dureeTime[d]}</span>
+                </span>
+              ))}
+            </dd>
+          </div>
         </div>
+        {materiel && (
         <div class="glance__row">
           <span class="glance__icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -107,13 +149,17 @@ const familleLabel: Record<string, string> = {
           </span>
           <div><dt>Matériel</dt><dd>{materiel}</dd></div>
         </div>
+        )}
         <div class="glance__row">
           <span class="glance__icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
             </svg>
           </span>
-          <div><dt>Difficulté</dt><dd>{difficulte}</dd></div>
+          <div>
+            <dt>Difficulté</dt>
+            <dd><span class={`diff-chip diff-chip--${difficulte}`}>{difficulteLabel[difficulte]}</span></dd>
+          </div>
         </div>
       </dl>
     </section>
@@ -279,6 +325,69 @@ const familleLabel: Record<string, string> = {
 </Layout>
 
 <style>
+/* Chips public dans "en un coup d'œil" */
+.pub-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+.pub-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  border: 1.5px solid;
+}
+.pub-chip--enfants  { background: rgba(107,127,74,.12); border-color: rgba(107,127,74,.35); color: #4a5a30; }
+.pub-chip--ados     { background: rgba(184,144,101,.14); border-color: rgba(184,144,101,.4); color: #6e4e25; }
+.pub-chip--adultes  { background: rgba(194,86,47,.10);  border-color: rgba(194,86,47,.32);  color: #8b3820; }
+.pub-chip--famille  { background: rgba(232,97,26,.09);  border-color: rgba(232,97,26,.32);  color: #7a3b0e; }
+
+/* Chips durée */
+.duree-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.duree-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  border: 1.5px solid;
+}
+.duree-chip__time {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  padding-left: 5px;
+  border-left: 1px solid currentColor;
+  opacity: .65;
+}
+.duree-chip--flux-ouvert { background: rgba(232,97,26,.09);   border-color: rgba(232,97,26,.32);   color: #7a3b0e; }
+.duree-chip--atelier     { background: rgba(107,127,74,.12);  border-color: rgba(107,127,74,.35);  color: #4a5a30; }
+.duree-chip--stage       { background: rgba(184,144,101,.14); border-color: rgba(184,144,101,.4);  color: #6e4e25; }
+
+/* Chip difficulté */
+.diff-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  border: 1.5px solid;
+  margin-top: 4px;
+}
+.diff-chip--debutant      { background: rgba(107,127,74,.12);  border-color: rgba(107,127,74,.35); color: #4a5a30; }
+.diff-chip--intermediaire { background: rgba(184,144,101,.14); border-color: rgba(184,144,101,.4); color: #6e4e25; }
+.diff-chip--avance        { background: rgba(194,86,47,.10);   border-color: rgba(194,86,47,.32);  color: #8b3820; }
+
 /* Prose du corps markdown */
 .atelier-prose {
   padding-top: 32px;

@@ -134,3 +134,4 @@ Si moins de 3 ateliers scorent > 0, compléter avec les ateliers restants dans l
 - Les pages Astro importent `Nav` et `Footer` comme composants — ne pas dupliquer la nav/footer en inline.
 - Le contenu des ateliers vient de la base de connaissances interne LFM — pas inventé ici, pas à dupliquer dans ce dépôt.
 - Ne jamais écrire de chemins absolus de machine locale dans ce dépôt (ni dans le code, ni dans la doc).
+- **Vocabulaire matériel** : ne jamais écrire "Posca" seul (marque déposée). Toujours écrire **"marqueurs acrylique (type Posca)"**. S'applique à tout le contenu : fiches ateliers, ressources, pages statiques.

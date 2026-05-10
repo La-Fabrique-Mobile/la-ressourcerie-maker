@@ -48,8 +48,10 @@ const FAMILLE_LABEL: Record<string, string> = {
   mediation: 'médiation',
   beaverbot: 'beaverbot',
 };
-const publicCourt = (p: string) => p.split(' · ')[0];
-const dureeCourte = (d: string) => d.split(' de ')[0];
+const PUBLIC_LABEL: Record<string, string> = { enfants: 'Enfants', ados: 'Ados', adultes: 'Adultes', famille: 'Famille' };
+const publicCourt = (p: string[]) => p.map(v => PUBLIC_LABEL[v] ?? v).join(' · ');
+const DUREE_LABEL: Record<string, string> = { 'flux-ouvert': '⚡ Flux ouvert', 'atelier': '🕐 Atelier', 'stage': '📅 Stage' };
+const dureeCourte = (d: string[]) => d.map(v => DUREE_LABEL[v] ?? v).join(' · ');
 const nbReemploi = tousAteliers.filter(a => a.data.reemploi).length;
 const reemploiLabel = nbReemploi >= 100 ? '100+' : String(nbReemploi);
 ---

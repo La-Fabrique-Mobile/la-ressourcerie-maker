@@ -3,44 +3,64 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Picto from '../components/Picto.astro';
-import FilterDropdown, { type DropdownOption } from '../components/FilterDropdown.astro';
+import FilterDropdown from '../components/FilterDropdown.astro';
+import type { DropdownOption } from '../components/FilterDropdown.astro';
 
 const ateliers = await getCollection('ateliers');
 const total = ateliers.length;
 
-const MAT_OPTIONS: DropdownOption[] = [
+const publicLabel: Record<string, string> = {
+  'enfants': 'Enfants',
+  'ados':    'Ados',
+  'adultes': 'Adultes',
+  'famille': 'Famille',
+};
+
+const dureeLabel: Record<string, string> = {
+  'flux-ouvert': '⚡ Flux ouvert',
+  'atelier':     '🕐 Atelier',
+  'stage':       '📅 Stage / Projet',
+};
+
+const difficulteLabel: Record<string, string> = {
+  'debutant':      '⭐ Débutant',
+  'intermediaire': '⭐⭐ Intermédiaire',
+  'avance':        '⭐⭐⭐ Avancé',
+};
+
+const DIFF_OPTIONS: DropdownOption[] = [
   {
     value: 'tous',
-    label: 'Tout matériel',
-    desc: 'Aucun filtre appliqué',
-    icon: '<path d="M4 5h16l-6 8v6l-4-2v-4z"/>',
+    label: 'Toute difficulté',
+    desc: 'Afficher tous les niveaux',
+    icon: '<path d="M4 6h16M7 12h10M10 18h4"/>',
   },
   {
-    value: 'récup',
-    label: "Récup'",
-    desc: 'Boîtes, tissu, papier — coût zéro',
-    icon: '<path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>',
-    iconBg: 'var(--rm-moss-soft)',
-    iconBorder: 'var(--rm-moss)',
-    iconColor: 'var(--rm-moss)',
+    value: 'debutant',
+    label: '⭐ Débutant',
+    desc: 'Aucune expérience requise',
+    icon: '<rect x="3" y="17" width="4" height="4" rx="1" fill="currentColor" stroke="none"/><rect x="10" y="11" width="4" height="10" rx="1" fill="currentColor" stroke="none" opacity=".2"/><rect x="17" y="5" width="4" height="16" rx="1" fill="currentColor" stroke="none" opacity=".2"/>',
+    iconBg: 'rgba(107,127,74,.12)',
+    iconBorder: 'rgba(107,127,74,.3)',
+    iconColor: '#6B7F4A',
   },
   {
-    value: 'kit',
-    label: 'Kit de base',
-    desc: 'Petit outillage · 20–50 €',
-    icon: '<path d="M5 9h14l-1 11H6z"/><path d="M9 9V6c0-1.7 1.3-3 3-3s3 1.3 3 3v3"/>',
-    iconBg: 'var(--rm-cream-2)',
-    iconBorder: 'var(--rm-kraft-soft)',
-    iconColor: 'var(--rm-kraft-deep)',
+    value: 'intermediaire',
+    label: '⭐⭐ Intermédiaire',
+    desc: 'Quelques notions utiles',
+    icon: '<rect x="3" y="17" width="4" height="4" rx="1" fill="currentColor" stroke="none"/><rect x="10" y="11" width="4" height="10" rx="1" fill="currentColor" stroke="none"/><rect x="17" y="5" width="4" height="16" rx="1" fill="currentColor" stroke="none" opacity=".2"/>',
+    iconBg: 'rgba(184,144,101,.15)',
+    iconBorder: 'rgba(184,144,101,.35)',
+    iconColor: '#B89065',
   },
   {
-    value: 'machine',
-    label: 'Machines',
-    desc: 'Découpe, broderie, impression…',
-    icon: '<path d="M14 4l6 6-3 3-2-2-7 7-3-3 7-7-2-2z"/>',
-    iconBg: '#F8DEC8',
-    iconBorder: 'var(--rm-terracotta-soft)',
-    iconColor: 'var(--rm-terracotta)',
+    value: 'avance',
+    label: '⭐⭐⭐ Avancé',
+    desc: 'Expérience recommandée',
+    icon: '<rect x="3" y="17" width="4" height="4" rx="1" fill="currentColor" stroke="none"/><rect x="10" y="11" width="4" height="10" rx="1" fill="currentColor" stroke="none"/><rect x="17" y="5" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',
+    iconBg: 'rgba(194,86,47,.12)',
+    iconBorder: 'rgba(194,86,47,.3)',
+    iconColor: '#C2562F',
   },
 ];
 ---
@@ -92,12 +112,12 @@ const MAT_OPTIONS: DropdownOption[] = [
       <div class="filter-group">
         <span class="filter-label">Durée</span>
         <button class="filter-chip filter-chip--active" data-filter="duree" data-value="tous">Toute</button>
-        <button class="filter-chip" data-filter="duree" data-value="court">&lt; 30 min</button>
-        <button class="filter-chip" data-filter="duree" data-value="moyen">30–60 min</button>
-        <button class="filter-chip" data-filter="duree" data-value="long">&gt; 1 h</button>
+        <button class="filter-chip" data-filter="duree" data-value="flux-ouvert">⚡ Flux ouvert</button>
+        <button class="filter-chip" data-filter="duree" data-value="atelier">🕐 Atelier</button>
+        <button class="filter-chip" data-filter="duree" data-value="stage">📅 Stage / Projet</button>
       </div>
 
-      <FilterDropdown id="filter-mat" label="Matériel" options={MAT_OPTIONS} />
+      <FilterDropdown id="filter-difficulte" label="Difficulté" options={DIFF_OPTIONS} />
 
       <button class="filter-chip filter-chip--reuse" id="filter-reuse" aria-pressed="false">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -117,16 +137,16 @@ const MAT_OPTIONS: DropdownOption[] = [
         <p class="catalogue-empty">Aucun atelier dans la collection — ajoutez des fichiers dans <code>src/content/ateliers/</code>.</p>
       ) : (
         ateliers.map(atelier => {
-          const { titre, accroche, public: pub, duree, materiel, classification, reemploi, famille } = atelier.data;
+          const { titre, accroche, public: pub, duree, difficulte, classification, reemploi, famille } = atelier.data;
           return (
             <a
               class="wcard"
               href={`/ateliers/${atelier.slug}`}
               data-titre={titre.toLowerCase()}
               data-accroche={(accroche ?? '').toLowerCase()}
-              data-public={pub.toLowerCase()}
-              data-duree={duree.toLowerCase()}
-              data-mat={materiel.toLowerCase()}
+              data-public={JSON.stringify(pub)}
+              data-duree={JSON.stringify(duree)}
+              data-difficulte={difficulte}
               data-reemploi={reemploi ? 'true' : 'false'}
               data-famille={famille}
             >
@@ -160,20 +180,19 @@ const MAT_OPTIONS: DropdownOption[] = [
                       <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
                       <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
                     </svg>
-                    {pub}
+                    {pub.map((p: string) => publicLabel[p]).join(' · ')}
                   </span>
                   <span class="tag tag--time">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
                       <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
                     </svg>
-                    {duree}
+                    {duree.map((d: string) => dureeLabel[d]).join(' · ')}
                   </span>
                   <span class="tag tag--mat">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                      <path d="M3 6h18M16 10a4 4 0 0 1-8 0"/>
+                      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
                     </svg>
-                    {materiel}
+                    {difficulteLabel[difficulte]}
                   </span>
                 </div>
               </div>
@@ -196,7 +215,7 @@ const MAT_OPTIONS: DropdownOption[] = [
   const total = cards.length;
 
   // Filtre state
-  const active: Record<string, string> = { public: 'tous', duree: 'tous', mat: 'tous' };
+  const active: Record<string, string> = { public: 'tous', duree: 'tous', difficulte: 'tous' };
   let reuseOnly = false;
   let query = '';
 
@@ -206,31 +225,19 @@ const MAT_OPTIONS: DropdownOption[] = [
 
   function matchesPublic(card: HTMLElement) {
     if (active.public === 'tous') return true;
-    const pub = normalize(card.dataset.public ?? '');
-    const val = active.public;
-    if (val === 'enfants') return /\d–\d|ans|enfant|primaire|maternelle|6|7|8|9|10|11/.test(pub);
-    if (val === 'ados')    return /ado|collège|lycée|12|13|14|15|16|17/.test(pub);
-    if (val === 'adultes') return /adulte|18\+|tout public/.test(pub);
-    if (val === 'famille') return /famille|parent|tout public/.test(pub);
-    return true;
+    const pubs = JSON.parse(card.dataset.public ?? '[]');
+    return pubs.includes(active.public);
   }
 
   function matchesDuree(card: HTMLElement) {
     if (active.duree === 'tous') return true;
-    const d = normalize(card.dataset.duree ?? '');
-    if (active.duree === 'court') return /\d+\s*min/.test(d) && !/>/.test(d);
-    if (active.duree === 'moyen') return /30|45|1h|1 h/.test(d);
-    if (active.duree === 'long')  return /\dh|heure/.test(d) && !/^[0-9]+\s*min/.test(d);
-    return true;
+    const durees = JSON.parse(card.dataset.duree ?? '[]');
+    return durees.includes(active.duree);
   }
 
-  function matchesMat(card: HTMLElement) {
-    if (active.mat === 'tous') return true;
-    const mat = normalize(card.dataset.mat ?? '');
-    if (active.mat === 'récup')   return /recup|reemploi|gratuit/.test(mat);
-    if (active.mat === 'kit')     return /kit|base/.test(mat);
-    if (active.mat === 'machine') return /laser|3d|cricut|broderie|machine/.test(mat);
-    return true;
+  function matchesDifficulte(card: HTMLElement) {
+    if (active.difficulte === 'tous') return true;
+    return card.dataset.difficulte === active.difficulte;
   }
 
   function matchesReuse(card: HTMLElement) {
@@ -250,7 +257,7 @@ const MAT_OPTIONS: DropdownOption[] = [
   function applyFilters() {
     let visible = 0;
     cards.forEach(card => {
-      const show = matchesPublic(card) && matchesDuree(card) && matchesMat(card) && matchesReuse(card) && matchesSearch(card);
+      const show = matchesPublic(card) && matchesDuree(card) && matchesDifficulte(card) && matchesReuse(card) && matchesSearch(card);
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -283,13 +290,14 @@ const MAT_OPTIONS: DropdownOption[] = [
     });
   });
 
-  // Dropdown Matériel — écouté via l'événement custom du composant FilterDropdown
-  document.addEventListener('dropdown:change', ((e: CustomEvent) => {
-    if (e.detail.id === 'filter-mat') {
-      active.mat = e.detail.value;
+  // Dropdown Difficulté
+  document.addEventListener('dropdown:change', (e: Event) => {
+    const { id, value } = (e as CustomEvent<{ id: string; value: string }>).detail;
+    if (id === 'filter-difficulte') {
+      active.difficulte = value;
       applyFilters();
     }
-  }) as EventListener);
+  });
 
   // Toggle réemploi
   const reuseBtn = document.getElementById('filter-reuse')!;

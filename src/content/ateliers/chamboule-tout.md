@@ -3,10 +3,9 @@ titre: Chamboule-tout
 accroche: "Le jeu d'adresse de kermesse : empiler, viser, faire tomber. Une fabrication courte qui se prête bien aux ateliers événementiels où les participants tournent vite."
 famille: kermesse
 classification: classique
-public: "Tout public · 4 ans+ · 8 ans+ en autonomie"
-duree: "20–30 min de fabrication"
-materiel: "Récup' · zéro machine"
-difficulte: "⭐ Débutant"
+public: [enfants, ados, adultes, famille]
+duree: [flux-ouvert, atelier]
+difficulte: debutant
 machines: [aucune]
 reemploi: true
 fiche_pdf: /assets/fiches-pedagogiques/chamboule-tout.pdf
@@ -18,9 +17,9 @@ steps:
     temps: "5 min"
     outils: ["9–12 boîtes", "Masking tape", "Chiffon"]
   - titre: "Décorer & numéroter"
-    corps: "Peindre ou habiller chaque boîte au feutre, à la peinture posca, ou avec du papier kraft. Numéroter de 1 à 9 — les chiffres servent au comptage des points et renforcent l'appropriation par les participants."
+    corps: "Peindre ou habiller chaque boîte au feutre, aux marqueurs acrylique (type Posca), ou avec du papier kraft. Numéroter de 1 à 9 — les chiffres servent au comptage des points et renforcent l'appropriation par les participants."
     temps: "8 min"
-    outils: ["Posca", "Papier kraft", "Colle"]
+    outils: ["Marqueurs acrylique (type Posca)", "Papier kraft", "Colle"]
   - titre: "Fabriquer les balles"
     corps: "Confectionner 3 balles de lancer en chaussettes roulées, lestées avec du riz, du sable ou des billes. Nouer fermement. La masse doit être suffisante pour renverser une pyramide de boîtes vides sans être dangereuse."
     temps: "5 min"
