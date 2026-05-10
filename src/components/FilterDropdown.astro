@@ -1,0 +1,232 @@
+---
+export interface DropdownOption {
+  value: string;
+  label: string;
+  desc: string;
+  icon: string;         // inner SVG elements (paths, etc.)
+  iconBg?: string;      // CSS value for icon background
+  iconBorder?: string;  // CSS value for icon border
+  iconColor?: string;   // CSS value for icon stroke color
+}
+
+interface Props {
+  id: string;
+  label: string;
+  options: DropdownOption[];
+}
+
+const { id, label, options } = Astro.props;
+---
+
+<div class="fd" data-dropdown-id={id}>
+  <button class="fd__trigger" aria-expanded="false" aria-haspopup="listbox">
+    <span class="fd__trigger-label">
+      <span class="fd__trigger-key">{label}</span>
+      <span class="fd__trigger-val"></span>
+    </span>
+    <svg class="fd__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="fd__panel" role="listbox" aria-label={`Filtrer par ${label.toLowerCase()}`} hidden>
+    <div class="fd__panel-tape" aria-hidden="true"></div>
+    <div class="fd__panel-head">
+      <span class="label-mono">Filtrer par {label.toLowerCase()}</span>
+    </div>
+
+    {options.map((opt, i) => (
+      <button
+        class:list={['fd__option', { 'fd__option--active': i === 0 }]}
+        data-value={opt.value}
+        data-option-label={opt.label}
+        role="option"
+        aria-selected={i === 0 ? 'true' : 'false'}
+        style={opt.iconBg
+          ? `--icon-bg:${opt.iconBg};--icon-border:${opt.iconBorder};--icon-color:${opt.iconColor}`
+          : undefined}
+      >
+        <span class:list={['fd__option-icon', { 'fd__option-icon--colored': !!opt.iconBg }]}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" set:html={opt.icon} />
+        </span>
+        <span class="fd__option-body">
+          <span class="fd__option-label">{opt.label}</span>
+          <span class="fd__option-desc">{opt.desc}</span>
+        </span>
+        <span class="fd__option-check" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12l5 5L20 7"/>
+          </svg>
+        </span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+.fd {
+  position: relative;
+  flex: none;
+  align-self: center;
+}
+
+.fd__trigger {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 10px 6px 14px;
+  background: var(--rm-paper); border: 1.5px solid var(--rm-kraft);
+  border-radius: 999px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 500;
+  color: var(--text-2); cursor: pointer; white-space: nowrap;
+  transition: background var(--dur), border-color var(--dur), color var(--dur);
+  height: 36px;
+}
+.fd__trigger:hover { background: var(--rm-cream-2); border-color: var(--rm-kraft-deep); }
+.fd__trigger--active { background: var(--rm-ink); color: var(--rm-cream); border-color: var(--rm-ink); }
+
+.fd__trigger-label { display: inline-flex; align-items: center; gap: 6px; }
+
+.fd__trigger-key {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--rm-kraft-deep); white-space: nowrap;
+}
+.fd__trigger--active .fd__trigger-key { color: rgba(251,245,233,.6); }
+
+.fd__trigger-val {
+  font-weight: 600; font-size: 13px;
+  color: var(--rm-orange);
+}
+.fd__trigger-val:empty { display: none; }
+
+.fd__chevron {
+  transition: transform 200ms var(--ease-out);
+  opacity: .55; flex: none;
+}
+.fd__chevron--open { transform: rotate(180deg); opacity: 1; }
+
+/* Panel */
+.fd__panel {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  min-width: 260px;
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft);
+  border-radius: var(--r-md);
+  box-shadow: 0 8px 22px rgba(42,33,24,.12), 0 4px 0 0 var(--rm-kraft-deep);
+  z-index: 40;
+  overflow: hidden;
+  animation: fdIn 160ms var(--ease-out);
+}
+@keyframes fdIn {
+  from { opacity: 0; transform: translateY(-4px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+.fd__panel-tape {
+  position: absolute; top: -7px; left: 16px;
+  width: 46px; height: 14px;
+  background: var(--rm-kraft-soft);
+  transform: rotate(-1.5deg);
+  border-radius: 2px; opacity: .9;
+  pointer-events: none;
+}
+
+.fd__panel-head {
+  padding: 16px 14px 8px;
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 4px;
+}
+
+.fd__option {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 10px 14px;
+  background: transparent; border: 0; cursor: pointer; text-align: left;
+  border-bottom: 1px solid var(--rm-cream-3);
+  transition: background var(--dur);
+}
+.fd__option:last-child { border-bottom: 0; }
+.fd__option:hover { background: var(--rm-cream-2); }
+.fd__option--active { background: var(--rm-cream-2); }
+
+.fd__option-icon {
+  flex: none; width: 32px; height: 32px;
+  border-radius: 9px;
+  background: var(--rm-cream-2); border: 1.5px solid var(--rm-kraft-soft);
+  display: grid; place-items: center;
+  color: var(--rm-kraft-deep);
+}
+.fd__option-icon--colored {
+  background: var(--icon-bg); border-color: var(--icon-border); color: var(--icon-color);
+}
+
+.fd__option-body { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+
+.fd__option-label {
+  font-family: var(--font-display); font-weight: 600; font-size: 14px;
+  color: var(--text); letter-spacing: -.01em;
+}
+
+.fd__option-desc {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .03em;
+  color: var(--text-3); line-height: 1.4;
+}
+
+.fd__option-check {
+  flex: none; color: var(--rm-moss);
+  display: none; place-items: center;
+}
+.fd__option--active .fd__option-check { display: grid; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.fd').forEach(wrapper => {
+    const dropId  = wrapper.dataset.dropdownId!;
+    const trigger = wrapper.querySelector<HTMLButtonElement>('.fd__trigger')!;
+    const panel   = wrapper.querySelector<HTMLElement>('.fd__panel')!;
+    const valEl   = wrapper.querySelector<HTMLElement>('.fd__trigger-val')!;
+    const firstVal = panel.querySelector<HTMLButtonElement>('[data-value]')?.dataset.value ?? '';
+
+    function setOpen(open: boolean) {
+      panel.hidden = !open;
+      trigger.setAttribute('aria-expanded', String(open));
+      trigger.querySelector('.fd__chevron')?.classList.toggle('fd__chevron--open', open);
+    }
+
+    trigger.addEventListener('click', () => setOpen(panel.hidden));
+
+    document.addEventListener('mousedown', e => {
+      if (!wrapper.contains(e.target as Node)) setOpen(false);
+    });
+
+    panel.querySelectorAll<HTMLButtonElement>('[data-value]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const value    = btn.dataset.value!;
+        const optLabel = btn.dataset.optionLabel ?? '';
+
+        if (value === firstVal) {
+          trigger.classList.remove('fd__trigger--active');
+          valEl.textContent = '';
+        } else {
+          trigger.classList.add('fd__trigger--active');
+          valEl.textContent = optLabel;
+        }
+
+        panel.querySelectorAll<HTMLButtonElement>('[data-value]').forEach(b => {
+          const on = b.dataset.value === value;
+          b.classList.toggle('fd__option--active', on);
+          b.setAttribute('aria-selected', String(on));
+        });
+
+        setOpen(false);
+
+        wrapper.dispatchEvent(new CustomEvent('dropdown:change', {
+          bubbles: true,
+          detail: { id: dropId, value },
+        }));
+      });
+    });
+  });
+</script>

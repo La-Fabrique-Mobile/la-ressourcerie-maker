@@ -69,7 +69,7 @@ la-ressourcerie-maker/
 |------|--------------|-------------|
 | Catalogue | `src/pages/catalogue.astro` | Grille d'ateliers avec filtres (public, durée, matériel) |
 | Fiche atelier | `src/pages/ateliers/[slug].astro` | Fiche complète : accroche, tableau "en un coup d'œil", étapes, déclinaisons |
-| Ressources | `src/pages/ressources/[slug].astro` | Pédagogie maker · Kit de base · Thématique réemploi |
+| Ressources | `src/pages/ressources/[slug].astro` | Pédagogie maker · Kit de base · Le réemploi |
 
 ---
 

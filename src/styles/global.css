@@ -426,7 +426,7 @@ p { margin: 0; text-wrap: pretty; }
 .search-bar__count { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); white-space: nowrap; }
 
 .filters {
-  display: flex; gap: 8px; padding: 14px 22px;
+  display: flex; gap: 8px; padding: 14px 0; margin: 0 22px;
   align-items: center; overflow-x: auto; scrollbar-width: none;
 }
 .filters::-webkit-scrollbar { display: none; }
@@ -455,36 +455,6 @@ p { margin: 0; text-wrap: pretty; }
 .filter-chip--active { background: var(--rm-ink); color: var(--rm-cream); }
 .filter-chip--active:hover { background: var(--rm-ink-2); }
 
-/* ---- Select Matériel ---- */
-.filter-select {
-  -webkit-appearance: none; appearance: none;
-  flex: none;
-  padding: 8px 34px 8px 16px;
-  border-radius: 999px;
-  background-color: var(--rm-paper);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23B89065' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 13px center;
-  border: 1.5px solid var(--rm-kraft);
-  font-family: var(--font-display); font-size: 12.5px; font-weight: 500;
-  color: var(--text-2); cursor: pointer; white-space: nowrap;
-  transition: border-color var(--dur), background-color var(--dur), color var(--dur);
-}
-.filter-select:hover { border-color: var(--rm-kraft-deep); background-color: var(--rm-cream-2); color: var(--text); }
-.filter-select:focus {
-  outline: none;
-  border-color: var(--rm-orange);
-  box-shadow: 0 0 0 3px rgba(232,97,26,.14);
-}
-.filter-select option {
-  background: var(--rm-paper);
-  color: var(--text);
-  font-weight: 500;
-}
-.filter-select option:checked {
-  background: var(--rm-ink);
-  color: var(--rm-cream);
-}
 
 /* ---- Toggle Réemploi (standalone) ---- */
 .filter-chip--reuse {
@@ -736,6 +706,29 @@ p { margin: 0; text-wrap: pretty; }
   content: ""; position: absolute; inset: 22px;
   border: 1.5px dashed rgba(251,245,233,.12); border-radius: 999px;
 }
+
+/* =============================================================
+   Suggested ateliers (universal pre-footer strip)
+   ============================================================= */
+.suggested {
+  background: var(--rm-cream-2);
+  border-top: 1px solid var(--border);
+  padding: 36px 22px 40px;
+}
+.suggested__inner { max-width: 1320px; margin: 0 auto; }
+.suggested__head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; gap: 12px;
+}
+.suggested__all {
+  font-size: 11px; text-decoration: underline;
+  text-decoration-thickness: 1px; text-underline-offset: 3px;
+  color: var(--text-3); white-space: nowrap;
+}
+.suggested__all:hover { color: var(--text); }
+.suggested__grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 540px) { .suggested__grid { grid-template-columns: 1fr 1fr; } }
+.wcard--soon { pointer-events: none; opacity: .5; }
 
 /* =============================================================
    Newsletter CTA strip (homepage)
@@ -1086,6 +1079,10 @@ p { margin: 0; text-wrap: pretty; }
   .workshop-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 0; }
   .wcard__title { font-size: 22px; }
   .wcard__hint { font-size: 14.5px; }
+
+  /* ---- Suggested ---- */
+  .suggested { padding: 56px 64px 64px; }
+  .suggested__grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
   /* ---- Resources ---- */
   .resources { padding: 32px 0; }

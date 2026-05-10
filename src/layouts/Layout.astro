@@ -1,11 +1,20 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import SuggestedAteliers from '../components/SuggestedAteliers.astro';
 
 interface Props {
   title: string;
   description?: string;
+  hideSuggestions?: boolean;
+  excludeSlug?: string;
 }
-const { title, description = "Fiches pédagogiques maker libres de droit pour MJC, centres sociaux et médiathèques. Propulsé par La Fabrique Mobile." } = Astro.props;
+const {
+  title,
+  description = "Fiches pédagogiques maker libres de droit pour MJC, centres sociaux et médiathèques. Propulsé par La Fabrique Mobile.",
+  hideSuggestions = true,
+  excludeSlug,
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="fr">
@@ -21,6 +30,8 @@ const { title, description = "Fiches pédagogiques maker libres de droit pour MJ
 <body>
   <div class="app">
     <slot />
+    {!hideSuggestions && <SuggestedAteliers exclude={excludeSlug} />}
+    <Footer />
   </div>
 </body>
 </html>

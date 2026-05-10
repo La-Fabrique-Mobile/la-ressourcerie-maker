@@ -2,17 +2,52 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Picto from '../components/Picto.astro';
+import FilterDropdown, { type DropdownOption } from '../components/FilterDropdown.astro';
 
 const ateliers = await getCollection('ateliers');
 const total = ateliers.length;
 
-// Valeurs pour les filtres
-const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
+const MAT_OPTIONS: DropdownOption[] = [
+  {
+    value: 'tous',
+    label: 'Tout matériel',
+    desc: 'Aucun filtre appliqué',
+    icon: '<path d="M4 5h16l-6 8v6l-4-2v-4z"/>',
+  },
+  {
+    value: 'récup',
+    label: "Récup'",
+    desc: 'Boîtes, tissu, papier — coût zéro',
+    icon: '<path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>',
+    iconBg: 'var(--rm-moss-soft)',
+    iconBorder: 'var(--rm-moss)',
+    iconColor: 'var(--rm-moss)',
+  },
+  {
+    value: 'kit',
+    label: 'Kit de base',
+    desc: 'Petit outillage · 20–50 €',
+    icon: '<path d="M5 9h14l-1 11H6z"/><path d="M9 9V6c0-1.7 1.3-3 3-3s3 1.3 3 3v3"/>',
+    iconBg: 'var(--rm-cream-2)',
+    iconBorder: 'var(--rm-kraft-soft)',
+    iconColor: 'var(--rm-kraft-deep)',
+  },
+  {
+    value: 'machine',
+    label: 'Machines',
+    desc: 'Découpe, broderie, impression…',
+    icon: '<path d="M14 4l6 6-3 3-2-2-7 7-3-3 7-7-2-2z"/>',
+    iconBg: '#F8DEC8',
+    iconBorder: 'var(--rm-terracotta-soft)',
+    iconColor: 'var(--rm-terracotta)',
+  },
+];
 ---
 <Layout
   title="Catalogue"
   description={`${total} fiches pédagogiques maker libres de droit — triez par public, durée ou matériel.`}
+  hideSuggestions={true}
 >
   <Nav current="catalogue" />
 
@@ -62,12 +97,7 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
         <button class="filter-chip" data-filter="duree" data-value="long">&gt; 1 h</button>
       </div>
 
-      <select class="filter-select" id="filter-mat" aria-label="Matériel">
-        <option value="tous">Tout matériel</option>
-        <option value="récup">Récup</option>
-        <option value="kit">Kit</option>
-        <option value="machine">Machine</option>
-      </select>
+      <FilterDropdown id="filter-mat" label="Matériel" options={MAT_OPTIONS} />
 
       <button class="filter-chip filter-chip--reuse" id="filter-reuse" aria-pressed="false">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -103,8 +133,8 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
               <div class={`wcard__media ph-photo ${famille === 'carton' || famille === 'kermesse' ? '' : famille === 'mediation' || famille === 'beaverbot' ? 'ph-photo--moss' : 'ph-photo--terracotta'}`}>
                 <div class="wcard__badges">
                   {classification === 'classique'
-                    ? <span class="badge badge--classique"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l1.5 1.1 1.8-.5.8 1.7 1.85.3.05 1.85 1.5 1.1-.7 1.7.7 1.7-1.5 1.1-.05 1.85-1.85.3-.8 1.7-1.8-.5L12 16.8l-1.5-1.1-1.8.5-.8-1.7-1.85-.3-.05-1.85L4.5 11.25l.7-1.7-.7-1.7L6 6.75l.05-1.85L7.9 4.6l.8-1.7 1.8.5L12 3.2z"/><path d="M12 7.4l1 2 2.2.3-1.6 1.55.4 2.2L12 12.4l-2 1.05.4-2.2L8.8 9.7 11 9.4l1-2z"/><path d="M9 18.5l-1.5 3 2-.3.7 1.8 1.8-3.6"/><path d="M15 18.5l1.5 3-2-.3-.7 1.8-1.8-3.6"/></svg>Classique</span>
-                    : <span class="badge badge--original"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c.4 3.4 1.8 4.8 5.2 5.2-3.4.4-4.8 1.8-5.2 5.2-.4-3.4-1.8-4.8-5.2-5.2 3.4-.4 4.8-1.8 5.2-5.2z"/><path d="M5.5 17c.2 1.5.9 2.2 2.4 2.4-1.5.2-2.2.9-2.4 2.4-.2-1.5-.9-2.2-2.4-2.4 1.5-.2 2.2-.9 2.4-2.4z"/><path d="M18 15.5c.2 1.6 1 2.4 2.6 2.6-1.6.2-2.4 1-2.6 2.6-.2-1.6-1-2.4-2.6-2.6 1.6-.2 2.4-1 2.6-2.6z"/></svg>Original</span>
+                    ? <span class="badge badge--classique"><Picto name="classique" size={14} />Classique</span>
+                    : <span class="badge badge--original"><Picto name="original" size={14} />Original</span>
                   }
                 </div>
                 {reemploi && (
@@ -156,7 +186,6 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
 
   </main>
 
-  <Footer />
 </Layout>
 
 <script>
@@ -165,8 +194,6 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
   const countEl = document.getElementById('search-count')!;
   const cards = Array.from(grid.querySelectorAll<HTMLElement>('.wcard'));
   const total = cards.length;
-
-  const selMat = document.getElementById('filter-mat') as HTMLSelectElement;
 
   // Filtre state
   const active: Record<string, string> = { public: 'tous', duree: 'tous', mat: 'tous' };
@@ -200,7 +227,7 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
   function matchesMat(card: HTMLElement) {
     if (active.mat === 'tous') return true;
     const mat = normalize(card.dataset.mat ?? '');
-    if (active.mat === 'récup')   return /récup|reemploi|gratuit|0/.test(mat);
+    if (active.mat === 'récup')   return /recup|reemploi|gratuit/.test(mat);
     if (active.mat === 'kit')     return /kit|base/.test(mat);
     if (active.mat === 'machine') return /laser|3d|cricut|broderie|machine/.test(mat);
     return true;
@@ -256,8 +283,13 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
     });
   });
 
-  // Select Matériel
-  selMat.addEventListener('change', () => { active.mat = selMat.value; applyFilters(); });
+  // Dropdown Matériel — écouté via l'événement custom du composant FilterDropdown
+  document.addEventListener('dropdown:change', ((e: CustomEvent) => {
+    if (e.detail.id === 'filter-mat') {
+      active.mat = e.detail.value;
+      applyFilters();
+    }
+  }) as EventListener);
 
   // Toggle réemploi
   const reuseBtn = document.getElementById('filter-reuse')!;

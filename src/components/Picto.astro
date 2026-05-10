@@ -1,0 +1,122 @@
+---
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+const { name, size = 20, class: className } = Astro.props;
+
+const pictos: Record<string, { vb?: string; sw?: string; paths: string }> = {
+  logo: {
+    vb: '0 0 32 32', sw: '2',
+    paths: `<path d="M5 27V7h7c2.5 0 4 1.7 4 4 0 2.3-1.5 4-4 4H5"/><path d="M12 15l5 12"/><path d="M21 27v-7l3 7 3-7v7"/>`,
+  },
+  menu: {
+    paths: `<path d="M4 7h16M4 12h16M4 17h10"/>`,
+  },
+  close: {
+    paths: `<path d="M6 6l12 12M18 6L6 18"/>`,
+  },
+  arrow: {
+    paths: `<path d="M5 12h14M13 5l7 7-7 7"/>`,
+  },
+  back: {
+    paths: `<path d="M19 12H5M11 5l-7 7 7 7"/>`,
+  },
+  search: {
+    paths: `<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>`,
+  },
+  seed: {
+    sw: '1.6',
+    paths: `<path d="M12 4c-3.5 2-5.5 5.5-5.5 9 0 4 3 7 5.5 7s5.5-3 5.5-7c0-3.5-2-7-5.5-9z"/><path d="M12 8v10" stroke-dasharray="1 3"/>`,
+  },
+  leaf: {
+    sw: '1.6',
+    paths: `<path d="M5 19c2-9 8-14 15-14-1 9-6 15-15 14z"/><path d="M5 19l9-9"/>`,
+  },
+  star: {
+    sw: '1.6',
+    paths: `<path d="M12 4l2.4 5.2L20 10l-4.2 4 1.2 5.8L12 17l-5 2.8L8.2 14 4 10l5.6-.8L12 4z"/>`,
+  },
+  recycle: {
+    sw: '1.6',
+    paths: `<path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/><path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/><path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>`,
+  },
+  box: {
+    sw: '1.6',
+    paths: `<path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4M20 8l-8 4M12 12v9"/>`,
+  },
+  tool: {
+    sw: '1.6',
+    paths: `<path d="M14 4l6 6-3 3-2-2-7 7-3-3 7-7-2-2z"/>`,
+  },
+  bulb: {
+    sw: '1.6',
+    paths: `<path d="M9 17h6M10 20h4"/><path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>`,
+  },
+  people: {
+    sw: '1.6',
+    paths: `<circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>`,
+  },
+  clock: {
+    sw: '1.6',
+    paths: `<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>`,
+  },
+  level: {
+    sw: '1.6',
+    paths: `<rect x="3" y="14" width="4" height="6" rx="1"/><rect x="10" y="9" width="4" height="11" rx="1"/><rect x="17" y="4" width="4" height="16" rx="1"/>`,
+  },
+  bag: {
+    sw: '1.6',
+    paths: `<path d="M5 9h14l-1 11H6z"/><path d="M9 9V6c0-1.7 1.3-3 3-3s3 1.3 3 3v3"/>`,
+  },
+  filter: {
+    sw: '1.6',
+    paths: `<path d="M4 5h16l-6 8v6l-4-2v-4z"/>`,
+  },
+  download: {
+    sw: '1.7',
+    paths: `<path d="M12 4v12M6 11l6 6 6-6M4 20h16"/>`,
+  },
+  printer: {
+    sw: '1.7',
+    paths: `<path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><rect x="7" y="14" width="10" height="6"/>`,
+  },
+  heart: {
+    sw: '1.7',
+    paths: `<path d="M12 20s-7-4.5-7-10c0-2.7 2-4.5 4.3-4.5 1.5 0 2.7 1 2.7 1s1.2-1 2.7-1C17 5.5 19 7.3 19 10c0 5.5-7 10-7 10z"/>`,
+  },
+  share: {
+    sw: '1.7',
+    paths: `<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 11l8-4M8 13l8 4"/>`,
+  },
+  classique: {
+    sw: '1.4',
+    paths: `<path d="M12 3.2l1.5 1.1 1.8-.5.8 1.7 1.85.3.05 1.85 1.5 1.1-.7 1.7.7 1.7-1.5 1.1-.05 1.85-1.85.3-.8 1.7-1.8-.5L12 16.8l-1.5-1.1-1.8.5-.8-1.7-1.85-.3-.05-1.85L4.5 11.25l.7-1.7-.7-1.7L6 6.75l.05-1.85L7.9 4.6l.8-1.7 1.8.5L12 3.2z"/><path d="M12 7.4l1 2 2.2.3-1.6 1.55.4 2.2L12 12.4l-2 1.05.4-2.2L8.8 9.7 11 9.4l1-2z"/><path d="M9 18.5l-1.5 3 2-.3.7 1.8 1.8-3.6"/><path d="M15 18.5l1.5 3-2-.3-.7 1.8-1.8-3.6"/>`,
+  },
+  original: {
+    sw: '1.5',
+    paths: `<path d="M12 3.5c.4 3.4 1.8 4.8 5.2 5.2-3.4.4-4.8 1.8-5.2 5.2-.4-3.4-1.8-4.8-5.2-5.2 3.4-.4 4.8-1.8 5.2-5.2z"/><path d="M5.5 17c.2 1.5.9 2.2 2.4 2.4-1.5.2-2.2.9-2.4 2.4-.2-1.5-.9-2.2-2.4-2.4 1.5-.2 2.2-.9 2.4-2.4z"/><path d="M18 15.5c.2 1.6 1 2.4 2.6 2.6-1.6.2-2.4 1-2.6 2.6-.2-1.6-1-2.4-2.6-2.6 1.6-.2 2.4-1 2.6-2.6z"/>`,
+  },
+  check: {
+    paths: `<path d="M5 12l5 5L20 7"/>`,
+  },
+};
+
+const p = pictos[name];
+---
+{p && (
+  <svg
+    width={size}
+    height={size}
+    viewBox={p.vb ?? '0 0 24 24'}
+    fill="none"
+    stroke="currentColor"
+    stroke-width={p.sw ?? '2'}
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    class={className}
+    set:html={p.paths}
+  />
+)}

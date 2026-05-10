@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import Picto from './Picto.astro';
+
+interface Props {
+  exclude?: string;
+}
+const { exclude } = Astro.props;
+
+const MOIS_CTX = [
+  { saison: 'hiver',     occasions: ['intergenerationnel'] },
+  { saison: 'hiver',     occasions: ['intergenerationnel'] },
+  { saison: 'printemps', occasions: ['stem'] },
+  { saison: 'printemps', occasions: ['paques', 'fetes'] },
+  { saison: 'printemps', occasions: ['fetes', 'kermesse'] },
+  { saison: 'été',       occasions: ['kermesse', 'fetes', 'reemploi'] },
+  { saison: 'été',       occasions: ['kermesse'] },
+  { saison: 'été',       occasions: ['kermesse'] },
+  { saison: 'automne',   occasions: ['reemploi'] },
+  { saison: 'automne',   occasions: ['halloween'] },
+  { saison: 'automne',   occasions: ['reemploi'] },
+  { saison: 'hiver',     occasions: ['noel'] },
+] as const;
+
+const now = new Date();
+const ctx = MOIS_CTX[now.getMonth()];
+
+const all = await getCollection('ateliers');
+const pool = all.filter(a => a.slug !== exclude);
+
+const scored = pool
+  .map(a => {
+    let score = 0;
+    if (a.data.saisons?.includes(ctx.saison as never)) score += 2;
+    if (a.data.occasions?.some(o => (ctx.occasions as readonly string[]).includes(o))) score += 3;
+    return { a, score };
+  })
+  .sort((x, y) => y.score - x.score);
+
+const selection = scored.slice(0, 3).map(x => x.a);
+const NEEDED = 3;
+
+const FAMILLE_CLASS: Record<string, string> = {
+  mediation: 'ph-photo--moss', beaverbot: 'ph-photo--moss',
+  machines: 'ph-photo--terracotta',
+};
+---
+
+<section class="suggested">
+  <div class="suggested__inner">
+    <div class="suggested__head">
+      <span class="section-eyebrow">À essayer</span>
+      <a class="suggested__all label-mono" href="/catalogue">Tout le catalogue</a>
+    </div>
+    <div class="suggested__grid">
+      {selection.map(atelier => (
+        <a class="wcard" href={`/ateliers/${atelier.slug}`}>
+          <div class={`wcard__media ph-photo ${FAMILLE_CLASS[atelier.data.famille] ?? ''}`}>
+            <div class="wcard__badges">
+              <span class={`badge badge--${atelier.data.classification}`}>
+                <Picto name={atelier.data.classification} size={14} />
+                {atelier.data.classification === 'classique' ? 'Classique' : 'Original'}
+              </span>
+            </div>
+            {atelier.data.reemploi && (
+              <div class="wcard__reuse">
+                <span class="tag tag--reuse">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                    <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                    <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+                  </svg>
+                  Réemploi
+                </span>
+              </div>
+            )}
+            <span class="ph-photo__caption">{atelier.data.famille}</span>
+          </div>
+          <div class="wcard__body">
+            <h3 class="wcard__title">{atelier.data.titre}</h3>
+            <p class="wcard__hint">{atelier.data.accroche}</p>
+            <div class="wcard__tags">
+              <span class="tag tag--public">{atelier.data.public}</span>
+              <span class="tag tag--time">{atelier.data.duree}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+      {Array.from({ length: Math.max(0, NEEDED - selection.length) }).map(() => (
+        <div class="wcard wcard--soon">
+          <div class="wcard__media ph-photo">
+            <span class="ph-photo__caption">bientôt</span>
+          </div>
+          <div class="wcard__body">
+            <p class="wcard__title" style="color:var(--text-3)">Bientôt</p>
+            <p class="wcard__hint">Un nouvel atelier arrive prochainement.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
