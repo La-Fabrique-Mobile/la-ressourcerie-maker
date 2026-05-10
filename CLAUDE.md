@@ -91,6 +91,45 @@ la-ressourcerie-maker/
 
 ---
 
+## Sélection de la une — "Ateliers à essayer"
+
+La homepage affiche 3 ateliers sélectionnés automatiquement **au moment du build** (pas de JS runtime). La logique est dans `src/pages/index.astro`.
+
+### Champs frontmatter requis sur chaque atelier
+
+```yaml
+saisons: [printemps, été]   # printemps | été | automne | hiver  (tableau, plusieurs valeurs possibles)
+occasions: [kermesse, fetes] # kermesse | fetes | halloween | noel | paques | stem | reemploi | intergenerationnel
+```
+
+### Mapping mois → saison + occasions prioritaires
+
+| Mois | Saison | Occasions |
+|------|--------|-----------|
+| Janvier | hiver | intergenerationnel |
+| Février | hiver | intergenerationnel |
+| Mars | printemps | stem |
+| Avril | printemps | paques, fetes |
+| Mai | printemps | fetes, kermesse |
+| Juin | été | kermesse, fetes, reemploi |
+| Juillet | été | kermesse |
+| Août | été | kermesse |
+| Septembre | automne | reemploi |
+| Octobre | automne | halloween |
+| Novembre | automne | reemploi |
+| Décembre | hiver | noel |
+
+### Scoring (trié desc, fallback sur les derniers ajoutés)
+
+- `saisons` contient la saison courante → +2 pts
+- `occasions` contient une occasion courante → +3 pts
+
+### Règle de fallback
+
+Si moins de 3 ateliers scorent > 0, compléter avec les ateliers restants dans l'ordre du catalogue. Si le catalogue a moins de 3 ateliers, afficher des cartes "Bientôt" pour les emplacements vides.
+
+---
+
 ## Conventions
 
 - **`public/styles/global.css` doit rester synchronisé** avec `src/styles/global.css` — copier manuellement après chaque modification CSS.

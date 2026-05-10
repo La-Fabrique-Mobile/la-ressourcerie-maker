@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Newsletter — La plateforme qui vient à vous"
+  description="Chaque mois : les nouveaux ateliers de la Ressourcerie Maker, un angle saisonnier et une ressource pédagogique. Gratuit, pour les animateurs maker."
+>
+  <Nav />
+
+  <main>
+
+    <!-- HERO -->
+    <section class="nl-hero">
+      <div class="nl-hero__inner">
+        <div class="nl-hero__eyebrow">Newsletter · mensuelle · gratuite</div>
+        <h1 class="nl-hero__title">La plateforme<br>qui vient à <em>vous</em>.</h1>
+        <p class="nl-hero__lead">Chaque mois, les nouveaux ateliers mis en avant, un angle saisonnier et une ressource pédagogique. La vitrine éditoriale de la Ressourcerie Maker — directement dans votre boîte.</p>
+        <div class="nl-hero__meta">
+          <span class="nl-hero__badge">Mensuelle</span>
+          <span class="nl-hero__badge">Gratuite</span>
+          <span class="nl-hero__badge">Sans spam</span>
+          <span class="nl-hero__badge">CC BY-SA · libre</span>
+        </div>
+        <a class="btn btn--accent" href="#inscription">
+          S'inscrire à la newsletter
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="nl-hero__decor" aria-hidden="true"></div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="nl-benefits">
+      <div class="nl-benefits__head">
+        <span class="section-eyebrow">Ce que vous recevez</span>
+        <h2 style="margin-top:8px">4 rubriques, chaque mois</h2>
+      </div>
+      <div class="nl-benefits__grid">
+
+        <div class="nl-benefit">
+          <div class="nl-benefit__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </div>
+          <div>
+            <div class="nl-benefit__title">Nouveautés de la plateforme</div>
+            <p class="nl-benefit__desc">Les fiches récemment ajoutées, avec l'essentiel pour les déployer dans votre structure dès ce mois. Rien à chercher — elles viennent à vous.</p>
+          </div>
+        </div>
+
+        <div class="nl-benefit nl-benefit--terra">
+          <div class="nl-benefit__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </div>
+          <div>
+            <div class="nl-benefit__title">Focus atelier</div>
+            <p class="nl-benefit__desc">Une fiche du catalogue revisitée en profondeur : variantes selon le public, conditions terrain, ce qui accroche et ce qui coince.</p>
+          </div>
+        </div>
+
+        <div class="nl-benefit nl-benefit--moss">
+          <div class="nl-benefit__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <div class="nl-benefit__title">Angle saisonnier</div>
+            <p class="nl-benefit__desc">Kermesse en mai, rentrée en septembre, cadeaux en décembre. Chaque édition suit le calendrier de l'animation maker pour vous donner les bons outils au bon moment.</p>
+          </div>
+        </div>
+
+        <div class="nl-benefit nl-benefit--ink">
+          <div class="nl-benefit__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 17h6M10 20h4"/>
+              <path d="M8 13c-1.5-1.3-2.5-3-2.5-5C5.5 4.5 8.4 2 12 2s6.5 2.5 6.5 6c0 2-1 3.7-2.5 5v3h-8v-3z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="nl-benefit__title">Ressource mise en lumière</div>
+            <p class="nl-benefit__desc">Un dossier de la plateforme remis en contexte — pédagogie maker, kit de base, réemploi — pour outiller votre posture d'animateur au-delà de la fiche.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CYCLE SAISONNIER -->
+    <section class="nl-preview">
+      <div class="nl-preview__inner">
+        <div class="nl-preview__head">
+          <span class="section-eyebrow">Calendrier éditorial</span>
+          <h2 style="margin-top:8px;font-size:24px">Un angle par mois,<br>calé sur la saison.</h2>
+          <p style="font-size:14px;color:var(--text-2);margin-top:10px;line-height:1.55">Chaque édition suit la saisonnalité de l'animation maker. Les bons ateliers, au bon moment.</p>
+        </div>
+        <div class="nl-preview__list">
+
+          <div class="nl-preview-item">
+            <div class="nl-preview-item__num">Mai</div>
+            <div>
+              <div class="nl-preview-item__label">Kermesse maker</div>
+              <div class="nl-preview-item__title">Jeux d'adresse, circuits ouverts, animations de rue</div>
+              <div class="nl-preview-item__desc">Chamboule-tout, courses de billes, structures gonflables — les ateliers de 20 min pour des stands.</div>
+            </div>
+          </div>
+
+          <div class="nl-preview-item">
+            <div class="nl-preview-item__num">Sep</div>
+            <div>
+              <div class="nl-preview-item__label">Rentrée</div>
+              <div class="nl-preview-item__title">Premiers ateliers pour une nouvelle saison</div>
+              <div class="nl-preview-item__desc">Accrocher un groupe en MJC ou centre social — formats courts, peu de matériel, fort impact.</div>
+            </div>
+          </div>
+
+          <div class="nl-preview-item">
+            <div class="nl-preview-item__num">Nov</div>
+            <div>
+              <div class="nl-preview-item__label">Semaine de la science</div>
+              <div class="nl-preview-item__title">STEM, médiation, démarche expérimentale</div>
+              <div class="nl-preview-item__desc">Ateliers qui posent des questions sans donner les réponses — la pédagogie du faire appliquée aux sciences.</div>
+            </div>
+          </div>
+
+          <div class="nl-preview-item">
+            <div class="nl-preview-item__num">Déc</div>
+            <div>
+              <div class="nl-preview-item__label">Festif &amp; réemploi</div>
+              <div class="nl-preview-item__title">Cadeaux faits main et ateliers de fin d'année</div>
+              <div class="nl-preview-item__desc">Ce qui se fabrique vite, se offre bien et se fait avec des récupérations de l'année.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="nl-form-section" id="inscription">
+      <div class="nl-form-section__head">
+        <span class="section-eyebrow">Inscription</span>
+        <h2 style="margin-top:8px">Suivre la plateforme</h2>
+        <p class="nl-form-section__lead">Gratuit, sans engagement. Chaque édition est produite à partir des contenus de la plateforme et validée par l'équipe terrain avant envoi.</p>
+      </div>
+
+      <div class="nl-form" aria-label="Formulaire d'inscription newsletter — bientôt disponible">
+        <div class="nl-form__soon-tag" aria-live="polite">Ouverture bientôt · en cours de mise en place</div>
+        <div class="nl-form__fields">
+          <div class="nl-form__field">
+            <label class="nl-form__label" for="nl-prenom">Prénom</label>
+            <input class="nl-form__input" id="nl-prenom" type="text" placeholder="Marie" disabled aria-disabled="true">
+          </div>
+          <div class="nl-form__field">
+            <label class="nl-form__label" for="nl-email">Email</label>
+            <input class="nl-form__input" id="nl-email" type="email" placeholder="marie@mjc-example.fr" disabled aria-disabled="true">
+          </div>
+          <div class="nl-form__field nl-form__field--full">
+            <label class="nl-form__label" for="nl-structure">
+              Structure
+              <span style="opacity:.5;font-weight:400;text-transform:none;letter-spacing:0"> (facultatif)</span>
+            </label>
+            <input class="nl-form__input" id="nl-structure" type="text" placeholder="MJC, médiathèque, centre social, indépendant…" disabled aria-disabled="true">
+          </div>
+        </div>
+        <button class="btn btn--accent nl-form__submit" type="button" disabled aria-disabled="true">
+          Inscription bientôt ouverte
+        </button>
+        <p class="nl-form__footnote">
+          En cours de mise en place — laissez-nous quelques semaines.<br>
+          D'ici là, tous les contenus sont en accès libre sur la plateforme.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

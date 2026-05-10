@@ -10,6 +10,8 @@ niveau: "⭐ Débutant · dès 8 ans en autonomie"
 machines: [aucune]
 reemploi: true
 fiche_pdf: /assets/fiches-pedagogiques/chamboule-tout.pdf
+saisons: [printemps, été]
+occasions: [kermesse, fetes]
 steps:
   - titre: "Préparer les boîtes"
     corps: "Récupérer 9 à 12 boîtes de conserve vides, rincées et séchées (ou des boîtes carton uniformes). Inspecter les bords : une boîte mal ouverte peut être coupante — couvrir les arêtes de masking tape si besoin."

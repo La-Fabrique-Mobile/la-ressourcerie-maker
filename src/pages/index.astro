@@ -2,6 +2,53 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// --- Sélection saisonnière (build-time) ---
+const MOIS_CTX = [
+  { saison: 'hiver',     occasions: ['intergenerationnel'],            label: 'Janvier'   },
+  { saison: 'hiver',     occasions: ['intergenerationnel'],            label: 'Février'   },
+  { saison: 'printemps', occasions: ['stem'],                          label: 'Mars'      },
+  { saison: 'printemps', occasions: ['paques', 'fetes'],               label: 'Avril'     },
+  { saison: 'printemps', occasions: ['fetes', 'kermesse'],             label: 'Mai'       },
+  { saison: 'été',       occasions: ['kermesse', 'fetes', 'reemploi'], label: 'Juin'      },
+  { saison: 'été',       occasions: ['kermesse'],                      label: 'Juillet'   },
+  { saison: 'été',       occasions: ['kermesse'],                      label: 'Août'      },
+  { saison: 'automne',   occasions: ['reemploi'],                      label: 'Septembre' },
+  { saison: 'automne',   occasions: ['halloween'],                     label: 'Octobre'   },
+  { saison: 'automne',   occasions: ['reemploi'],                      label: 'Novembre'  },
+  { saison: 'hiver',     occasions: ['noel'],                          label: 'Décembre'  },
+] as const;
+
+const ctx = MOIS_CTX[new Date().getMonth()];
+const tousAteliers = await getCollection('ateliers');
+
+const scored = tousAteliers.map(a => {
+  let score = 0;
+  if (a.data.saisons?.includes(ctx.saison as any)) score += 2;
+  if (a.data.occasions?.some(o => (ctx.occasions as readonly string[]).includes(o))) score += 3;
+  return { a, score };
+}).sort((x, y) => y.score - x.score);
+
+const selection = scored.slice(0, 3).map(s => s.a);
+const nbPlaceholders = Math.max(0, 3 - selection.length);
+
+const FAMILLE_CLASS: Record<string, string> = {
+  kermesse: '',
+  carton: '',
+  machines: 'ph-photo--moss',
+  mediation: 'ph-photo--moss',
+  beaverbot: 'ph-photo--moss',
+};
+const FAMILLE_LABEL: Record<string, string> = {
+  kermesse: 'jeu · kermesse',
+  carton: 'construction carton',
+  machines: 'fabrication numérique',
+  mediation: 'médiation',
+  beaverbot: 'beaverbot',
+};
+const publicCourt = (p: string) => p.split(' · ')[0];
+const dureeCourte = (d: string) => d.split(' de ')[0];
 ---
 <Layout title="Tous les outils pour animer des ateliers maker">
   <Nav current="home" />
@@ -84,78 +131,71 @@ import Footer from '../components/Footer.astro';
     <section class="section">
       <div class="section__head">
         <div>
-          <span class="section-eyebrow">Sélection</span>
+          <span class="section-eyebrow">Sélection · {ctx.label}</span>
           <h2 style="margin-top:8px">Ateliers à essayer</h2>
         </div>
         <a href="/catalogue">Tout voir →</a>
       </div>
 
       <div class="workshop-grid">
-        <a class="wcard" href="/ateliers/chamboule-tout">
-          <div class="wcard__media ph-photo">
-            <div class="wcard__badges">
-              <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
+        {selection.map(atelier => (
+          <a class="wcard" href={`/ateliers/${atelier.slug}`}>
+            <div class={`wcard__media ph-photo ${FAMILLE_CLASS[atelier.data.famille] ?? ''}`}>
+              <div class="wcard__badges">
+                <span class={`badge badge--${atelier.data.classification}`}>
+                  <span class="badge__dot"></span>
+                  {atelier.data.classification === 'classique' ? 'Classique' : 'Original'}
+                </span>
+              </div>
+              {atelier.data.reemploi && (
+                <div class="wcard__reuse">
+                  <span class="tag tag--reuse">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
+                      <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
+                      <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
+                    </svg>
+                    Réemploi
+                  </span>
+                </div>
+              )}
+              <span class="ph-photo__caption">{FAMILLE_LABEL[atelier.data.famille] ?? atelier.data.famille}</span>
             </div>
-            <div class="wcard__reuse">
-              <span class="tag tag--reuse">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M7 13L4 18h7"/><path d="M11 18l-2-2"/>
-                  <path d="M17 13l3 5h-7"/><path d="M13 18l2-2"/>
-                  <path d="M14 7L11 5 8 7"/><path d="M11 5v6"/>
-                </svg>
-                Réemploi
-              </span>
+            <div class="wcard__body">
+              <h3 class="wcard__title">{atelier.data.titre}</h3>
+              <p class="wcard__hint">{atelier.data.accroche}</p>
+              <div class="wcard__tags">
+                <span class="tag tag--public">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                    <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
+                  </svg>
+                  {publicCourt(atelier.data.public)}
+                </span>
+                <span class="tag tag--time">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
+                  </svg>
+                  {dureeCourte(atelier.data.duree)}
+                </span>
+              </div>
             </div>
-            <span class="ph-photo__caption">jeu d'adresse</span>
-          </div>
-          <div class="wcard__body">
-            <h3 class="wcard__title">Chamboule-tout</h3>
-            <p class="wcard__hint">Boîtes empilées, balles lestées : un classique de kermesse à fabriquer en 20 minutes.</p>
-            <div class="wcard__tags">
-              <span class="tag tag--public">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-                  <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
-                </svg>
-                Tout public
-              </span>
-              <span class="tag tag--time">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
-                </svg>
-                20 min
-              </span>
-            </div>
-          </div>
-        </a>
+          </a>
+        ))}
 
-        <a class="wcard" href="/ateliers/lampe-conduction">
-          <div class="wcard__media ph-photo ph-photo--moss">
-            <div class="wcard__badges">
-              <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+        {Array.from({ length: nbPlaceholders }).map(() => (
+          <div class="wcard wcard--soon">
+            <div class="wcard__media ph-photo ph-photo--muted">
+              <div class="wcard__badges">
+                <span class="badge badge--soon">Bientôt</span>
+              </div>
             </div>
-            <span class="ph-photo__caption">électronique douce</span>
-          </div>
-          <div class="wcard__body">
-            <h3 class="wcard__title">Lampe à conduction</h3>
-            <p class="wcard__hint">Une LED, du papier alu, une pile bouton. La lumière comme prétexte pour parler de circuits.</p>
-            <div class="wcard__tags">
-              <span class="tag tag--public">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="9" cy="9" r="3"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-                  <circle cx="17" cy="7" r="2.5"/><path d="M14 14c2.7 0 6 1.7 6 5"/>
-                </svg>
-                8–12 ans
-              </span>
-              <span class="tag tag--time">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.5"/>
-                </svg>
-                45 min
-              </span>
+            <div class="wcard__body">
+              <p class="wcard__title" style="color:var(--text-3)">Prochain atelier</p>
+              <p class="wcard__hint" style="color:var(--text-3)">De nouveaux ateliers arrivent bientôt dans le catalogue.</p>
             </div>
           </div>
-        </a>
+        ))}
       </div>
     </section>
 
@@ -213,7 +253,52 @@ import Footer from '../components/Footer.astro';
       </div>
       </div>
     </section>
+    <!-- NEWSLETTER CTA -->
+    <section class="newsletter-cta">
+      <div class="newsletter-cta__inner">
+        <div class="newsletter-cta__content">
+          <div class="newsletter-cta__eyebrow">Newsletter · mensuelle · gratuite</div>
+          <h2 class="newsletter-cta__title">La plateforme<br>qui vient à vous.</h2>
+          <p class="newsletter-cta__desc">Nouveaux ateliers, angle saisonnier et ressource pédagogique — chaque mois, sans avoir à chercher.</p>
+          <div class="newsletter-cta__perks">
+            <span class="newsletter-cta__perk">Angle saisonnier</span>
+            <span class="newsletter-cta__perk">Nouveaux ateliers</span>
+            <span class="newsletter-cta__perk">Ressource pédago</span>
+            <span class="newsletter-cta__perk">Gratuit</span>
+          </div>
+        </div>
+        <div class="newsletter-cta__actions">
+          <a class="btn btn--nl" href="/newsletter">
+            S'inscrire
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <p class="newsletter-cta__note">Gratuit · résiliable à tout moment</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+.wcard--soon {
+  pointer-events: none;
+  cursor: default;
+}
+.ph-photo--muted {
+  background: var(--rm-cream-2);
+  background-image: none;
+}
+.badge--soon {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px dashed var(--rm-kraft);
+  background: transparent;
+  color: var(--text-3);
+}
+</style>

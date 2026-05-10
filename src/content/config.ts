@@ -25,6 +25,8 @@ const ateliers = defineCollection({
       titre: z.string(),
       corps: z.string(),
     })).optional(),
+    saisons: z.array(z.enum(['printemps', 'été', 'automne', 'hiver'])).optional(),
+    occasions: z.array(z.string()).optional(),
   }),
 });
 

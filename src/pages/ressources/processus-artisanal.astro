@@ -1,0 +1,720 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Processus artisanal — La Ressourcerie Maker"
+  description="Les 5 étapes qui transforment un matériau brut en objet fini : Concevoir, Tracer, Découper, Assembler, Finir. Organisation de l'espace et progression par format."
+>
+  <Nav current="ressources" />
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="pa-hero">
+      <a class="pa-back" href="/ressources/pedagogie-maker">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Pédagogie maker
+      </a>
+      <div class="pa-hero__tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 2l1 4-2 5 6 1 1 10 5-8 4 2-2-7 5-3-7-2z"/>
+        </svg>
+        Approche pédagogique
+      </div>
+      <h1 class="pa-hero__title">Processus artisanal</h1>
+      <p class="pa-hero__lead">La séquence de gestes qui transforme un matériau brut en objet fini. Nommer les étapes aide les participants à se situer, à anticiper, à surmonter les blocages. Ce n'est pas une contrainte — c'est un cadre qui libère.</p>
+      <div class="pa-hero__pills">
+        <span>Toutes durées</span>
+        <span>Dès 4 ans avec adaptation</span>
+        <span>5 étapes</span>
+        <span>4 zones atelier</span>
+      </div>
+    </section>
+
+    <!-- LES 5 ÉTAPES -->
+    <section class="section">
+      <span class="section-eyebrow">Séquence</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Les 5 étapes</h2>
+      <p class="pa-intro-text">Chaque étape peut être enseignée et évaluée séparément. Pour les formats courts, on compresse les premières étapes — mais on ne supprime jamais l'assemblage à sec.</p>
+
+      <div class="pa-steps">
+
+        <div class="pa-step">
+          <div class="pa-step__header">
+            <div class="pa-step__num">1</div>
+            <h3>Concevoir</h3>
+            <span class="pa-step__tag">Avant de toucher le matériau</span>
+          </div>
+          <p>Penser et décider. Qu'est-ce qu'on veut faire ? Comment ça va tenir ? Quelles pièces ? Dans quel ordre ? Le passage du "j'ai une idée" au croquis révèle les imprécisions et anticipe les problèmes.</p>
+          <div class="pa-step__block">
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Gestes clés</span>
+              <ul>
+                <li>Croquis à main levée (face, profil, dessus)</li>
+                <li>Schéma coté avec dimensions clés</li>
+                <li>Liste des pièces</li>
+                <li>Identification des mécanismes</li>
+              </ul>
+            </div>
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Autonomie par âge</span>
+              <ul>
+                <li><b>4–6 ans</b> — guide oral, croquis optionnel</li>
+                <li><b>6–9 ans</b> — croquis simple, 2–3 éléments</li>
+                <li><b>9–12 ans</b> — croquis coté, liste de pièces</li>
+                <li><b>12 ans+</b> — schéma technique, nomenclature</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pa-step__warn">Erreurs fréquentes : sauter à la découpe sans planifier (gâchis + frustration) · croquis trop détaillé qui bloque plutôt qu'il ne guide · oublier les dimensions.</div>
+        </div>
+
+        <div class="pa-step">
+          <div class="pa-step__header">
+            <div class="pa-step__num">2</div>
+            <h3>Tracer</h3>
+            <span class="pa-step__tag">Le pont entre le croquis et la découpe</span>
+          </div>
+          <p>Reporter les formes à fabriquer sur le matériau. Un bon tracé économise 50 % du matériau et 30 % du temps de découpe.</p>
+          <div class="pa-step__block">
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Gestes clés</span>
+              <ul>
+                <li>Maintenir fermement le gabarit pendant le tracé</li>
+                <li>Crayon fin (effaçable, visible sur carton)</li>
+                <li>"Mesure deux fois, découpe une fois"</li>
+                <li>Optimiser le placement pour économiser le matériau</li>
+              </ul>
+            </div>
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Autonomie par âge</span>
+              <ul>
+                <li><b>4–6 ans</b> — l'animateur trace, l'enfant suit du doigt</li>
+                <li><b>6–9 ans</b> — gabarit fourni + règle simple</li>
+                <li><b>9–12 ans</b> — traçage coté à partir du croquis</li>
+                <li><b>12 ans+</b> — traçage libre, équerre, compas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pa-step__warn">Erreurs fréquentes : tracer trop épais (feutre → décalage de 2 mm) · ne pas maintenir le gabarit · tracer au bord sans marge.</div>
+        </div>
+
+        <div class="pa-step">
+          <div class="pa-step__header">
+            <div class="pa-step__num">3</div>
+            <h3>Découper</h3>
+            <span class="pa-step__tag">L'étape la plus physique</span>
+          </div>
+          <p>Transformer le matériau tracé en pièces individuelles. C'est le premier moment où le participant rencontre une résistance réelle du matériau — apprendre à s'adapter est une compétence clé.</p>
+          <div class="pa-step__table-wrap">
+            <table class="pa-table">
+              <thead>
+                <tr><th>Matériau</th><th>Ciseaux</th><th>Cutter</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Carton fin (&lt; 1 mm)</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+                <tr><td>Carton plat (1–2 mm)</td><td class="ok">✓ lignes droites</td><td class="ok">✓</td></tr>
+                <tr><td>Carton ondulé</td><td class="ok">✓ formes simples</td><td class="ok">✓</td></tr>
+                <tr><td>Carton gris (&gt; 2 mm)</td><td class="no">✗ fatigue</td><td class="ok">✓ 2–3 passes</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pa-step__block">
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Autonomie par âge</span>
+              <ul>
+                <li><b>4–6 ans</b> — ciseaux enfant, pièces pré-découpées à finir</li>
+                <li><b>6–9 ans</b> — ciseaux + supervision directe</li>
+                <li><b>9–12 ans</b> — autonome sur carton fin avec briefing</li>
+                <li><b>12 ans+</b> — cutter autonome après briefing sécurité</li>
+              </ul>
+            </div>
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Sécurité cutter</span>
+              <ul>
+                <li>4 doigts à plat sur la règle métal, jamais les bouts</li>
+                <li>Plusieurs passes légères, pas une seule passe forcée</li>
+                <li>Découper sur tapis, jamais sur la table nue</li>
+                <li>Ne pas mélanger zones découpe et colle chaude</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pa-step">
+          <div class="pa-step__header">
+            <div class="pa-step__num">4</div>
+            <h3>Assembler</h3>
+            <span class="pa-step__tag">Là où la conception se vérifie</span>
+          </div>
+          <p>Relier les pièces entre elles. C'est l'étape où les ajustements sont encore possibles — à condition d'avoir testé à sec avant de coller.</p>
+          <div class="pa-assemble-table">
+            <div class="pa-assemble-row pa-assemble-row--head">
+              <span>Technique</span><span>Permanence</span><span>Âge min</span>
+            </div>
+            <div class="pa-assemble-row">
+              <span><b>Colle PVA</b><br><small>Séchage 30 min–2h</small></span>
+              <span class="pa-perm pa-perm--yes">Permanent</span>
+              <span class="pa-age">4 ans</span>
+            </div>
+            <div class="pa-assemble-row">
+              <span><b>Colle chaude</b><br><small>Prise 30–60 sec · risque brûlure</small></span>
+              <span class="pa-perm pa-perm--yes">Permanent · très bonne</span>
+              <span class="pa-age">Supervisé &lt; 10 ans</span>
+            </div>
+            <div class="pa-assemble-row">
+              <span><b>Scotch double face</b><br><small>Propre et rapide</small></span>
+              <span class="pa-perm pa-perm--yes">Permanent</span>
+              <span class="pa-age">4 ans</span>
+            </div>
+            <div class="pa-assemble-row">
+              <span><b>Attache parisienne</b><br><small>Pivot mécanique</small></span>
+              <span class="pa-perm pa-perm--rev">Réversible</span>
+              <span class="pa-age">6 ans</span>
+            </div>
+            <div class="pa-assemble-row">
+              <span><b>Connecteurs Makedo</b><br><small>Vissé, démontable</small></span>
+              <span class="pa-perm pa-perm--rev">Réversible · solide</span>
+              <span class="pa-age">6 ans</span>
+            </div>
+          </div>
+          <div class="pa-step__tip">Règle d'or : toujours tester à sec d'abord — positionner toutes les pièces sans colle pour vérifier que les cotes sont bonnes. Coller ensuite dans le bon ordre (intérieur → extérieur).</div>
+        </div>
+
+        <div class="pa-step">
+          <div class="pa-step__header">
+            <div class="pa-step__num">5</div>
+            <h3>Finir</h3>
+            <span class="pa-step__tag">Ce qui donne envie de montrer l'objet</span>
+          </div>
+          <p>Poncer, peindre, décorer, ajuster. La finition est souvent sous-estimée — c'est elle qui crée la fierté de l'objet. Un objet bien fini est un objet qu'on garde, qu'on montre, qu'on offre.</p>
+          <div class="pa-step__block">
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Gestes clés</span>
+              <ul>
+                <li>Couche de fond PVA diluée sur carton (évite le gondolage)</li>
+                <li>Peinture en couches fines et successives</li>
+                <li>Ponçage dans le sens du fil du bois (jamais en travers)</li>
+                <li>Coller avant ou après peindre selon l'effet voulu</li>
+              </ul>
+            </div>
+            <div class="pa-step__col">
+              <span class="pa-step__col-label">Autonomie par âge</span>
+              <ul>
+                <li><b>4–6 ans</b> — peinture libre, pinceaux larges, focus plaisir</li>
+                <li><b>6–9 ans</b> — 2 couleurs avec délimitation, masquage</li>
+                <li><b>9–12 ans</b> — couche de fond, zones, ponçage bois</li>
+                <li><b>12 ans+</b> — finition complète, pochoirs, effets</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pa-step__warn">Peindre en toute fin de séance → objet collant au moment de rentrer. Prévoir sacs plastique ou papier journal. Couche trop épaisse → craquelures au séchage.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ORGANISATION DE L'ESPACE -->
+    <section class="section">
+      <span class="section-eyebrow">Logistique</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Organisation de l'espace atelier</h2>
+      <p class="pa-intro-text">Structurer l'espace en zones distinctes réduit les accidents, les embouteillages et les pertes de temps. Même dans un espace contraint, un simple sens de circulation suffit.</p>
+
+      <div class="pa-zones">
+        <div class="pa-zone pa-zone--1">
+          <div class="pa-zone__num">A</div>
+          <h3>Conception</h3>
+          <p>Croquis, mesures, gabarits</p>
+          <div class="pa-zone__rule">On réfléchit avant de se lever</div>
+        </div>
+        <div class="pa-zone pa-zone--2">
+          <div class="pa-zone__num">B</div>
+          <h3>Traçage</h3>
+          <p>Reporter les formes sur le matériau</p>
+          <div class="pa-zone__rule">Les pièces arrivent tracées à la découpe</div>
+        </div>
+        <div class="pa-zone pa-zone--3">
+          <div class="pa-zone__num">C</div>
+          <h3>Découpe</h3>
+          <p>Ciseaux, cutter</p>
+          <div class="pa-zone__rule">On découpe sur le tapis, les chutes restent sur la table</div>
+        </div>
+        <div class="pa-zone pa-zone--4">
+          <div class="pa-zone__num">D</div>
+          <h3>Assemblage</h3>
+          <p>Colle, fixations, articulations</p>
+          <div class="pa-zone__rule">La station colle chaude ne bouge pas — c'est le participant qui vient à elle</div>
+        </div>
+      </div>
+
+      <div class="pa-colle-banner">
+        <div class="pa-colle-banner__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        </div>
+        <div>
+          <b>Station colle chaude — règles non négociables</b>
+          <ul>
+            <li>La station ne bouge pas — c'est le participant qui se déplace.</li>
+            <li>Maximum 1 pistolet pour 4–5 participants — la file est normale.</li>
+            <li>Zone de refroidissement : 30 cm de table libre pour les pièces juste collées.</li>
+            <li>Adulte référent pour les moins de 10 ans : l'animateur tient le pistolet, l'enfant positionne la pièce.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pa-espaces">
+        <div class="pa-espace">
+          <span class="pa-espace__size">Grande salle · &gt; 40 m²</span>
+          <p>4 zones distinctes, tables séparées. Les participants se déplacent librement d'une zone à l'autre.</p>
+        </div>
+        <div class="pa-espace">
+          <span class="pa-espace__size">Salle moyenne · 20–40 m²</span>
+          <p>Conception + traçage sur les mêmes tables (début de séance). Découpe + assemblage de l'autre côté. Station colle chaude fixe dans un coin.</p>
+        </div>
+        <div class="pa-espace">
+          <span class="pa-espace__size">Espace contraint · stand</span>
+          <p>1 seule table de travail. Station colle chaude dans un coin fixe. Délimiter verbalement les zones dès le départ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESSION PAR FORMAT -->
+    <section class="section">
+      <span class="section-eyebrow">Selon le temps disponible</span>
+      <h2 style="margin-top:8px;margin-bottom:8px">Progression par format d'atelier</h2>
+      <p class="pa-intro-text">Quand le temps manque, on compresse dans cet ordre : ponçage → finition détaillée → traçage précis. On ne supprime jamais l'assemblage à sec.</p>
+
+      <div class="pa-formats">
+        <div class="pa-format">
+          <div class="pa-format__dur">30 min</div>
+          <div class="pa-format__label">Événementiel</div>
+          <div class="pa-format__steps">
+            <span class="skip">Concevoir</span>
+            <span class="skip">Tracer</span>
+            <span class="active">Assembler</span>
+            <span class="active">Finir</span>
+          </div>
+          <p>Pièces pré-découpées fournies. Participant assemble et décore uniquement.</p>
+        </div>
+        <div class="pa-format">
+          <div class="pa-format__dur">2h</div>
+          <div class="pa-format__label">Atelier standard</div>
+          <div class="pa-format__steps">
+            <span class="light">Concevoir</span>
+            <span class="light">Tracer</span>
+            <span class="active">Découper</span>
+            <span class="active">Assembler</span>
+            <span class="light">Finir</span>
+          </div>
+          <p>Conception simplifiée (modèle fourni), finition express. Le participant passe par toutes les étapes.</p>
+        </div>
+        <div class="pa-format">
+          <div class="pa-format__dur">3h</div>
+          <div class="pa-format__label">Atelier long</div>
+          <div class="pa-format__steps">
+            <span class="active">Concevoir</span>
+            <span class="active">Tracer</span>
+            <span class="active">Découper</span>
+            <span class="active">Assembler</span>
+            <span class="light">Finir</span>
+          </div>
+          <p>Toutes les étapes, finition limitée. Bonne autonomie à chaque geste.</p>
+        </div>
+        <div class="pa-format">
+          <div class="pa-format__dur">Stage</div>
+          <div class="pa-format__label">Multi-jours</div>
+          <div class="pa-format__steps">
+            <span class="active">Concevoir</span>
+            <span class="active">Tracer</span>
+            <span class="active">Découper</span>
+            <span class="active">Assembler</span>
+            <span class="active">Finir</span>
+          </div>
+          <p>Cycle complet avec rigueur à chaque étape. Temps pour itérer et corriger.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pa-cta-section">
+      <div class="pa-cta">
+        <div class="pa-cta__links">
+          <a href="/ressources/design-thinking">Design thinking →</a>
+          <a href="/ressources/defis-stem">Défis STEM →</a>
+          <a href="/ressources/pedagogie-maker">← Pédagogie maker</a>
+        </div>
+        <a class="btn btn--accent" href="/catalogue">Explorer le catalogue</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+.pa-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-3);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  letter-spacing: .04em;
+}
+.pa-back:hover { color: var(--text-1); }
+
+.pa-hero {
+  padding: 32px 22px 36px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+}
+.pa-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--rm-terracotta);
+  background: #F8DEC8;
+  border: 1px solid var(--rm-terracotta);
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-bottom: 18px;
+}
+.pa-hero__title {
+  font-size: clamp(36px, 9vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+.pa-hero__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 56ch;
+  margin-bottom: 22px;
+}
+.pa-hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pa-hero__pills span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  background: #F8DEC8;
+  color: var(--rm-terracotta);
+  border-radius: var(--r-sm);
+  padding: 4px 10px;
+  border: 1px solid var(--rm-terracotta-soft, #E8B89A);
+}
+
+.pa-intro-text {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 20px;
+}
+
+/* Steps */
+.pa-steps { display: grid; gap: 12px; }
+.pa-step {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-xl);
+  padding: 22px 20px 20px;
+}
+.pa-step__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.pa-step__num {
+  flex: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--rm-terracotta);
+  color: var(--rm-paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  display: grid;
+  place-items: center;
+}
+.pa-step h3 { font-size: 18px; letter-spacing: -0.02em; }
+.pa-step__tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-left: auto;
+}
+.pa-step > p { font-size: 14px; color: var(--text-2); line-height: 1.6; margin-bottom: 16px; }
+.pa-step__block {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.pa-step__col-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 8px;
+}
+.pa-step__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.pa-step__col li {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.pa-step__col li::before { content: '—'; position: absolute; left: 0; color: var(--rm-terracotta); }
+.pa-step__tip {
+  font-size: 12.5px;
+  color: var(--rm-terracotta);
+  background: #F8DEC8;
+  border-radius: var(--r-sm);
+  padding: 9px 12px;
+  line-height: 1.55;
+}
+.pa-step__warn {
+  font-size: 12.5px;
+  color: #7A5A10;
+  background: #FEF3C7;
+  border: 1px solid #F6D860;
+  border-radius: var(--r-sm);
+  padding: 9px 12px;
+  line-height: 1.55;
+}
+
+/* Table découpe */
+.pa-table-wrap { overflow-x: auto; margin-bottom: 12px; }
+.pa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.pa-table th {
+  background: var(--rm-cream-3);
+  padding: 8px 12px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  border-bottom: 1.5px solid var(--rm-kraft-soft);
+}
+.pa-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  color: var(--text-2);
+}
+.pa-table tr:last-child td { border-bottom: 0; }
+.pa-table td.ok { color: var(--rm-moss); font-weight: 500; }
+.pa-table td.no { color: var(--rm-terracotta); }
+
+/* Assemblage table */
+.pa-assemble-table {
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.pa-assemble-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr auto;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rm-kraft-soft);
+  align-items: center;
+  font-size: 13px;
+}
+.pa-assemble-row:last-child { border-bottom: 0; }
+.pa-assemble-row--head {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  background: var(--rm-cream-3);
+}
+.pa-assemble-row small { display: block; font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.pa-perm {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  padding: 2px 7px;
+  border-radius: var(--r-sm);
+}
+.pa-perm--yes { background: var(--rm-moss-soft); color: var(--rm-moss); }
+.pa-perm--rev { background: #F0E6D6; color: var(--rm-kraft-deep); }
+.pa-age { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); text-align: right; }
+
+/* Zones */
+.pa-zones {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.pa-zone {
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+  border: 1.5px solid transparent;
+}
+.pa-zone--1 { background: #F0E6D6; border-color: var(--rm-kraft); }
+.pa-zone--2 { background: var(--rm-moss-soft); border-color: var(--rm-moss); }
+.pa-zone--3 { background: #F8DEC8; border-color: var(--rm-terracotta); }
+.pa-zone--4 { background: var(--rm-cream-2); border-color: var(--rm-kraft-soft); border-style: dashed; }
+.pa-zone__num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .1em;
+  opacity: .5;
+  margin-bottom: 6px;
+}
+.pa-zone h3 { font-size: 15px; letter-spacing: -0.01em; margin-bottom: 4px; }
+.pa-zone p { font-size: 13px; color: var(--text-2); margin-bottom: 8px; }
+.pa-zone__rule {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--text-3);
+  border-top: 1px dashed rgba(0,0,0,.12);
+  padding-top: 8px;
+}
+
+.pa-colle-banner {
+  display: flex;
+  gap: 14px;
+  background: #FEF3C7;
+  border: 1.5px solid #F6D860;
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+.pa-colle-banner__icon { flex: none; color: #92600A; margin-top: 2px; }
+.pa-colle-banner b { font-size: 14px; display: block; margin-bottom: 8px; color: #7A5A10; }
+.pa-colle-banner ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.pa-colle-banner li { font-size: 12.5px; color: #7A5A10; line-height: 1.5; padding-left: 14px; position: relative; }
+.pa-colle-banner li::before { content: '—'; position: absolute; left: 0; }
+
+.pa-espaces { display: grid; gap: 8px; }
+.pa-espace {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+}
+.pa-espace__size {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--rm-terracotta);
+  display: block;
+  margin-bottom: 5px;
+}
+.pa-espace p { font-size: 13px; color: var(--text-2); line-height: 1.55; margin: 0; }
+
+/* Formats */
+.pa-formats { display: grid; gap: 10px; }
+.pa-format {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+.pa-format__dur {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: var(--rm-terracotta);
+  margin-bottom: 2px;
+}
+.pa-format__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 12px;
+}
+.pa-format__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.pa-format__steps span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  padding: 3px 9px;
+  border-radius: var(--r-sm);
+}
+.pa-format__steps .active { background: var(--rm-terracotta); color: var(--rm-paper); }
+.pa-format__steps .light  { background: #F8DEC8; color: var(--rm-terracotta); opacity: .7; }
+.pa-format__steps .skip   { background: var(--rm-cream-3); color: var(--text-3); text-decoration: line-through; }
+.pa-format p { font-size: 13px; color: var(--text-2); line-height: 1.55; margin: 0; }
+
+/* CTA */
+.pa-cta-section { padding: 0 22px 56px; }
+.pa-cta {
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-kraft-soft);
+  border-radius: var(--r-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pa-cta__links { display: flex; flex-wrap: wrap; gap: 14px; }
+.pa-cta__links a { font-size: 14px; color: var(--rm-terracotta); text-decoration: none; font-weight: 500; }
+.pa-cta__links a:hover { color: var(--rm-ink); }
+
+/* Desktop */
+@media (min-width: 880px) {
+  .pa-hero { padding: 56px 64px 48px; max-width: 1320px; margin: 0 auto; }
+  .pa-hero__title { font-size: clamp(56px, 5.5vw, 80px); }
+  .pa-hero__lead { font-size: 19px; }
+
+  .pa-step__block { grid-template-columns: 1fr 1fr; }
+  .pa-zones { grid-template-columns: 1fr 1fr; }
+  .pa-espaces { grid-template-columns: 1fr 1fr 1fr; }
+  .pa-formats { grid-template-columns: 1fr 1fr; }
+
+  .pa-cta-section { padding: 0 64px 72px; max-width: 1320px; margin: 0 auto; }
+  .pa-cta { flex-direction: row; align-items: center; justify-content: space-between; padding: 28px 32px; }
+}
+
+@media (min-width: 1280px) {
+  .pa-formats { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
+</style>

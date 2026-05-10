@@ -276,7 +276,7 @@ import Footer from '../../components/Footer.astro';
 
       <div class="pm-approaches">
 
-        <div class="pm-approach">
+        <a class="pm-approach" href="/ressources/design-thinking">
           <div class="pm-approach__icon pm-approach__icon--dt">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
@@ -290,9 +290,9 @@ import Footer from '../../components/Footer.astro';
               <span>Empathiser</span><span>Définir</span><span>Idéer</span><span>Prototyper</span><span>Tester</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="pm-approach">
+        <a class="pm-approach" href="/ressources/defis-stem">
           <div class="pm-approach__icon pm-approach__icon--stem">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/>
@@ -306,9 +306,9 @@ import Footer from '../../components/Footer.astro';
               <span>Concevoir</span><span>Construire</span><span>Tester</span><span>Améliorer</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="pm-approach">
+        <a class="pm-approach" href="/ressources/processus-artisanal">
           <div class="pm-approach__icon pm-approach__icon--craft">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M3 2l1 4-2 5 6 1 1 10 5-8 4 2-2-7 5-3-7-2z"/>
@@ -322,7 +322,7 @@ import Footer from '../../components/Footer.astro';
               <span>Concevoir</span><span>Tracer</span><span>Découper</span><span>Assembler</span><span>Finir</span>
             </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </section>
@@ -719,6 +719,13 @@ import Footer from '../../components/Footer.astro';
   display: flex;
   gap: 16px;
   align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .15s, box-shadow .15s;
+}
+.pm-approach:hover {
+  border-color: var(--rm-ink);
+  box-shadow: 0 2px 0 0 var(--rm-ink);
 }
 .pm-approach__icon {
   flex: none;

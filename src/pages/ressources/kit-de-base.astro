@@ -1,0 +1,1494 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Layout
+  title="Kit de base — La Ressourcerie Maker"
+  description="Le matériel nécessaire pour animer des ateliers maker : kits par niveau, matériaux, outils, sécurité et où se fournir."
+>
+  <Nav />
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="kb-hero">
+      <a href="/ressources/pedagogie-maker" class="kb-back">← Pédagogie maker</a>
+      <div class="kb-hero__tag">Kit de base</div>
+      <h1 class="kb-hero__title">Le nécessaire pour animer,<br>rien de plus.</h1>
+      <p class="kb-hero__lead">Pas besoin d'un fablab équipé pour lancer un atelier maker. Voici ce qu'il faut vraiment — par niveau de budget et d'ambition.</p>
+      <div class="kb-hero__stats">
+        <div class="kb-stat">
+          <span class="kb-stat__val">~30 €</span>
+          <span class="kb-stat__label">pour démarrer</span>
+        </div>
+        <div class="kb-stat">
+          <span class="kb-stat__val">6 ans+</span>
+          <span class="kb-stat__label">tout public</span>
+        </div>
+        <div class="kb-stat">
+          <span class="kb-stat__val">0</span>
+          <span class="kb-stat__label">machine obligatoire</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LES 5 NIVEAUX -->
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Niveaux</span>
+          <h2 style="margin-top:8px">5 niveaux de kit</h2>
+        </div>
+      </div>
+      <p class="kb-intro">Les 4 premiers niveaux sont cumulatifs. La majorité des ateliers du catalogue fonctionnent avec le kit Événementiel ou Projet. Le kit Code en bois est indépendant — il ouvre un axe médiation algorithmique.</p>
+
+      <div class="kb-levels">
+
+        <div class="kb-level kb-level--green">
+          <div class="kb-level__head">
+            <span class="kb-level__num">01</span>
+            <div>
+              <div class="kb-level__name">Kit Événementiel</div>
+              <div class="kb-level__budget">~30 €</div>
+            </div>
+          </div>
+          <ul class="kb-level__list">
+            <li>Carton de récupération</li>
+            <li>Ciseaux (1 par participant)</li>
+            <li>Pistolet à colle chaude</li>
+            <li>Feutres de coloriage</li>
+            <li>Scotch + blue tape</li>
+            <li>Tapis de découpe</li>
+          </ul>
+          <div class="kb-level__footer">Format animation courte, kermesse, événement</div>
+        </div>
+
+        <div class="kb-level kb-level--yellow">
+          <div class="kb-level__head">
+            <span class="kb-level__num">02</span>
+            <div>
+              <div class="kb-level__name">Kit Projet</div>
+              <div class="kb-level__budget">+20 €</div>
+            </div>
+          </div>
+          <ul class="kb-level__list">
+            <li>Cutter 18 mm + lames</li>
+            <li>Règle aluminium 40 cm</li>
+            <li>Équerre + compas</li>
+            <li>Peinture acrylique</li>
+            <li>Feutres permanents</li>
+            <li>Colle blanche + attaches parisiennes</li>
+          </ul>
+          <div class="kb-level__footer">Atelier long, séquence multi-séances, stage</div>
+        </div>
+
+        <div class="kb-level kb-level--blue">
+          <div class="kb-level__head">
+            <span class="kb-level__num">03</span>
+            <div>
+              <div class="kb-level__name">Kit Makedo</div>
+              <div class="kb-level__budget">+80 €</div>
+            </div>
+          </div>
+          <ul class="kb-level__list">
+            <li>Connecteurs Scru (vis réutilisables)</li>
+            <li>Pivots Roto-Ring 360°</li>
+            <li>Charnières Spin-Hinge</li>
+            <li>Scoring Tool (rainurage)</li>
+            <li>Hole Punch (perçage)</li>
+          </ul>
+          <div class="kb-level__footer">Structures articulées, mécanismes, projets itératifs</div>
+        </div>
+
+        <div class="kb-level kb-level--red">
+          <div class="kb-level__head">
+            <span class="kb-level__num">04</span>
+            <div>
+              <div class="kb-level__name">Kit STEM</div>
+              <div class="kb-level__budget">+200 €</div>
+            </div>
+          </div>
+          <ul class="kb-level__list">
+            <li>Beaverbot / ChompSaw</li>
+            <li>Visseuse-perceuse</li>
+            <li>Ponceuse sans fil</li>
+            <li>Lunettes de protection × 3</li>
+            <li>Masques FFP2 × 5</li>
+          </ul>
+          <div class="kb-level__footer">Défis STEM, constructions robustes, public ado-adulte</div>
+        </div>
+
+        <div class="kb-level kb-level--moss">
+          <div class="kb-level__head">
+            <span class="kb-level__num">05</span>
+            <div>
+              <div class="kb-level__name">Kit Code en bois</div>
+              <div class="kb-level__budget">0 € (imprimable)</div>
+            </div>
+          </div>
+          <ul class="kb-level__list">
+            <li>Tuiles séquence (PDF libres)</li>
+            <li>Cartes défi imprimables</li>
+            <li>Figurine robot (papier ou bois)</li>
+            <li>Plateau de jeu A3</li>
+            <li>Guide animateur PDF</li>
+          </ul>
+          <div class="kb-level__footer">Médiation algorithmique · sans écran · dès 5 ans</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MATÉRIAUX -->
+    <section class="section" style="padding-top:0">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Matériaux</span>
+          <h2 style="margin-top:8px">Ce qu'il faut avoir</h2>
+        </div>
+      </div>
+
+      <div class="kb-mat-grid">
+
+        <div class="kb-mat-block">
+          <h3 class="kb-mat-block__title">
+            <span class="kb-mat-block__icon">📦</span>
+            Carton — le matériau central
+          </h3>
+          <table class="kb-table">
+            <thead>
+              <tr><th>Type</th><th>Usage</th><th>Source</th><th>Coût</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ondulé double face</strong></td>
+                <td>Structure, parois, corps d'automate</td>
+                <td>Récup (livraisons, supermarchés)</td>
+                <td>0 €</td>
+              </tr>
+              <tr>
+                <td><strong>Plat / boîte céréales</strong></td>
+                <td>Cames, engrenages, gabarits</td>
+                <td>Récup (emballages plats)</td>
+                <td>0 €</td>
+              </tr>
+              <tr>
+                <td><strong>Gris (cartonnage)</strong></td>
+                <td>Pièces mécaniques, châssis</td>
+                <td>Papeterie, arts créatifs</td>
+                <td>0,50–1,50 € / A4</td>
+              </tr>
+              <tr>
+                <td><strong>Tube kraft</strong></td>
+                <td>Axes, colonnes, rouleaux</td>
+                <td>Récup (essuie-tout, papier alu)</td>
+                <td>0 €</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="kb-tip">Constituer un stock de récup en amont — partenariats avec les épiceries, imprimeries ou écoles du quartier. Coût participant : &lt; 1 €.</p>
+        </div>
+
+        <div class="kb-mat-block">
+          <h3 class="kb-mat-block__title">
+            <span class="kb-mat-block__icon">🖊️</span>
+            Écriture &amp; décoration
+          </h3>
+          <div class="kb-mat-items">
+            <div class="kb-mat-item">
+              <div class="kb-mat-item__name">Crayon HB + gomme</div>
+              <div class="kb-mat-item__desc">Traçage, gabarits, repères. 1 par participant.</div>
+              <div class="kb-mat-item__age">✅ 3 ans+</div>
+            </div>
+            <div class="kb-mat-item">
+              <div class="kb-mat-item__name">Feutres de coloriage</div>
+              <div class="kb-mat-item__desc">Décoration rapide, non permanent, lavable. On recommande la gamme <a href="https://www.enmy.com" target="_blank" rel="noopener" class="kb-link">Enmy</a>.</div>
+              <div class="kb-mat-item__age">✅ 3 ans+</div>
+            </div>
+            <div class="kb-mat-item">
+              <div class="kb-mat-item__name">Feutre permanent fin</div>
+              <div class="kb-mat-item__desc">Marquage de pièces, contours définitifs. Ventilation conseillée.</div>
+              <div class="kb-mat-item__age">⚠️ 6 ans+ (supervisé)</div>
+            </div>
+            <div class="kb-mat-item">
+              <div class="kb-mat-item__name">Marqueur peinture (type Posca)</div>
+              <div class="kb-mat-item__desc">Décoration opaque sur toutes surfaces, y compris carton brun ou noir. La gamme <a href="https://www.enmy.com" target="_blank" rel="noopener" class="kb-link">Enmy</a> est une alternative moins onéreuse.</div>
+              <div class="kb-mat-item__age">✅ 4 ans+</div>
+            </div>
+            <div class="kb-mat-item">
+              <div class="kb-mat-item__name">Peinture acrylique</div>
+              <div class="kb-mat-item__desc">Couvre bien, séchage 15–30 min. Tablier obligatoire.</div>
+              <div class="kb-mat-item__age">✅ 3 ans+ (tablier)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kb-mat-block">
+          <h3 class="kb-mat-block__title">
+            <span class="kb-mat-block__icon">🔗</span>
+            Colles &amp; assemblage
+          </h3>
+          <table class="kb-table">
+            <thead>
+              <tr><th>Produit</th><th>Usage</th><th>Âge autonomie</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Colle blanche</strong></td>
+                <td>Assemblage léger, collage papier/carton</td>
+                <td>✅ 3 ans+</td>
+              </tr>
+              <tr>
+                <td><strong>Scotch / blue tape</strong></td>
+                <td>Fixation provisoire, masquage peinture</td>
+                <td>✅ 3 ans+</td>
+              </tr>
+              <tr>
+                <td><strong>Attaches parisiennes</strong></td>
+                <td>Liaisons pivots, articulations</td>
+                <td>✅ 4 ans+</td>
+              </tr>
+              <tr>
+                <td><strong>Colle chaude</strong></td>
+                <td>Assemblage rapide et solide</td>
+                <td>⚠️ 12 ans+ (10 ans supervisé)</td>
+              </tr>
+              <tr>
+                <td><strong>Super glue</strong></td>
+                <td>Collage ponctuel de précision</td>
+                <td>🔴 Animateur uniquement</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="kb-warning">
+            <strong>Colle chaude :</strong> ne pas toucher l'embout ni la colle fondue. En cas de brûlure → eau froide courante 10 min minimum.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUTILS PAR GESTE -->
+    <section class="section" style="padding-top:0">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Outils</span>
+          <h2 style="margin-top:8px">Par geste</h2>
+        </div>
+      </div>
+
+      <div class="kb-tools-grid">
+
+        <div class="kb-tool-group">
+          <div class="kb-tool-group__head">
+            <span class="kb-tool-group__icon">✏️</span>
+            <h3 class="kb-tool-group__title">Traçage</h3>
+          </div>
+          <ul class="kb-tool-list">
+            <li><strong>Crayon HB</strong> — 1 par participant</li>
+            <li><strong>Règle aluminium 40 cm</strong> — guide de découpe + mesures</li>
+            <li><strong>Équerre</strong> — angles droits, gabarits</li>
+            <li><strong>Compas</strong> — cercles, arcs</li>
+            <li><strong>Feutre véleda</strong> — instructions effaçables (animateur)</li>
+          </ul>
+        </div>
+
+        <div class="kb-tool-group">
+          <div class="kb-tool-group__head">
+            <span class="kb-tool-group__icon">✂️</span>
+            <h3 class="kb-tool-group__title">Découpe</h3>
+          </div>
+          <ul class="kb-tool-list">
+            <li><strong>Ciseaux bouts ronds</strong> — &lt; 6 ans, découpe libre</li>
+            <li><strong>Ciseaux à pointes</strong> — 6 ans+ sous supervision</li>
+            <li><strong>Cutter 18 mm</strong> — 10 ans+ avec tapis et règle</li>
+            <li><strong>Tapis de découpe</strong> — obligatoire pour tout usage cutter</li>
+            <li><strong>Massicot</strong> — animateur uniquement, coupes rapides</li>
+          </ul>
+        </div>
+
+        <div class="kb-tool-group">
+          <div class="kb-tool-group__head">
+            <span class="kb-tool-group__icon">🔩</span>
+            <h3 class="kb-tool-group__title">Assemblage</h3>
+          </div>
+          <ul class="kb-tool-list">
+            <li><strong>Pistolet à colle chaude</strong> — incontournable (+ support)</li>
+            <li><strong>Pince plate</strong> — plier, maintenir, serrer</li>
+            <li><strong>Ciseaux de précision</strong> — découpes fines</li>
+            <li><strong>Pince-notes / pince à linge</strong> — maintien pendant séchage</li>
+          </ul>
+        </div>
+
+        <div class="kb-tool-group">
+          <div class="kb-tool-group__head">
+            <span class="kb-tool-group__icon">🎨</span>
+            <h3 class="kb-tool-group__title">Finition</h3>
+          </div>
+          <ul class="kb-tool-list">
+            <li><strong>Pinceaux plats (n°6, n°12)</strong> — peinture acrylique</li>
+            <li><strong>Éponge naturelle</strong> — textures, aplats</li>
+            <li><strong>Gesso</strong> — apprêt sur carton brun avant peinture</li>
+            <li><strong>Vernis mat / satiné</strong> — protection de la production finie</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MAKEDO -->
+    <section class="kb-makedo">
+      <div class="kb-makedo__inner">
+        <div class="kb-makedo__head">
+          <div class="kb-makedo__badge">03</div>
+          <div>
+            <div class="kb-makedo__eyebrow">Moyen budget · ~80 €</div>
+            <h2 class="kb-makedo__title">Kit Makedo</h2>
+            <p class="kb-makedo__sub">Assembler sans colle, sans chaleur, sans lame.</p>
+          </div>
+        </div>
+
+        <p class="kb-makedo__intro">Makedo est un système de connecteurs plastique réutilisables conçus pour assembler du carton de récupération. Contrairement à la colle, tout se démonte — l'erreur n'est pas définitive, elle est une étape.</p>
+
+        <div class="kb-makedo__cols">
+          <div class="kb-makedo__components">
+            <h4>Les composants</h4>
+            <div class="kb-makedo__comp">
+              <div class="kb-makedo__comp-name">Scru</div>
+              <div class="kb-makedo__comp-desc">Vis de fixation plastique → liaison rigide entre deux couches de carton</div>
+            </div>
+            <div class="kb-makedo__comp">
+              <div class="kb-makedo__comp-name">Roto-Ring</div>
+              <div class="kb-makedo__comp-desc">Pivot 360° → roues, manivelles, cames, articulations</div>
+            </div>
+            <div class="kb-makedo__comp">
+              <div class="kb-makedo__comp-name">Spin-Hinge</div>
+              <div class="kb-makedo__comp-desc">Charnière plane → portes, jambes, mâchoires, ailes</div>
+            </div>
+            <div class="kb-makedo__comp">
+              <div class="kb-makedo__comp-name">Scoring Tool</div>
+              <div class="kb-makedo__comp-desc">Outil de rainurage → plis nets, séparation de couches carton</div>
+            </div>
+            <div class="kb-makedo__comp">
+              <div class="kb-makedo__comp-name">Hole Punch</div>
+              <div class="kb-makedo__comp-desc">Emporte-pièce → perçage pour entrée de découpe, fenêtres intérieures</div>
+            </div>
+          </div>
+
+          <div class="kb-makedo__why">
+            <h4>Pourquoi Makedo ?</h4>
+            <ul class="kb-why-list">
+              <li><strong>Réutilisable</strong> — les connecteurs se récupèrent à la fin de l'atelier</li>
+              <li><strong>Mécanique visible</strong> — on voit pourquoi ça tient et pourquoi ça tourne</li>
+              <li><strong>Dès 6 ans en autonomie</strong> — aucun risque de brûlure, aucun outil tranchant</li>
+              <li><strong>Idéal pour les projets longs</strong> — une structure peut être améliorée séance après séance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEAVERBOT / CHOMPSHOP -->
+    <section class="kb-stem">
+      <div class="kb-stem__inner">
+        <div class="kb-stem__head">
+          <div class="kb-stem__badge">04</div>
+          <div>
+            <div class="kb-stem__eyebrow">Gros budget · +200 €</div>
+            <h2 class="kb-stem__title">Kit STEM — Beaverbot &amp; Chompshop</h2>
+            <p class="kb-stem__sub">Découpe sécurisée dès 6 ans. Autonomie réelle en atelier.</p>
+          </div>
+        </div>
+
+        <p class="kb-stem__intro">Le ChompSaw (Chompshop) et le BeaverBot sont des scies à chantourner dont la lame est entièrement encapsulée. Aucun tranchant accessible. Les participants peuvent découper du carton en autonomie dès 6 ans — cercles, courbes, formes intérieures.</p>
+
+        <div class="kb-stem__cols">
+          <div>
+            <h4>Ce que ça permet</h4>
+            <ul class="kb-why-list">
+              <li>Coupes droites, courbes, cercles et formes intérieures</li>
+              <li>Accessoires inclus : Fence (guide droit), Angle Guide, Circle Guide</li>
+              <li>1 machine pour 2–3 participants (rotation des postes)</li>
+              <li>Cardboard Workstation : établi carton pliable, sans vis ni colle</li>
+            </ul>
+
+            <h4 style="margin-top:24px">Règles de base (3 à afficher)</h4>
+            <ol class="kb-rules">
+              <li>Vérifier que le tiroir à chutes est fermé avant de démarrer</li>
+              <li>Vider le tiroir toutes les 30 minutes</li>
+              <li>Éteindre entre chaque coupe</li>
+            </ol>
+          </div>
+
+          <div>
+            <h4>Projets types avec ChompSaw</h4>
+            <table class="kb-table">
+              <thead>
+                <tr><th>Projet</th><th>Âge</th><th>Concept</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Dé de défis</td><td>8 ans+</td><td>Probabilités, créativité</td></tr>
+                <tr><td>Fusée</td><td>7 ans+</td><td>Formes géométriques, cônes</td></tr>
+                <tr><td>Four solaire</td><td>8 ans+</td><td>Énergie, réflexion</td></tr>
+                <tr><td>Véhicule à traction</td><td>8 ans+</td><td>Mécanique, roues</td></tr>
+              </tbody>
+            </table>
+
+            <div class="kb-stem__links">
+              <a href="https://chompshop.com" target="_blank" rel="noopener" class="kb-link">chompshop.com</a>
+              <span>·</span>
+              <a href="https://getbeaverbot.com" target="_blank" rel="noopener" class="kb-link">getbeaverbot.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODE EN BOIS -->
+    <section class="kb-ceb">
+      <div class="kb-ceb__inner">
+        <div class="kb-ceb__head">
+          <div class="kb-ceb__badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div>
+            <div class="kb-ceb__eyebrow">Kit spécialisé · dès 5 ans · sans écran</div>
+            <h2 class="kb-ceb__title">Code en bois</h2>
+            <p class="kb-ceb__sub">Programmer avec des tuiles. Sans allumer un seul écran.</p>
+          </div>
+        </div>
+
+        <p class="kb-ceb__intro">Le code en bois, c'est de la programmation physique et débranchée. Des tuiles en bois représentent des instructions — avancer, tourner, boucler, répéter. Les participants composent des programmes avec leurs mains, avant de les exécuter à pied ou avec un robot-papier. Aucun écran, aucun câble, aucune connexion.</p>
+
+        <div class="kb-ceb__cols">
+          <div>
+            <h4>Ce que ça permet</h4>
+            <ul class="kb-why-list kb-ceb__why">
+              <li>Introduire les notions d'algorithme et de séquence sans aucun outil numérique</li>
+              <li>Accessible dès 5 ans en accompagnement, en autonomie dès 7–8 ans</li>
+              <li>Combinable avec les ateliers de fabrication : robot carton + séquence code</li>
+              <li>Imprimable et fabricable — les tuiles sont disponibles en PDF libre</li>
+            </ul>
+          </div>
+
+          <div class="kb-ceb__links-block">
+            <h4>Ressources officielles</h4>
+            <div class="kb-ceb__links">
+              <a href="https://codeenbois.forge.apps.education.fr/" target="_blank" rel="noopener" class="kb-ceb__link">
+                <div class="kb-ceb__link-pic" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <div>
+                  <div class="kb-ceb__link-label">Plateforme Éducation Nationale</div>
+                  <div class="kb-ceb__link-url">codeenbois.forge.apps.education.fr →</div>
+                </div>
+              </a>
+              <a href="https://www.codeenbois.fr/" target="_blank" rel="noopener" class="kb-ceb__link">
+                <div class="kb-ceb__link-pic" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                  <div class="kb-ceb__link-label">Site officiel Code en bois</div>
+                  <div class="kb-ceb__link-url">codeenbois.fr →</div>
+                </div>
+              </a>
+            </div>
+            <p class="kb-ceb__note">Fiches séquence, tuiles imprimables et guide animateur disponibles gratuitement sur les deux plateformes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SÉCURITÉ & EPI -->
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Sécurité</span>
+          <h2 style="margin-top:8px">Trousse &amp; règles essentielles</h2>
+        </div>
+      </div>
+
+      <div class="kb-safety-grid">
+
+        <div class="kb-safety-block">
+          <h3 class="kb-safety-block__title">Trousse de premiers secours</h3>
+          <p class="kb-safety-block__sub">À emporter systématiquement — dans les murs et hors les murs.</p>
+          <ul class="kb-safety-list">
+            <li>Pansements adhésifs (assortiment) × 20</li>
+            <li>Compresses stériles 10×10 cm × 10</li>
+            <li>Solution antiseptique (chlorhexidine)</li>
+            <li>Sérum physiologique (dosettes) × 10</li>
+            <li>Sac de froid (cold pack) × 2</li>
+            <li>Gants nitrile × 4 paires</li>
+            <li>Gel hydroalcoolique</li>
+            <li>Couverture de survie</li>
+          </ul>
+          <div class="kb-emergency">
+            <strong>Brûlure colle chaude</strong> → eau froide courante 10 min<br>
+            <strong>Urgence médicale</strong> → 15 (SAMU)<br>
+            <strong>Ingestion produit</strong> → 0 800 59 59 59 (antipoison, gratuit)
+          </div>
+        </div>
+
+        <div class="kb-safety-block">
+          <h3 class="kb-safety-block__title">7 règles non négociables</h3>
+          <p class="kb-safety-block__sub">À énoncer en 2–3 min au début de chaque atelier. Montrer, ne pas lire.</p>
+          <ol class="kb-rules-list">
+            <li>On ne court pas et on ne joue pas avec les outils.</li>
+            <li>On pose les outils tranchants quand on ne s'en sert pas — lame rentrée, posés sur le tapis.</li>
+            <li>On ne donne pas un outil tranchant à quelqu'un — on le pose, l'autre le prend.</li>
+            <li>Le tapis de découpe est obligatoire pour tout usage du cutter.</li>
+            <li>On coupe en s'éloignant du corps et jamais vers la main qui tient la pièce.</li>
+            <li>Le pistolet à colle : ne pas toucher l'embout ni la colle fondue.</li>
+            <li>Si on ne sait pas comment utiliser un outil, on demande avant de toucher.</li>
+          </ol>
+        </div>
+
+        <div class="kb-safety-block kb-safety-block--full">
+          <h3 class="kb-safety-block__title">EPI par type d'atelier</h3>
+          <table class="kb-table">
+            <thead>
+              <tr><th>Format</th><th>Lunettes</th><th>Masque FFP2</th><th>Tablier</th><th>Gants nitrile</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kit Événementiel (ciseaux, colle)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Si peinture</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Kit Projet (cutter)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Si peinture</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Kit Makedo</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Beaverbot / ChompSaw</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Perceuse / ponceuse</td>
+                <td>✅ obligatoires</td>
+                <td>✅ ponceuse</td>
+                <td>—</td>
+                <td>🚫 interdits</td>
+              </tr>
+              <tr>
+                <td>Colle néoprène</td>
+                <td>—</td>
+                <td>✅</td>
+                <td>—</td>
+                <td>✅ obligatoires</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OÙ SE FOURNIR -->
+    <section class="kb-sources">
+      <div class="section__head">
+        <div>
+          <span class="section-eyebrow">Approvisionnement</span>
+          <h2 style="margin-top:8px">Où se fournir</h2>
+        </div>
+      </div>
+      <div class="kb-sources__grid">
+        <div class="kb-source">
+          <div class="kb-source__title">Récupération</div>
+          <p>Carton ondulé → épiceries, supermarchés, librairies. Tubes kraft → grandes surfaces, artisans. Rouleaux → imprimeries.</p>
+          <div class="kb-source__tip">Constituer un partenariat régulier — prévoir une collecte la semaine avant l'atelier.</div>
+        </div>
+        <div class="kb-source">
+          <div class="kb-source__title">Grande surface bricolage</div>
+          <p>Leroy Merlin, Castorama — cutter, règle alu, pistolet à colle, tapis de découpe, pince-notes.</p>
+        </div>
+        <div class="kb-source">
+          <div class="kb-source__title">Papeterie &amp; arts créatifs</div>
+          <p>Cultura, Rougier &amp; Plé — carton gris, peinture acrylique, gesso, marqueur acrylique (<a href="https://www.enmy.com" target="_blank" rel="noopener" class="kb-link">Enmy</a> est une alternative au Posca).</p>
+        </div>
+        <div class="kb-source">
+          <div class="kb-source__title">En ligne — systèmes spécialisés</div>
+          <p>
+            <a href="https://chompshop.com" target="_blank" rel="noopener" class="kb-link">chompshop.com</a> — ChompSaw + accessoires<br>
+            <a href="https://getbeaverbot.com" target="_blank" rel="noopener" class="kb-link">getbeaverbot.com</a> — BeaverBot Cutter<br>
+            makedo.com — connecteurs Makedo
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="kb-cta-grid">
+        <a href="/catalogue" class="kb-cta-primary">
+          <span class="kb-cta-primary__title">Voir les ateliers →</span>
+          <span class="kb-cta-primary__sub">Catalogue complet — filtrable par matériel disponible</span>
+        </a>
+        <div class="kb-cta-lfm">
+          <div class="kb-cta-lfm__icon">
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 27V7h7c2.5 0 4 1.7 4 4 0 2.3-1.5 4-4 4H5"/>
+              <path d="M12 15l5 12"/>
+              <path d="M21 27v-7l3 7 3-7v7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="kb-cta-lfm__title">Vous démarrez un atelier maker ?</div>
+            <p class="kb-cta-lfm__desc">La Fabrique Mobile propose un accompagnement pour les MJC, centres sociaux et médiathèques qui veulent se lancer — choix du matériel, formation animateur, première séance.</p>
+            <a href="mailto:bonjour.lafabriquemobile@gmail.com" class="kb-cta-lfm__link">Contacter La Fabrique Mobile →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+/* ---- Hero ---- */
+.kb-hero {
+  padding: 32px 22px 24px;
+}
+.kb-back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--text-3);
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+.kb-back:hover { color: var(--text-1); }
+.kb-hero__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: var(--rm-kraft);
+  color: var(--rm-paper);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+.kb-hero__title {
+  font-size: clamp(28px, 7vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+.kb-hero__lead {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 50ch;
+  margin: 0 0 24px;
+}
+.kb-hero__stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.kb-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.kb-stat__val {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--rm-kraft-deep);
+}
+.kb-stat__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ---- Intro ---- */
+.kb-intro {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+
+/* ---- Niveaux ---- */
+.kb-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.kb-level {
+  padding: 20px 18px;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--border);
+  background: var(--rm-paper);
+}
+.kb-level--green { border-color: var(--rm-moss); }
+.kb-level--yellow { border-color: var(--rm-kraft); }
+.kb-level--blue { border-color: #5B8FD4; }
+.kb-level--red { border-color: var(--rm-terracotta); }
+.kb-level--moss { border-color: var(--rm-moss); background: #F4F7EA; }
+
+.kb-level__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.kb-level__num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+}
+.kb-level__name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+.kb-level__budget {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+  margin-top: 1px;
+}
+.kb-level__list {
+  list-style: none;
+  padding: 0; margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.kb-level__list li {
+  font-size: 13px;
+  color: var(--text-1);
+  padding-left: 14px;
+  position: relative;
+}
+.kb-level__list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.kb-level__footer {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+/* ---- Matériaux ---- */
+.kb-mat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kb-mat-block {
+  border: 1.5px solid var(--rm-kraft);
+  border-radius: var(--r-md);
+  padding: 20px 18px;
+  background: var(--rm-paper);
+}
+.kb-mat-block__title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kb-mat-block__icon { font-size: 18px; }
+
+.kb-mat-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.kb-mat-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--rm-cream-2);
+  border: 1px solid var(--border);
+}
+.kb-mat-item__name {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.kb-mat-item__desc {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.kb-mat-item__age {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .05em;
+  color: var(--text-3);
+  margin-top: 4px;
+}
+
+.kb-tip {
+  font-size: 12px;
+  color: var(--text-2);
+  font-style: italic;
+  margin: 12px 0 0;
+  line-height: 1.5;
+}
+
+.kb-warning {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: rgba(194,86,47,.07);
+  border-left: 3px solid var(--rm-terracotta);
+  border-radius: 0 6px 6px 0;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+/* ---- Tables ---- */
+.kb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  margin-top: 4px;
+}
+.kb-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  border-bottom: 1.5px solid var(--rm-kraft);
+  padding: 6px 8px;
+}
+.kb-table td {
+  padding: 8px 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-1);
+  vertical-align: top;
+  line-height: 1.45;
+}
+.kb-table tr:last-child td { border-bottom: 0; }
+
+/* ---- Outils par geste ---- */
+.kb-tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.kb-tool-group {
+  padding: 18px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--rm-paper);
+}
+.kb-tool-group__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.kb-tool-group__icon { font-size: 16px; }
+.kb-tool-group__title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.kb-tool-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.kb-tool-list li {
+  font-size: 12.5px;
+  color: var(--text-1);
+  line-height: 1.45;
+  padding-left: 12px;
+  position: relative;
+}
+.kb-tool-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+  font-size: 10px;
+  top: 2px;
+}
+
+/* ---- Makedo ---- */
+.kb-makedo {
+  background: var(--rm-cream-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 22px;
+}
+.kb-makedo__inner { max-width: 100%; }
+.kb-makedo__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.kb-makedo__badge {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: #5B8FD4;
+  color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+.kb-makedo__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #5B8FD4;
+  margin-bottom: 4px;
+}
+.kb-makedo__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+}
+.kb-makedo__sub {
+  font-size: 13px;
+  color: var(--text-2);
+  margin: 0;
+}
+.kb-makedo__intro {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+.kb-makedo__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kb-makedo__components h4,
+.kb-makedo__why h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.kb-makedo__comp {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.kb-makedo__comp:last-child { border-bottom: 0; }
+.kb-makedo__comp-name {
+  font-weight: 600;
+  font-size: 13px;
+  flex: none;
+  width: 100px;
+  color: #5B8FD4;
+}
+.kb-makedo__comp-desc {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.45;
+}
+
+.kb-why-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.kb-why-list li {
+  font-size: 13px;
+  color: var(--text-1);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.kb-why-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--rm-moss);
+  font-size: 11px;
+  top: 1px;
+}
+
+/* ---- STEM / Beaverbot ---- */
+.kb-stem {
+  background: var(--rm-ink);
+  color: var(--rm-cream);
+  padding: 32px 22px;
+}
+.kb-stem__inner { max-width: 100%; }
+.kb-stem__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.kb-stem__badge {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--rm-terracotta);
+  color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+.kb-stem__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-terracotta);
+  margin-bottom: 4px;
+}
+.kb-stem__title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+  color: var(--rm-cream);
+}
+.kb-stem__sub {
+  font-size: 13px;
+  color: rgba(251,245,233,.6);
+  margin: 0;
+}
+.kb-stem__intro {
+  font-size: 14px;
+  color: rgba(251,245,233,.75);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+.kb-stem__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.kb-stem h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--rm-cream);
+}
+.kb-stem .kb-why-list li { color: rgba(251,245,233,.85); }
+.kb-stem .kb-table { color: var(--rm-cream); }
+.kb-stem .kb-table th { color: rgba(251,245,233,.5); border-bottom-color: rgba(251,245,233,.15); }
+.kb-stem .kb-table td { border-bottom-color: rgba(251,245,233,.1); }
+.kb-stem .kb-rules { color: rgba(251,245,233,.8); }
+
+.kb-rules {
+  font-size: 13px;
+  line-height: 1.6;
+  padding-left: 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kb-stem__links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(251,245,233,.4);
+}
+.kb-stem .kb-link { color: rgba(251,245,233,.7); }
+.kb-stem .kb-link:hover { color: var(--rm-cream); }
+
+/* ---- Sécurité ---- */
+.kb-safety-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.kb-safety-block {
+  padding: 20px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--rm-paper);
+}
+.kb-safety-block--full {
+  grid-column: 1 / -1;
+}
+.kb-safety-block__title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px;
+}
+.kb-safety-block__sub {
+  font-size: 12px;
+  color: var(--text-3);
+  margin: 0 0 14px;
+  font-style: italic;
+}
+.kb-safety-list {
+  list-style: none;
+  padding: 0; margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.kb-safety-list li {
+  font-size: 13px;
+  color: var(--text-1);
+  padding-left: 14px;
+  position: relative;
+}
+.kb-safety-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--rm-moss);
+  font-weight: 700;
+}
+.kb-emergency {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.7;
+  padding: 10px 12px;
+  background: rgba(107,127,74,.08);
+  border-radius: 6px;
+  border-left: 3px solid var(--rm-moss);
+}
+.kb-rules-list {
+  list-style: decimal;
+  padding-left: 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.kb-rules-list li {
+  font-size: 12.5px;
+  color: var(--text-1);
+  line-height: 1.5;
+}
+
+/* ---- Sources ---- */
+.kb-sources {
+  padding: 0 22px 32px;
+}
+.kb-sources__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 0;
+}
+.kb-source {
+  padding: 16px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--rm-paper);
+}
+.kb-source__title {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.kb-source p {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+.kb-source__tip {
+  font-size: 11.5px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ---- Liens ---- */
+.kb-link {
+  color: var(--rm-kraft-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.kb-link:hover { color: var(--rm-ink); }
+
+/* ---- CTA ---- */
+.kb-cta-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.kb-cta-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 20px;
+  background: var(--rm-orange);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  transition: opacity .15s;
+}
+.kb-cta-primary:hover { opacity: .9; }
+.kb-cta-primary__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--rm-paper);
+}
+.kb-cta-primary__sub {
+  font-size: 12.5px;
+  color: rgba(251,245,233,.75);
+}
+.kb-cta-lfm {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px 18px;
+  border: 1.5px dashed var(--rm-kraft);
+  border-radius: var(--r-md);
+  background: var(--rm-paper);
+}
+.kb-cta-lfm__icon {
+  flex: none;
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  background: var(--rm-orange);
+  color: var(--rm-paper);
+  display: grid; place-items: center;
+}
+.kb-cta-lfm__title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.kb-cta-lfm__desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+.kb-cta-lfm__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rm-orange);
+  text-decoration: none;
+}
+.kb-cta-lfm__link:hover { text-decoration: underline; }
+
+/* ---- Code en bois ---- */
+.kb-ceb {
+  background: var(--rm-cream-2);
+  border-top: 1px solid var(--rm-moss);
+  border-bottom: 1px solid var(--rm-moss);
+  padding: 32px 22px;
+}
+.kb-ceb__inner { max-width: 100%; }
+.kb-ceb__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.kb-ceb__badge {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--rm-moss);
+  color: #fff;
+  display: grid; place-items: center;
+}
+.kb-ceb__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rm-moss);
+  margin-bottom: 4px;
+}
+.kb-ceb__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+}
+.kb-ceb__sub {
+  font-size: 13px;
+  color: var(--text-2);
+  margin: 0;
+}
+.kb-ceb__intro {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+.kb-ceb__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kb-ceb__cols h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.kb-ceb__why li::before { color: var(--rm-moss) !important; }
+
+.kb-ceb__links-block { }
+.kb-ceb__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.kb-ceb__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--rm-paper);
+  border: 1.5px solid var(--rm-moss);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  color: var(--text);
+  transition: box-shadow var(--dur), transform var(--dur) var(--ease-out);
+}
+.kb-ceb__link:hover {
+  box-shadow: 0 3px 0 0 var(--rm-moss);
+  transform: translateY(-1px);
+}
+.kb-ceb__link-pic {
+  flex: none;
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: var(--rm-moss-soft);
+  border: 1px solid var(--rm-moss);
+  display: grid; place-items: center;
+  color: var(--rm-moss);
+}
+.kb-ceb__link-label {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+.kb-ceb__link-url {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .04em;
+  color: var(--rm-moss);
+}
+.kb-ceb__note {
+  font-size: 12px;
+  color: var(--text-3);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 880px) {
+  .kb-hero {
+    padding: 64px 64px 48px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .kb-hero__title { font-size: clamp(40px, 4.5vw, 60px); }
+  .kb-hero__lead { font-size: 18px; }
+  .kb-stat__val { font-size: 28px; }
+
+  .kb-levels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .kb-level { display: flex; flex-direction: column; }
+  .kb-level__footer { margin-top: auto; }
+
+  .kb-mat-grid { gap: 16px; }
+
+  .kb-tools-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .kb-makedo { padding: 48px 64px; }
+  .kb-makedo__inner { max-width: 1320px; margin: 0 auto; }
+  .kb-makedo__title { font-size: 28px; }
+  .kb-makedo__cols { flex-direction: row; gap: 40px; }
+  .kb-makedo__components { flex: 1; }
+  .kb-makedo__why { flex: 0 0 280px; }
+
+  .kb-stem { padding: 48px 64px; }
+  .kb-stem__inner { max-width: 1320px; margin: 0 auto; }
+  .kb-stem__title { font-size: 26px; }
+  .kb-stem__cols { flex-direction: row; gap: 40px; }
+  .kb-stem__cols > div { flex: 1; }
+
+  .kb-ceb { padding: 48px 64px; }
+  .kb-ceb__inner { max-width: 1320px; margin: 0 auto; }
+  .kb-ceb__title { font-size: 28px; }
+  .kb-ceb__cols { flex-direction: row; gap: 48px; }
+  .kb-ceb__cols > div { flex: 1; }
+  .kb-ceb__links { flex-direction: row; }
+  .kb-ceb__link { flex-direction: column; align-items: flex-start; gap: 10px; flex: 1; }
+
+  .kb-sources { padding: 0 64px 48px; }
+  .kb-sources__grid { grid-template-columns: repeat(4, 1fr); }
+
+  .kb-cta-grid { flex-direction: row; }
+  .kb-cta-primary { flex: 0 0 260px; justify-content: center; }
+  .kb-cta-lfm { flex: 1; }
+}
+</style>
