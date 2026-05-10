@@ -29,16 +29,6 @@ steps:
     corps: "Empiler en pyramide : 4 + 3 + 2 + 1 (standard) ou 3 + 2 + 1 (petits espaces). Marquer la ligne de tir au sol : 1,5 m pour les enfants, 2–3 m pour les ados et adultes. Trois lancers par joueur. La règle se discute en groupe."
     temps: "2 min + jeu"
     outils: ["Craie ou scotch", "Tableau de scores (optionnel)"]
-declinaisons:
-  - kind: reuse
-    titre: "Version 100% réemploi"
-    corps: "Remplacer les boîtes de conserve par des boîtes carton de taille uniforme (céréales, chaussures), remplies de papier froissé pour leur donner du poids. Projectiles : balles de chaussettes compactées ou balle de papier aluminium. Coût total : 0 €."
-  - kind: time
-    titre: "Version express — stand kermesse"
-    corps: "Boîtes pré-empilées par l'animateur, remontage rapide entre chaque joueur (15–20 s). Prévoir 3 postes en parallèle pour absorber le flux. Affecter un bénévole uniquement au remontage dès 30 participants."
-  - kind: age
-    titre: "Avec des 3–5 ans"
-    corps: "Pyramide réduite à 3 + 2 + 1, ligne de tir à 1 m, balles très molles (mousse). Insister sur le geste plutôt que le score. Pas de fabrication autonome à cet âge — l'animateur prépare le matériel en amont."
 adaptations:
   - kind: age
     titre: "Selon l'âge"

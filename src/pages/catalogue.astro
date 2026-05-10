@@ -103,8 +103,8 @@ const publics = [...new Set(ateliers.map(a => a.data.public))].sort();
               <div class={`wcard__media ph-photo ${famille === 'carton' || famille === 'kermesse' ? '' : famille === 'mediation' || famille === 'beaverbot' ? 'ph-photo--moss' : 'ph-photo--terracotta'}`}>
                 <div class="wcard__badges">
                   {classification === 'classique'
-                    ? <span class="badge badge--classique"><span class="badge__dot"></span>Classique</span>
-                    : <span class="badge badge--original"><span class="badge__dot"></span>Original</span>
+                    ? <span class="badge badge--classique"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l1.5 1.1 1.8-.5.8 1.7 1.85.3.05 1.85 1.5 1.1-.7 1.7.7 1.7-1.5 1.1-.05 1.85-1.85.3-.8 1.7-1.8-.5L12 16.8l-1.5-1.1-1.8.5-.8-1.7-1.85-.3-.05-1.85L4.5 11.25l.7-1.7-.7-1.7L6 6.75l.05-1.85L7.9 4.6l.8-1.7 1.8.5L12 3.2z"/><path d="M12 7.4l1 2 2.2.3-1.6 1.55.4 2.2L12 12.4l-2 1.05.4-2.2L8.8 9.7 11 9.4l1-2z"/><path d="M9 18.5l-1.5 3 2-.3.7 1.8 1.8-3.6"/><path d="M15 18.5l1.5 3-2-.3-.7 1.8-1.8-3.6"/></svg>Classique</span>
+                    : <span class="badge badge--original"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c.4 3.4 1.8 4.8 5.2 5.2-3.4.4-4.8 1.8-5.2 5.2-.4-3.4-1.8-4.8-5.2-5.2 3.4-.4 4.8-1.8 5.2-5.2z"/><path d="M5.5 17c.2 1.5.9 2.2 2.4 2.4-1.5.2-2.2.9-2.4 2.4-.2-1.5-.9-2.2-2.4-2.4 1.5-.2 2.2-.9 2.4-2.4z"/><path d="M18 15.5c.2 1.6 1 2.4 2.6 2.6-1.6.2-2.4 1-2.6 2.6-.2-1.6-1-2.4-2.6-2.6 1.6-.2 2.4-1 2.6-2.6z"/></svg>Original</span>
                   }
                 </div>
                 {reemploi && (

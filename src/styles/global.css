@@ -137,7 +137,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 .badge--classique { border-color: var(--rm-moss);       color: var(--rm-moss);       background: #F4F7EA; }
 .badge--original  { border-color: var(--rm-terracotta); color: var(--rm-terracotta); background: #FAEDE3; }
-.badge__dot { width: 7px; height: 7px; border-radius: 999px; background: currentColor; }
+.badge__dot { width: 7px; height: 7px; border-radius: 999px; background: currentColor; flex: none; }
 
 /* ---- Photo placeholders ---- */
 .ph-photo {
@@ -665,7 +665,7 @@ p { margin: 0; text-wrap: pretty; }
 .adapt-section {
   margin: 24px 22px 0;
 }
-.adapt-section > .section-eyebrow { display: block; margin-bottom: 8px; }
+.adapt-section > .section-eyebrow { display: inline-flex; margin-bottom: 8px; }
 .adapt-section > h2 { font-size: 22px; letter-spacing: -.02em; margin-bottom: 18px; }
 .adapt-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .adapt-card {
