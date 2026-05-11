@@ -2,6 +2,13 @@
 
 - [ ] Ajouter un bouton partager avec un blurb par défaut
 
+## Contenu & Schéma
+
+- [ ] **Fiches bi-phases (fabrication + animation)** — pour les ateliers comme chamboule-tout qui ont deux modes d'usage :
+  - Schéma `config.ts` : ajouter `stepsAnimation` (array, même structure que `steps`) en complément de `steps` (qui devient `stepsFabrication`) — ou ajouter un champ `phase: z.enum(['fabrication', 'animation']).optional()` sur chaque step
+  - Template `[slug].astro` : afficher deux sections distinctes "Fabrication" et "Animation" quand les deux sont présents — section Fabrication en premier, Animation ensuite
+  - Le générateur de fiches doit produire les deux tableaux de steps séparément selon la phase
+
 ## SEO & Accessibilité
 
 - [ ] Ajouter des balises Open Graph (og:title, og:description, og:image) dans Layout.astro
